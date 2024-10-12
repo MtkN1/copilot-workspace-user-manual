@@ -1,39 +1,39 @@
-# Experiments
+# 実験
 
-Copilot Workspace is a technical preview and is under active development. This document lists some known issues and known areas where we'd like to make future improvements.
+Copilot Workspaceは技術プレビューであり、現在も活発に開発が進められています。このドキュメントでは、既知の問題や将来的に改善したい領域について説明します。
 
-We will be doing ongoing continuous releases of Copilot Workspace during the technical preview, adding new features, new experiments and fixing bugs as we go. 
+技術プレビュー期間中、Copilot Workspaceの継続的なリリースを行い、新機能や新しい実験を追加し、バグを修正していきます。
 
-We greatly appreciate any [feedback](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback) on these experiments, as it helps us improve Copilot Workspace and make it more useful for you.
+これらの実験に関するフィードバックを大いに歓迎します。フィードバックは、Copilot Workspaceを改善し、より役立つものにするために役立ちます。
 
-## Active experiments
+## アクティブな実験
 
-There are several active "Experiments" available related to things we are working on. We invite you to activate these and will update this document with new experiments when they are available. These features aren't set in stone, and any feedback regarding them would be greatly appreciated.
+現在、いくつかのアクティブな「実験」があり、これらは私たちが取り組んでいることに関連しています。これらを有効にすることをお勧めします。これらの機能は確定しておらず、これに関するフィードバックを大いに歓迎します。
 
-### Use line numbers always (🥼)
+### 常に行番号を使用する (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to always use line numbers when generating code. Enable this using the "Use line numbers always" feature in Copilot Workspace.
+Copilot Workspaceがコード生成時に常に行番号を使用する機能を実験しています。Copilot Workspaceで「常に行番号を使用する」機能を有効にしてください。
 
-### Use emoji in topic and specs (🥼)
+### トピックと仕様に絵文字を使用する (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to use emoji in the topic and specifications. Enable this using the "Use emoji in topic and specs" feature in Copilot Workspace.
+Copilot Workspaceがトピックと仕様に絵文字を使用する機能を実験しています。Copilot Workspaceで「トピックと仕様に絵文字を使用する」機能を有効にしてください。
 
-### Utilize linked issues, PRs, and GitHub file links in analysis (🥼)
+### 分析時にリンクされた問題、PR、およびGitHubファイルリンクを利用する (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to utilize linked issues, pull requests, and GitHub file links when analyzing tasks. This allows CW to have more context related to linked issues, PRs, and GitHub file links in analysis. Enable this using the "Utilize linked issues, PRs, and GitHub file links in analysis" feature in Copilot Workspace.
+Copilot Workspaceがタスクを分析する際にリンクされた問題、プルリクエスト、およびGitHubファイルリンクを利用する機能を実験しています。これにより、リンクされた問題、PR、およびGitHubファイルリンクに関連するコンテキストがより多く提供されます。Copilot Workspaceで「リンクされた問題、PR、およびGitHubファイルリンクを利用する」機能を有効にしてください。
 
-### Utilize referenced generic web content in analysis (🥼)
+### 分析時に参照された一般的なWebコンテンツを利用する (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to utilize referenced generic web content when analyzing tasks. Currently, the contents of the URL are summarized and given to Copilot Workspace, in order to aid Copilot Workspace more focused on relevant details.
+Copilot Workspaceがタスクを分析する際に参照された一般的なWebコンテンツを利用する機能を実験しています。現在、URLの内容が要約され、Copilot Workspaceに提供されることで、関連する詳細により焦点を当てることができます。
 
-### Use code search during task analysis (🥼)
+### タスク分析中にコード検索を使用する (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to utilize code search during task analysis. This helps Copilot Workspace identify relevant files and code snippets more effectively, improving the overall accuracy and relevance of the generated specifications and plans. Enable this using the "Use code search during task analysis" feature in Copilot Workspace. Note that this experiment may result in slower completion times for spec/plan generation, but will cause Copilot Workspace to be more "focused" on your codebase.
+Copilot Workspaceがタスク分析中にコード検索を利用する機能を実験しています。これにより、Copilot Workspaceが関連するファイルやコードスニペットをより効果的に特定し、生成された仕様や計画の全体的な精度と関連性を向上させます。Copilot Workspaceで「タスク分析中にコード検索を使用する」機能を有効にしてください。この実験により、仕様や計画の生成時間が遅くなる可能性がありますが、Copilot Workspaceがコードベースに対してより「集中」するようになります。
 
-### Clarify ambiguous specifications (🥼)
+### 曖昧な仕様を明確にする (🥼)
 
-We are experimenting with a feature that allows Copilot Workspace to detect and warn about ambiguous specifications, in cooperation with the user. Enable this using the "Clarify ambiguous specifications" feature in Copilot Workspace.
+Copilot Workspaceが曖昧な仕様を検出し、ユーザーと協力して警告する機能を実験しています。Copilot Workspaceで「曖昧な仕様を明確にする」機能を有効にしてください。
 
-### Allow skipping the spec and going straight to plan (🥼)
+### 仕様をスキップして計画に直接進むことを許可する (🥼)
 
-We are experimenting with a feature that allows users to skip the specification step and go straight to the plan. This is especially useful if you have already written a very detailed task description and want Copilot Workspace to go straight to implementing the task. Enable this using the "Allow skipping the spec and going straight to plan" feature in Copilot Workspace.
+ユーザーが仕様ステップをスキップして計画に直接進むことを許可する機能を実験しています。これは、非常に詳細なタスク説明を書いており、Copilot Workspaceにタスクの実装を直接行ってほしい場合に特に便利です。Copilot Workspaceで「仕様をスキップして計画に直接進むことを許可する」機能を有効にしてください。

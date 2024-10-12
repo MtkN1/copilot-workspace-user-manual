@@ -1,11 +1,11 @@
-# Ad-hoc Tasks
+# アドホックタスク
 
-An ad-hoc task is a task that you define yourself, without the context of an issue or pull request. You can start an ad-hoc task from the Copilot Workspace dashboard, or from the repository page on GitHub.com.
+アドホックタスクは、問題やプルリクエストのコンテキストなしに、自分で定義するタスクです。Copilot Workspace ダッシュボードまたは GitHub.com のリポジトリページからアドホックタスクを開始できます。
 
-<img src="images/adhoc-tasks/ad-hoc-task-full.png" width=400 alt="Panel on repository page to open an ad-hoc task in Copilot Workspace"><br>*Start an ad-hoc task in Copilot Workspace*
+<img src="images/adhoc-tasks/ad-hoc-task-full.png" width=400 alt="Panel on repository page to open an ad-hoc task in Copilot Workspace"><br>*Copilot Workspace でアドホックタスクを開始する*
 
-Once started an ad-hoc task looks like this:
+アドホックタスクを開始すると、次のようになります。
 
-<img src="images/adhoc-tasks/adhoc-task-timeline-representation.png" width=600 alt="Ad-hoc task timeline representation"><br>*The timeline starts with the ad-hoc task and has no associated metadata*
+<img src="images/adhoc-tasks/adhoc-task-timeline-representation.png" width=600 alt="Ad-hoc task timeline representation"><br>*タイムラインはアドホックタスクから始まり、関連するメタデータはありません*
 
-After creation, ad-hoc tasks proceed as for issue tasks.
+作成後、アドホックタスクは問題タスクと同様に進行します。

@@ -1,28 +1,28 @@
-# 📖 Copilot Workspace User Manual
+# 📖 Copilot Workspace ユーザーマニュアル
 
-Welcome! 👋 This is the user manual for [Copilot Workspace](https://copilot-workspace.githubnext.com), an experiment by [GitHub Next](https://githubnext.com). Copilot Workspace is an AI-native dev environment that allows you to collaborate with Copilot on repo-wide coding tasks, using natural language and integrated cloud compute. You can learn more about what Copilot Workspace is from its [project page](https://githubnext.com/projects/copilot-workspace/).
+ようこそ！ 👋 これは [Copilot Workspace](https://copilot-workspace.githubnext.com) のユーザーマニュアルです。これは [GitHub Next](https://githubnext.com) による実験です。Copilot Workspace は、自然言語と統合されたクラウドコンピュートを使用して、リポジトリ全体のコーディングタスクを Copilot と協力して行うことができる AI ネイティブの開発環境です。Copilot Workspace についての詳細は、その [プロジェクトページ](https://githubnext.com/projects/copilot-workspace/) で確認できます。
 
-This manual will help you understand how to use Copilot Workspace most effectively, and share tips & tricks that we've learned while using Copilot Workspace to build Copilot Workspace. It also documents some known issues (it's an experiment after all!), as well the technical roadmap and origins of the project. 
+このマニュアルは、Copilot Workspace を最も効果的に使用する方法を理解し、Copilot Workspace を使用して Copilot Workspace を構築する際に学んだヒントやコツを共有するのに役立ちます。また、既知の問題（これは実験です！）や、プロジェクトの技術的なロードマップと起源についても記載しています。
 
-## Table of Contents
+## 目次
 
-* [Overview](overview.md)
-* [Getting Started](getting-started.md)
-* [Tips and Tricks](tips-and-tricks.md)
-* [Terminal/Codespaces Guide](codespaces-guide.md)
-* [Troubleshooting](troubleshooting.md)
-* Going Further
-  - [Creating Repositories](creating-repos.md)
-  - [Ad-hoc Tasks](adhoc-tasks.md)
-  - [Controls for Repository Maintainers](repo-maintainers.md)
-  - [Experiments, Roadmap and Known Issues](known-issues.md)
-  - [Responsible AI FAQ](responsible-ai-faq.md)
-  - [Origins](origins.md)
-  - [Settings](settings.md)
-* [Change Notes](changes.md)
+* [概要](overview.md)
+* [始め方](getting-started.md)
+* [ヒントとコツ](tips-and-tricks.md)
+* [ターミナル/コードスペースガイド](codespaces-guide.md)
+* [トラブルシューティング](troubleshooting.md)
+* さらに進む
+  - [リポジトリの作成](creating-repos.md)
+  - [アドホックタスク](adhoc-tasks.md)
+  - [リポジトリメンテナーのためのコントロール](repo-maintainers.md)
+  - [実験、ロードマップ、既知の問題](known-issues.md)
+  - [責任あるAI FAQ](responsible-ai-faq.md)
+  - [起源](origins.md)
+  - [設定](settings.md)
+* [変更ノート](changes.md)
 
-## Feedback
+## フィードバック
 
-To give general feedback, please join the [GitHub Next Discord](https://discord.gg/FeGshJZ2yy) and post in the [#copilot-workspace](https://discord.com/channels/735557230698692749/1237161687233200279) forum channel.  Please provide a share link to the workspace and a description of the issue you're facing so that we can help you more effectively.
+一般的なフィードバックを提供するには、[GitHub Next Discord](https://discord.gg/FeGshJZ2yy) に参加し、[#copilot-workspace](https://discord.com/channels/735557230698692749/1237161687233200279) フォーラムチャンネルに投稿してください。ワークスペースの共有リンクと、直面している問題の説明を提供していただけると、より効果的にサポートできます。
 
-To report harmful content, please email copilot-safety@github.com with a description of the issue and a share link to the workspace.
+有害なコンテンツを報告するには、問題の説明とワークスペースの共有リンクを添えて copilot-safety@github.com にメールしてください。
