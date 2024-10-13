@@ -1,6 +1,6 @@
 # コードスペーススターターガイド
 
-このドキュメントには、ワークスペースセッションでターミナル/コードスペースを使用するための有用な情報が含まれています。
+このドキュメントには、ワークスペースセッションでターミナル / コードスペースを使用するための有用な情報が含まれています。
 
 ## コードスペースの制限
 
@@ -38,9 +38,9 @@
 
 数分後に再試行してください。さらに、このエラーが特定のリージョンで続く場合は、ユーザー設定でデフォルトのコードスペースリージョンを変更できます。詳細は[こちらの公開ドキュメント](https://docs.github.com/en/codespaces/setting-your-user-preferences/setting-your-default-region-for-github-codespaces)をご覧ください。
 
-#### 提供された`devcontainer.json`が有効なJSONに解析できません
+#### 提供された `devcontainer.json` が有効な JSON に解析できません
 
-選択したリポジトリで`devcontainer.json`の構文エラーを修正する必要があります。`devcontainer.json`の構文について詳しくは、[こちらの公開ドキュメント](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)をご覧ください。
+選択したリポジトリで `devcontainer.json` の構文エラーを修正する必要があります。`devcontainer.json` の構文について詳しくは、[こちらの公開ドキュメント](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)をご覧ください。
 
 #### 組織がOAuthアプリのアクセス制限を有効にしているため、Copilot Workspaceへのアクセスが制限されています
 
