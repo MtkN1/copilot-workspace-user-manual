@@ -1,60 +1,60 @@
 ## 📅 18 October 2024
 
-- [Error repair](#error-repair)
-- [Follow ups](#follow-ups)
-- [Brainstorm enhancements](#brainstorm-enhancements)
-- [Plan command enhancements](#plan-command-enhancements)
+- [エラー修復](#error-repair)
+- [フォローアップ](#follow-ups)
+- [Brainstorm の強化](#brainstorm-enhancements)
+- [Plan コマンドの強化](#plan-command-enhancements)
 
-### Error repair
+### エラー修復
 
-When a [build/test/run command](#commands) fails, CW now displays a lightbulb button in the command's toolbar. When you click this, it will trigger a [brainstorming](#brainstorming) action, and then offer a suggestion for how to fix the error.
+[ビルド/テスト/実行コマンド](#commands)が失敗した場合、CW はコマンドのツールバーに電球ボタンを表示するようになりました。これをクリックすると、[ブレインストーミング](#brainstorming)アクションがトリガーされ、エラーを修正するための提案が表示されます。
 
 <img src="https://github.com/user-attachments/assets/db1cc14e-f3b5-49ea-a9e0-80b8b2b98bba" width="450px" />
 
-When a suggestion comes back, it will include an explaination of the issue, and then present a fix in one of two forms:
+提案が返ってくると、問題の説明が含まれ、その後、次の2つの形式のいずれかで修正が提示されます：
 
-1. A **terminal command**, which can be run in order to resolve the issue (e.g. installing a missing environment dependency)
-2. A **plan update**, which can be applied, and then implemented in the impacted file(s) (e.g. missing imports, type errors)
+1. **ターミナルコマンド** - 問題を解決するために実行できるコマンド（例：不足している環境依存関係のインストール）
+2. **プランの更新** - 適用して影響を受けたファイルに実装できる修正（例：不足しているインポート、型エラー）
 
-| Terminal fix | Plan fix |
+| ターミナル修正 | プラン修正 |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/f81063fe-deca-455a-9c38-07bbb336b193" width="350px" /> | <img src="https://github.com/user-attachments/assets/029729bd-a50f-4078-b764-a464a35bf4f4" width="350px" /> |
 
-After accepting a suggestion, you can then re-run the failed command, and hopefully see it pass. That said, if you encounter another issue (e.g. a build with multiple errors), then you can just continue to command + repair as much as needed 🚀
+提案を受け入れた後、失敗したコマンドを再実行し、成功することを期待できます。とはいえ、別の問題が発生した場合（例：複数のエラーがあるビルド）、必要に応じてコマンド+修正を続けることができます 🚀
 
-### Follow ups
+### フォローアップ
 
-We've introduced a new capability into CW, that we're calling `Follow up`. And we're pretty excited about it 😃
+CWに新しい機能「フォローアップ」を導入しました。これには非常に興奮しています 😃
 
 <img src="https://github.com/user-attachments/assets/bd881a9f-f557-4f9d-8682-25075368ad00" width="400px" />
 
-#### Let's talk about why it's useful!
+#### なぜ役立つのか説明しましょう！
 
-When you're working against a large repository that has complex/inter-file dependencies, it's possible that a simple change/refactoring can impact many other places across the codebase (e.g. updating a shared method signature). And while the plan can do a great job of identifying the core changes needed for a task (the "primary edits"), it can sometimes miss transitive changes that are needed in response (e.g. updating callers of a changed function).
+複雑なファイル間依存関係を持つ大規模なリポジトリで作業している場合、単純な変更/リファクタリングがコードベース全体の他の多くの場所に影響を与える可能性があります（例：共有メソッドシグネチャの更新）。プランはタスクに必要なコア変更（「主要な編集」）を特定するのに優れていますが、時には必要な追加の変更（例：変更された関数の呼び出し元の更新）を見逃すことがあります。
 
-To address this, after you've implemented a plan, you can open up the `Commands` tab and click the new `Follow up` button. This will perform a thorough, fine-grained check on your codebase + edits, to see if any additional changes are required, in order to complete your task. And if any follow-ups are detected, it will edit the neccessary files, and add them to your existing implementation 👍
+これに対処するために、プランを実装した後、`Commands` タブを開き、新しい `Follow up` ボタンをクリックできます。これにより、コードベース+編集に対して徹底的で詳細なチェックが行われ、タスクを完了するために追加の変更が必要かどうかが確認されます。フォローアップが検出された場合、必要なファイルが編集され、既存の実装に追加されます 👍
 
 <img src="https://github.com/user-attachments/assets/4c33b6e9-9506-4726-a018-4889b0a2d210" width="400px" />
 
-This workflow is pretty slick, because it allows the initial CW plan to be both fast and focused, which makes it quicker for you to get to code, and easier for you to review the essence of the change. And in cases that a change has repo-wide impact, you can simply trigger a follow up and let Copilot do the rest 😎
+このワークフローは非常にスムーズで、初期の CW プランが迅速かつ集中しているため、コードにすばやくアクセスでき、変更の本質をレビューしやすくなります。リポジトリ全体に影響を与える変更がある場合は、フォローアップをトリガーし、Copilot に任せることができます 😎
 
-#### How can you try it?
+#### どうやって試すのか？
 
-At the moment, this experience supports codebases that are written in TypeScript/JavaScript, Python, Java, and C#. So if you're working in one of those languages, we'd love to hear your feedback! And if not, we'd love to hear whether this capability would be useful, in order to help us prioritize new languages in the future 🙏
+現在、この機能は TypeScript/JavaScript、Python、Java、および C# で書かれたコードベースをサポートしています。そのため、これらの言語で作業している場合は、フィードバックをお待ちしています！そうでない場合でも、この機能が役立つかどうかをお知らせいただければ、将来の新しい言語の優先順位を決定するのに役立ちます 🙏
 
-And while we let this capability bake a bit, it's currently disabled by default. So if you'd like to give it a try, simply open the `Experiments` panel (under the avatar menu) and check the `Enable follow up` setting. 
+この機能を試すには、`Experiments` パネル（アバターメニューの下）を開き、`Enable follow up` 設定をチェックするだけです。
 
-### Brainstorm enhancements
+### Brainstorm の強化
 
-When you open an issue in CW, or click the `Brainstorm` button for ad-hoc tasks, the initially-generated question (`How do I solve this issue?`) is now presented in a "special" structured format. The response includes two sections (`Current behavior` / `Proposed solution`), and has the advantage of allowing you to add/edit/delete/organize any of the steps, in a very granular way.
+CW で問題を開くか、アドホックタスクの `Brainstorm` ボタンをクリックすると、最初に生成される質問（`w do I solve this issue?`）が「特別な」構造化形式で表示されるようになりました。応答には2つのセクション（`Current behavior` / `Proposed solution`）が含まれており、非常に詳細な方法でステップを追加/編集/削除/整理することができます。
 
 <img src="https://github.com/user-attachments/assets/d11ad993-6ee7-4899-a3f4-f6c896b0472d" width="700px" />
 
-Additionally, since we're treating this question as "special", it's automatically updated any time you attach an additional brainstorming question/idea to the task. That way, you can continue to brainstorm further, and ensure that CW's understanding of the overall solution remains always up-to-date 👍
+さらに、この質問を「特別な」として扱っているため、タスクに追加のブレインストーミングの質問/アイデアを添付するたびに自動的に更新されます。これにより、さらにブレインストーミングを続け、CW の全体的な解決策の理解が常に最新であることを確認できます 👍
 
-### Plan command enhancements
+### Plan コマンドの強化
 
-When a plan includes a `Commands` section (e.g. because your task required installing 3rd-party dependencies), you can now execute an individual command, in addition to the existing "Execute all" support. Additionally, the completion status of commands are now persisted. So when you resume a CW session later, you can see which commands were already run, which failed, and which are still outstanding.
+プランに `Commands` セクションが含まれている場合（例：タスクにサードパーティの依存関係のインストールが必要な場合）、個々のコマンドを実行できるようになりました。さらに、コマンドの完了ステータスが保持されるようになりました。そのため、後でCWセッションを再開すると、どのコマンドが既に実行され、どれが失敗し、どれがまだ未完了であるかを確認できます。
 
 <img src="https://github.com/user-attachments/assets/ede11071-62a8-4f9c-a8a9-f91a4ddf71c0" width="300px" />
 
