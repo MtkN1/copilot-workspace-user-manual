@@ -1,179 +1,178 @@
-# Tips and Tricks
+# ヒントとコツ
 
-This document contains assorted tips and tricks for using Copilot Workspace effectively. We'd love to hear your tips and tricks, too! Please share them with us in [feedback channels](README.md#feedback).
+このドキュメントには、Copilot Workspace を効果的に使用するためのさまざまなヒントとコツが含まれています。あなたのヒントやコツもぜひお聞かせください！[フィードバックチャンネル](README.md#feedback)で共有してください。
 
-## Edit the Issue or Task
+## Issue またはタスクを編集する
 
-✨ TIP: You can edit the issue or task to guide Copilot Workspace.
+✨ ヒント: Copilot Workspace をガイドするために Issue またはタスクを編集できます。
 
-The Issue/Task panel may be prepopulated with content depending on how you entered Copilot Workspace. For example, if you started from an Issue, the Issue panel will be prepopulated with the content of the issue. This content is ephemeral -- edits aren't synced back to the issue -- and so feel free to edit it to provide more context or to steer Copilot Workspace towards better results.
+Issue / Task パネルは、Copilot Workspace に入る方法に応じてコンテンツが事前に入力されている場合があります。たとえば、Issue から開始した場合、Issue パネルには Issue の内容が事前に入力されます。このコンテンツは一時的なものであり、編集内容は Issue に同期されないため、より多くのコンテキストを提供したり、Copilot Workspace をより良い結果に導くために自由に編集してください。
 
-## Tasks can be short!
+## タスクは短くても大丈夫！
 
-✨ TIP: You might be surprised at the effectiveness of simple tasks like "Add unit tests"
+✨ ヒント: 「ユニットテストを追加する」などのシンプルなタスクの効果に驚くかもしれません。
 
-Tasks don't have to be long. Simple, clear statements of intent like "Switch to use Python numpy" or "Add more unit tests for the server code" can get you a long way. You can easily add more clarification and iterate.
+タスクは長くある必要はありません。「Python の numpy を使用するように切り替える」や「サーバーコードのユニットテストを追加する」などのシンプルで明確な意図の表明は、大いに役立ちます。簡単に追加の説明を加えたり、反復することができます。
 
-## Clarify the Issue or Task
+## Issue またはタスクを明確にする
 
-✨ TIP: A few words clarifications can make a huge difference!
+✨ ヒント: 数語の説明が大きな違いを生むことがあります！
 
-Just a few words of clarification can make a big difference in the quality of the results you get. For example,
+数語の説明を加えるだけで、得られる結果の品質に大きな違いが生まれます。たとえば、
 
-* _add corresponding unit tests in `test/server`_ or
+* _`test/server` に対応するユニットテストを追加する_ や
 
-* _the problem is in the convolution code_ or
+* _問題は畳み込みコードにあります_ や
 
-* _don't change any existing code just add unit tests_
+* _既存のコードを変更せずにユニットテストを追加する_
 
-are examples of useful clarifications. Use as many of these as you like!
+などの説明が役立ちます。これらの説明を自由に使用してください！
 
-## Consider using Examples
+## 例を使用することを検討する
 
-✨ TIP: Giving examples of what you want can be a great way to clarify a task
+✨ ヒント: 望むものの例を示すことは、タスクを明確にするための素晴らしい方法です。
 
-For example, you can say: _Here are some examples of command line invocations that should work after the change..._ and give a few examples. Or you can say: _Here are some examples of the expected output..._ and give a few examples.
+たとえば、次のように言うことができます：_変更後に動作するはずのコマンドライン呼び出しの例をいくつか示します..._ そしていくつかの例を示します。または、次のように言うことができます：_期待される出力の例をいくつか示します..._ そしていくつかの例を示します。
 
-## Check the Topic and Specification
+## トピックと仕様を確認する
 
-✨ TIP: Check the topic and specification - if they're accurate, then Copilot Workspace is on the right track
+✨ ヒント: トピックと仕様を確認してください - それらが正確であれば、Copilot Workspace は正しい方向に進んでいます。
 
-The Topic is your first quick glimpse of Copilot Workspace's analysis of your task in the context of your repository, and the Current Specification follows soon after, then the Updated Specification. If these are accurate, then Copilot Workspace is on the right track. If they're not, then you may need to provide more context, clarifications and hints in the Issue/Task panel, or you may be performing something beyond Copilot Workspace's current capabilities.
+トピックは、リポジトリのコンテキストでタスクを分析した Copilot Workspace の最初の一瞥です。その後、現在の仕様が続き、次に更新された仕様が続きます。これらが正確であれば、Copilot Workspace は正しい方向に進んでいます。そうでない場合は、Issue / Task パネルでより多くのコンテキスト、説明、およびヒントを提供する必要があるか、Copilot Workspace の現在の能力を超えることを行っている可能性があります。
 
-You can edit all of these to correct them, and checking them quickly can save you a lot of time. You can also go back and clarify the issue or task and try again.
+これらをすべて編集して修正することができ、迅速に確認することで多くの時間を節約できます。また、Issue またはタスクを明確にして再試行することもできます。
 
-## Check the Content Selection
+## コンテンツの選択を確認する
 
-✨ TIP: Check the content selection and use short notes in the issue or task to say where to look
+✨ ヒント: コンテンツの選択を確認し、Issue またはタスクでどこを参照するかを短いメモで示す
 
-You can [check the content selection used](overview.md#content-selection). Often the content selection can be improved, and right now you do this through natural language and notes on the issue/task. If you know where the code that needs to be changed is, you can say so in the issue/task panel. For example, you can say: _Look in `src/server.js`_ or many other variations.
+[使用されるコンテンツの選択を確認](overview.md#content-selection)できます。多くの場合、コンテンツの選択を改善でき、現在は自然言語と Issue / Task のメモを通じてこれを行います。変更が必要なコードの場所がわかっている場合は、Issue / Task パネルでその場所を示すことができます。たとえば、次のように言うことができます：_`src/server.js` を参照してください_ などの多くのバリエーションがあります。
 
-To determine how to address a task, Copilot Workspace must determine which files in a repo are relevant to the task. This is hard, and Copilot Workspace may not always select the right files. If that happens, you may see low-quality results.
+タスクに対処する方法を決定するために、Copilot Workspace はリポジトリ内のどのファイルがタスクに関連しているかを特定する必要があります。これは難しく、Copilot Workspace は常に正しいファイルを選択するわけではありません。その場合、低品質の結果が表示されることがあります。
 
-To review the files that were selected, in the Specification panel, click the "View references" button:
+選択されたファイルを確認するには、仕様パネルで「参照を表示」ボタンをクリックします：
 
-<img src="images/overview/references.png" width=600 alt="Show references dialog">
+<img src="images/overview/references.png" width=600 alt="参照ダイアログを表示">
 
-To steer Copilot Workspace towards better file selection, you can mention file names, directory names, etc. in the issue/task panel. Just write it naturally, as if you were writing a normal issue.
+Copilot Workspace をより良いファイル選択に導くために、Issue / Task パネルでファイル名、ディレクトリ名などを言及することができます。通常の Issue を書くように自然に書いてください。
 
-## If at First You Don't Succeed...
+## 最初にうまくいかない場合は...
 
-✨ TIP: Try regenerating the spec or plan
+✨ ヒント: 仕様または計画を再生成してみてください
 
-If you're not happy with the results you're getting, you can try regenerating the spec and/or plan. To do this, click the "Regenerate" button in the Spec or Plan panels:
+結果に満足していない場合は、仕様や計画を再生成してみてください。これを行うには、仕様または計画パネルで「再生成」ボタンをクリックします：
 
-<img src="images/tips-and-tricks/regen.png" width=600 alt="Regenerate button">
+<img src="images/tips-and-tricks/regen.png" width=600 alt="再生成ボタン">
 
-## Iterating on the Implementation
+## 実装の反復
 
-✨ TIP: Add short notes to files in the plan, then iterate
+✨ ヒント: 計画のファイルに短いメモを追加し、反復する
 
-Often Copilot Workspace will get a task *mostly right*, but may have trouble with some parts. In this case, you can reimplement specific files with new or additional instructions. After implementing and reviewing the code, you can select file(s) in the Plan panel and add bullet points, then click "Update selected files" to reimplement those file(s) with the new instructions that you've provided.
+多くの場合、Copilot Workspace はタスクを*ほぼ正しく*処理しますが、一部の部分で問題が発生することがあります。この場合、新しい指示や追加の指示を使用して特定のファイルを再実装できます。コードを実装してレビューした後、計画パネルでファイルを選択し、箇条書きを追加してから「選択したファイルを更新」ボタンをクリックして、新しい指示でそのファイルを再実装します。
 
-<img src="images/overview/file-iteration.png" width=600 alt="Update selected files flow">
+<img src="images/overview/file-iteration.png" width=600 alt="選択したファイルの更新フロー">
 
-## Add New Files and Iterate
+## 新しいファイルを追加して反復する
 
-✨ TIP: You can add new files and iterate on the implementation
+✨ ヒント: 新しいファイルを追加して実装を反復できます
 
-If you need to add new files to the implementation, you can do so by clicking the "Add file" button in the Plan panel. This will add a new file to the plan, which you can then implement and iterate on.
+実装に新しいファイルを追加する必要がある場合は、計画パネルで「ファイルを追加」ボタンをクリックして追加できます。これにより、計画に新しいファイルが追加され、そのファイルを実装して反復できます。
 
-## Consider Generating New Files
+## 新しいファイルを生成することを検討する
 
-✨ TIP: Generating new files can be better than appending to existing files
+✨ ヒント: 既存のファイルに追加するよりも新しいファイルを生成する方が良い場合があります
 
-This technical preview of Copilot Workspace uses "whole file rewriting". This means that when you ask Copilot Workspace to add code to a file, it will replace the entire file with the new code. When performing tasks like writing unit tests or generating documentation or new implementation code, it can be easier and quicker to generate new files, then rename them.
+この Copilot Workspace の技術プレビューでは、「全ファイルの書き換え」を使用しています。これは、Copilot Workspace にファイルにコードを追加するように依頼すると、新しいコードでファイル全体が置き換えられることを意味します。ユニットテストの作成やドキュメントの生成、新しい実装コードの生成などのタスクを実行する場合、新しいファイルを生成してから名前を変更する方が簡単で迅速です。
 
-## Share Early, Share Often
+## 早期に共有し、頻繁に共有する
 
-✨ TIP: You can share your session at any time, including with people who are not part of the Copilot Workspace preview.
+✨ ヒント: Copilot Workspace プレビューの一部ではない人々ともセッションをいつでも共有できます。
 
-You can share your Copilot Workspace session with others by clicking the "Share" button in the top right corner of the screen. This will generate a link that you can share with others. These links can be shared with guests, even if they are not part of the Copilot Workspace preview. They will need to log in with their GitHub account to view the session.
+画面の右上隅にある「共有」ボタンをクリックして、Copilot Workspace セッションを他の人と共有できます。これにより、他の人と共有できるリンクが生成されます。これらのリンクは、Copilot Workspace プレビューの一部ではないゲストとも共有できます。セッションを表示するには、GitHub アカウントでログインする必要があります。
 
-Shared sessions are copies of the original session. Non-guest users can use them as a starting point to continue the task or explore alternative solutions without interfering with the original session. Guest users can view the session but cannot use the workspace to make changes.
+共有セッションは元のセッションのコピーです。非ゲストユーザーは、タスクを続行したり、元のセッションに干渉せずに代替ソリューションを探索するための出発点として使用できます。ゲストユーザーはセッションを表示できますが、ワークスペースを使用して変更を加えることはできません。
 
-<img src="images/overview/share-link.png" width=200 alt="Share button">
+<img src="images/overview/share-link.png" width=200 alt="共有ボタン">
 
-## Use the Sessions
+## セッションを使用する
 
-✨ TIP: Return to your work at any time
+✨ ヒント: いつでも作業に戻ることができます
 
-Your sessions are automatically saved, so you won't lose work if you close the browser or navigate away from the page. You can return to your session by going to [your Copilot Workspace dashboard](https://copilot-workspace.githubnext.com).
+セッションは自動的に保存されるため、ブラウザを閉じたりページから離れたりしても作業が失われることはありません。セッションに戻るには、[Copilot Workspace ダッシュボード](https://copilot-workspace.githubnext.com)にアクセスしてください。
 
-## Configure the Terminal for Your Repository
+## リポジトリのターミナルを設定する
 
-✨ TIP: Set up a `devcontainer.json` file in your repository to configure the terminal
+✨ ヒント: リポジトリに `devcontainer.json` ファイルを設定してターミナルを構成する
 
-We provide a built-in terminal so that you can validate the code changes that Copilot Workspace suggests. We use GitHub Codespaces to provide this terminal, and we use the `devcontainer.json` file in your repository to configure the container that powers the terminal. If you need to make changes to the default container to e.g. install necessary software, etc., you can do so by creating a `devcontainer.json` file in your repository. Learn more about Development Containers at https://containers.dev/.
+Copilot Workspace が提案するコード変更を検証できるように、組み込みのターミナルを提供しています。このターミナルを提供するために GitHub Codespaces を使用しており、ターミナルを駆動するコンテナを構成するためにリポジトリの `devcontainer.json` ファイルを使用しています。必要なソフトウェアをインストールするなど、デフォルトのコンテナに変更を加える必要がある場合は、リポジトリに `devcontainer.json` ファイルを作成して変更を加えることができます。開発コンテナの詳細については、https://containers.dev/ を参照してください。
 
-## Use the Codespace
+## コードスペースを使用する
 
-✨ TIP: Full editing in the Codespace is simple and quick
+✨ ヒント: コードスペースでの完全な編集は簡単で迅速です
 
-Modified files are two-way-synced between Copilot Workspace and the terminal/Codespace. Feel free to edit in either place, and your changes will be reflected in the other.
+変更されたファイルは Copilot Workspace とターミナル / コードスペースの間で双方向に同期されます。どちらの場所でも自由に編集でき、変更は他方に反映されます。
 
-Check out [Codespaces Guide](./codespaces-guide.md) for more information.
+詳細については、[コードスペースガイド](./codespaces-guide.md)を参照してください。
 
-## Explore the Experiments!
+## 実験を探索する！
 
-✨ TIP: Explore our experiments and send us feedback!
+✨ ヒント: 実験を探索し、フィードバックをお送りください！
 
-We're always trying new things in Copilot Workspace. You can opt into our current experiments by clicking on your avatar in the top right corner of the screen and selecting "Experiments":
+Copilot Workspace では常に新しいことを試みています。画面の右上隅にあるアバターをクリックし、「実験」を選択することで、現在の実験にオプトインできます：
 
-<img src="images/tips-and-tricks/experiments.png" width=200 alt="Experiments selector">
+<img src="images/tips-and-tricks/experiments.png" width=200 alt="実験セレクター">
 
-## Work Around Model "Laziness"
+## モデルの「怠惰」を回避する
 
-✨ TIP: If the model is "lazy" and elides chunks of edited files, copy and paste the missing parts from the diff
+✨ ヒント: モデルが「怠惰」で編集されたファイルの一部を省略する場合、差分から欠落している部分をコピーして貼り付ける
 
-Sometimes the model will be "lazy" and elide chunks of edited files. If you see this happening, you can copy the missing parts from the left-hand side of the diff and paste them into the right-hand side.  We know that's not ideal, and we're working hard on this issue.
+時々、モデルは「怠惰」で編集されたファイルの一部を省略することがあります。このような場合、差分の左側から欠落している部分をコピーして右側に貼り付けることができます。理想的ではないことはわかっていますが、この問題に取り組んでいます。
 
-## Edit code in Copilot Workspace
+## Copilot Workspace でコードを編集する
 
-✨ TIP: Make edits directly in the code editors per file
+✨ ヒント: ファイルごとにコードエディタで直接編集を行う
 
-When Copilot Workspace has generated a suggestion, it is presented to you in the implementation panel. But those suggestions aren’t just read-only! You can edit them, and make changes as you desire.
+Copilot Workspace が提案を生成すると、それは実装パネルに表示されます。しかし、それらの提案は読み取り専用ではありません！編集して変更を加えることができます。
 
-<img src="images/tips-and-tricks/code-editor.png" width=300 alt="Edit code in Copilot Workspace">
+<img src="images/tips-and-tricks/code-editor.png" width=300 alt="Copilot Workspace でコードを編集する">
 
-And if you have a GitHub Codespace open, those edits will sync between Copilot Workspace and the GitHub Codespace too!
+GitHub Codespace を開いている場合、それらの編集は Copilot Workspace と GitHub Codespace の間で同期されます！
 
-## Need to go back?
+## 戻る必要がありますか？
 
-✨ TIP: You can use the undo and redo buttons to travel between an older and newer state of your workspace.
+✨ ヒント: 元に戻すおよびやり直しボタンを使用して、ワークスペースの古い状態と新しい状態の間を移動できます。
 
-You can use the undo and redo buttons to navigate back to a previous state of your workspace. That can include reverting an implementation, or the additions and tweaks that you may have made to your spec or plan. 
+元に戻すおよびやり直しボタンを使用して、ワークスペースの以前の状態に戻ることができます。これには、実装の元に戻しや、仕様や計画に加えた追加や調整が含まれます。
 
-<img src="images/tips-and-tricks/undo-redo.png" width=300 alt="Use Undo and Redo to change states in Copilot Workspace">
+<img src="images/tips-and-tricks/undo-redo.png" width=300 alt="Copilot Workspace で状態を変更するために元に戻すおよびやり直しを使用する">
 
+## 外出先で？モバイルで Copilot Workspace を試してみてください
 
-## On the go? Try Copilot Workspace on Mobile
+✨ ヒント: Copilot Workspace はモバイルフレンドリーなので、外出先での変更を検討してください！
 
-✨ TIP: Copilot Workspace is mobile-friendly, so consider making changes on the go!
+アイデアはどこでも生まれることがあります。デスクにいるとき、コーヒーショップにいるとき、バスに乗っているときなど、創造性のひらめきがあれば、モバイルから Copilot Workspace を使用してアイデアを探求できます！タスクを完全に完了していない場合でも、Copilot Workspace のダッシュボードを使用して中断した場所から再開できます。
 
-Ideas can happen anywhere, whether you’re at your desk, in a coffee shop or on a bus. With that spark of creativity, you can use Copilot Workspace from your mobile to explore ideas! And if you didn’t fully complete your task, you can use the dashboard in Copilot Workspace to pick up where you left off.
+また、いつでも簡単に Copilot Workspace にアクセスできるように、次の手順を実行してモバイルのホーム画面に追加できます：
 
-And if you'd like to easily access Copilot Workspace at any time, you can add it to your mobile homescreen by performing the following steps:
+1. モバイルブラウザを開き、[https://copilot-workspace.githubnext.com](https://copilot-workspace.githubnext.com) の Copilot Workspace ダッシュボードにアクセスします。
+2. ダッシュボードが読み込まれたら、ブラウザのメニューをタップし、「ホーム画面に追加」を選択して、ホーム画面から簡単に Copilot Workspace にアクセスできるようにします。
+3. プロンプトが表示されたらアクションを確認し、Copilot Workspace がホーム画面に追加され、PWA サポートのおかげでネイティブアプリのような体験が提供されます。
 
-1. Open your mobile browser and navigate to the Copilot Workspace dashboard at [https://copilot-workspace.githubnext.com](https://copilot-workspace.githubnext.com).
-2. Once the dashboard loads, tap on the browser's menu and select "Add to Home screen" to easily access Copilot Workspace from your home screen.
-3. Confirm the action if prompted, and Copilot Workspace will be added to your home screen, providing a native app-like experience thanks to PWA support.
+## OAuth を取り消した場合のアクセスの再取得
 
-## Regaining access if you revoked OAuth
+Copilot Workspace は OAuth アプリケーションとして実装されています。GitHub アカウント設定でアプリケーションの承認を取り消した場合、Workspace を使用できなくなります。https://copilot-workspace.githubnext.com/ にアクセスしてログアウトし、再度ログインして OAuth アプリを再承認することでアクセスを復元できます。
 
-Copilot Workspace is implemented as an OAuth application. If you revoked authorization for the application in your GitHub account settings, you'll no longer be able to use Workspace. You can restore your access at https://copilot-workspace.githubnext.com/ by logging out, then logging in and re-authorizing the OAuth app.
+## 受信リンク
 
-## Incoming Links
-
-✨ TIP: Copilot Workspace has a capability for the task to be specified by query parameters when the subject is a repository, branch or pull request. 
+✨ ヒント: Copilot Workspace には、リポジトリ、ブランチ、またはプルリクエストが対象の場合に、クエリパラメータによってタスクを指定する機能があります。
 
 ```
 https://copilot-workspace.githubnext.com/githubnext/copilot-workspace/pull/695?task=Add%20more%20unit%20tests%20to%20this%20pull%20request.```
 ```
 
-The query parameters supported are
+サポートされているクエリパラメータは次のとおりです：
 
-- `task` - The description of the task. If not specified, and the subject is an issue, the body of the issue is used, otherwise no task body is used and the user must enter one.
-- `codeOwner` - The organization or individual for the code repository associated with an issue, e.g. `githubnext` for `githubnext/copilot-workspace`
-- `codeRepo` - The name of the code repository associated with an issue, e.g. `copilot-workspace` for `githubnext/copilot-workspace`
-- `branch` - The SHA or branch name to analyze the task at, e.g. `main`
+- `task` - タスクの説明。指定されていない場合、対象が Issue であれば Issue の本文が使用されます。それ以外の場合、タスク本文は使用されず、ユーザーが入力する必要があります。
+- `codeOwner` - Issue に関連するコードリポジトリの組織または個人。例：`githubnext` は `githubnext/copilot-workspace` の場合
+- `codeRepo` - Issue に関連するコードリポジトリの名前。例：`copilot-workspace` は `githubnext/copilot-workspace` の場合
+- `branch` - タスクを分析する SHA またはブランチ名。例：`main`

@@ -1,177 +1,151 @@
 # Copilot Workspace: Overview
 
-[Copilot Workspace](https://githubnext.com/projects/copilot-workspace/) is a _task-centric_ AI assistant. Each day as a developer you start with a task, and make the journey to explore, understand, refine, and complete that task, a journey that can be exciting, challenging, fascinating, and rewarding. Copilot Workspace takes this journey with you, every step of the way — the journey from task to working code. 
+[Copilot Workspace](https://githubnext.com/projects/copilot-workspace/) は、_タスク中心_ の AI アシスタントです。開発者として毎日、タスクから始まり、そのタスクを探索し、理解し、洗練し、完了するまでの旅をします。この旅は、エキサイティングで、挑戦的で、魅力的で、やりがいのあるものです。Copilot Workspace は、この旅をあなたと共に歩み、タスクから動作するコードへの旅をサポートします。
 
-Copilot Workspace is built on a set of principles that guide its design and development:
+Copilot Workspace は、その設計と開発を導く一連の原則に基づいて構築されています：
 
-* Copilot Workspace is _contextual_. It is deeply integrated with GitHub, and is aware of the context of your task — the repository, the issue, the pull request.
+* Copilot Workspace は _コンテキストに基づいています_。GitHub と深く統合されており、タスクのコンテキスト（リポジトリ、問題、プルリクエスト）を認識しています。
 
-* Copilot Workspace is _assistive_. It offers a canvas for you to navigate unfamiliar tasks, augmenting your development skills with a new kind of AI assistance.
+* Copilot Workspace は _支援的です_。未知のタスクをナビゲートするためのキャンバスを提供し、新しい種類の AI 支援で開発スキルを拡張します。
 
-* Copilot Workspace is _pervasive_. It is ready and waiting for you, available on every issue in every enabled repository on GitHub. And Copilot Workspace is even there for you when starting new code, available on every template repository, to create new software using natural language.
+* Copilot Workspace は _普及しています_。GitHub のすべての有効なリポジトリのすべての問題で利用可能で、常に待機しています。新しいコードを開始する際にも、テンプレートリポジトリで利用可能で、自然言語を使用して新しいソフトウェアを作成できます。
 
-* Copilot Workspace is _iterative_. Copilot Workspace encourages you to check, review, refine and iterate on AI-generated outputs. You, the developer, are in control.
+* Copilot Workspace は _反復的です_。Copilot Workspace は、AI 生成の出力を確認し、レビューし、洗練し、反復することを奨励します。開発者であるあなたがコントロールしています。
 
-* Copilot Workspace is _collaborative_. You can share sessions with your team and publish links to your sessions on issues and pull requests. And, if you're a repository maintainer, we give you controls to help manage the use of AI-assisted development with your repositories.
+* Copilot Workspace は _協力的です_。セッションをチームと共有し、問題やプルリクエストにリンクを公開できます。また、リポジトリのメンテナーであれば、リポジトリでの AI 支援開発の使用を管理するためのコントロールを提供します。
 
-* Copilot Workspace is _configurable_. You can integrate Copilot Workspace into your workflows via deep links to Copilot Workspace that specify common tasks.
+* Copilot Workspace は _設定可能です_。一般的なタスクを指定する Copilot Workspace へのディープリンクを介して、ワークフローに統合できます。
 
-In this manual, we will guide you through the concepts and features of Copilot Workspace, and help you get started with using it effectively.
+このマニュアルでは、Copilot Workspace の概念と機能を案内し、効果的に使用するための手助けをします。
 
-<img src="images/overview/session.png" width="600" alt="A fully-implemented workspace session">
+<img src="images/overview/session.png" width="600" alt="完全に実装されたワークスペースセッション"><br> *完全に実装されたワークスペースセッション*
 
-*A fully-implemented workspace session*
+## 機能
 
-## Features
+1. [タスク](#task)
+1. [仕様](#specification)
+1. [計画](#plan)
+1. [実装](#implementation)
+1. [ファイルの反復](#iterating-on-files)
+1. [統合ターミナル](#integrated-terminal)
+1. [セッション共有](#session-sharing)
+1. [タスク完了](#task-completion)
+1. [セッションダッシュボード](#session-dashboard)
 
-1. [Task](#task)
-1. [Specification](#specification)
-1. [Plan](#plan)
-1. [Implementation](#implementation)
-1. [Iterating on Files](#iterating-on-files)
-1. [Integrated Terminal](#integrated-terminal)
-1. [Session Sharing](#session-sharing)
-1. [Task Completion](#task-completion)
-1. [Session Dashboard](#session-dashboard)
+## タスク
 
-## Task
+Copilot Workspace のすべては「タスク」から始まります。これは、自然言語での意図の説明です。タスクには常にコンテキストがあります：GitHub リポジトリです。
+この技術プレビューでは、Copilot Workspace は 4 種類のタスクをサポートしています：問題の解決、[プルリクエストの洗練](pull-request-tasks.md)、[テンプレートからのリポジトリ作成](creating-repos.md)、および [アドホックタスク](adhoc-tasks.md) です。ここでは、最も一般的なエントリーポイントである問題の解決に焦点を当てます。
 
-Everything in Copilot Workspace begins with a “task”, which is a natural language description of intent. The task always has a context: a GitHub repository.
-For this technical preview, Copilot Workspace supports four types of tasks: solving issues, [refining pull requests](pull-request-tasks.md), [creating repositories from templates](creating-repos.md) and [ad-hoc tasks](adhoc-tasks.md). Here we focus on solving issues, which are the most common entry point.
+技術プレビューに登録すると、GitHub のすべての問題に「Open in Workspace」ボタンが表示されます：
 
-Once enrolled in the technical preview, then on every issue in GitHub you will find a new "Open in Workspace" button:
+<img src="images/general/open-in-workspace.png" width=400 alt="Copilot Workspace で開くボタン"><br> *問題を Copilot Workspace で開く*
 
-<img src="images/general/open-in-workspace.png" width=400 alt="Button on issue page to open in Copilot Workspace">
+これにより、この問題にコンテキスト化された Copilot Workspace が開きます。問題タスクの場合、タスクは問題のタイトルと本文、および問題のコメントスレッドに基づいています。Copilot Workspace はすぐにタイムラインの次のステップに進みます。これは次のようになります：
 
-*Open an issue in Copilot Workspace*
+<img src="images/overview/issue-timeline-representation.png" width=600 alt="問題タスクのタイムライン表現"><br> *タスクは「問題」とラベル付けされ、分析が始まります*
 
-This will open Copilot Workspace contextualized to this issue. For issue tasks, the task is based in the title and body of the issue, plus the issue’s comment thread. Copilot Workspace will immediately progress to the next step in the timeline. This looks like this:
+## 仕様
 
-<img src="images/overview/issue-timeline-representation.png" width=600 alt="Issue task timeline representation">
+非自明なタスク定義（例：長いコメントスレッドを持つ問題）を要約するために、Copilot Workspace は最初にタスクの「トピック」を生成します。これは、コードベースに対して提起できる質問の形式を取り、成功基準の前後を定義するために使用されます（以下の [仕様](#specification) セクションを参照）。
 
-*The task is labeled as “Issue” and analysis begins*
+<img src="images/overview/topic-question.png" width=600 alt="トピックの質問"><br> *トピックは、問題のタイトルには全く欠けている明確さをもたらします*
 
-## Specification
+トピックは、タスクをその本質にまで蒸留し、Copilot Workspace が正しい方向に進んでいるかどうかを早期かつ迅速に確認する方法と考えることができます。トピックが間違っている場合は、続行する必要はありません。しかし、トピックが正しい場合、それはタスクをよりよく理解し、タスクに関連するコードベースの最も重要な側面に焦点を当てるのに役立ちます。
 
-In order to help summarize a non-trivial task definition (e.g. an issue with a long comment thread), Copilot Workspace first generates a “topic” for the task, which takes the form of a question that can be posed against the codebase, and used to define the before/after success criteria (see the [specification](#specification) section below). 
+トピックを生成した後、Copilot Workspace は、タスクとトピックに基づいてコードベースの現在の動作を説明する箇条書きリストを生成します。これにより、Copilot Workspace が正しい方向に進んでいるという自信が高まり、現在の状態を完全に理解していない場合にコンテキストにオンボードする手段として機能します。
 
-<img src="images/overview/topic-question.png" width=600 alt="Topic question">
+<img src="images/overview/current-spec.png" width=600 alt="現在の仕様"><br> *現在の仕様は、トピックの質問に現在の状態に基づいて回答します*
 
-*Note how the topic introduces clarity that is completely missing from the issue title*
+Copilot Workspace が何かを間違えた場合は、現在の仕様からステップを簡単に編集/削除するか、まったく新しい仕様を再生成することができます（「再試行」）。実際には、これらは最初の試行でかなり良い結果をもたらすことが多いです。
 
-You can think of the topic as a way to distill the task down to its essence, and to give you an early and fast opportunity to see if Copilot Workspace is on the right track. If the topic is wrong, you don't need to continue. But if the topic is right, it helps you better understand the task, and to focus on the most important aspects of the codebase that are relevant to the task.
+現在の仕様の後、Copilot Workspace は「提案された仕様」を生成します。これは、タスクを解決した後のコードベースの状態を説明する箇条書きリストです（実質的にはトピックの質問に回答します）。特に、提案された仕様は、成功基準の定義に焦点を当てており、実装の詳細には立ち入りません（これは [計画](#plan) の役割です）。
 
-After producing the topic, Copilot Workspace generates a bulleted list describing the current behavior of the codebase, based on the task and topic being posed. This helps build your confidence that Copilot Workspace is on the right track, and serves as a means of onboarding you to the context, in cases where you might not fully understand the current state.
+<img src="images/overview/proposed-spec.png" width=600 alt="提案された仕様"><br> *提案された仕様は、タスクを解決するためにコードベースをどのように編集するかを示します*
 
-<img src="images/overview/current-spec.png" width=600 alt="Current specification">
+## コンテンツ選択
 
-*The current specification answers the question in the topic based on the current state*
+現在および提案された仕様を生成するために、そして以下のすべてのステップのために、Copilot Workspace はタスクを理解し完了するためにコードベースのどのファイルが関連しているかを特定する必要があります。これは、LLM 技術と従来のコード検索の組み合わせによって行われます。最も高ランクのファイルの内容は、ワークフローのほぼすべてのステップのコンテキストとして使用されます。
 
-And if Copilot Workspace gets anything wrong, then you can easily edit/delete steps from the current spec, or even choose to regenerate an entirely new spec (“try again”). In practice, we find that these tend to be pretty good on the first try.
+ユーザーは、仕様パネルの「参照を表示」ボタンを使用して、Copilot Workspace によって選択されたファイルを確認できます。選択されたファイルを調整するには、タスクを編集し、自然言語を使用して関連するファイルを指定できます。
 
-After the current specification, Copilot Workspace generates a “proposed specification”, which is a bulleted list which articulates the state that the codebase would be in after resolving the task (effectively answering the question in the topic). And in particular, the proposed specification is focused on defining the success criteria of the task, as opposed to getting into implementation details (which is the role of the [plan](#plan)).
+<img src="images/overview/references.png" width=600 alt="参照ダイアログを表示"><br> *元の仕様と変更された仕様を生成するためにモデルが使用した参照*
 
-<img src="images/overview/proposed-spec.png" width=600 alt="Proposed specification">
+## 計画
 
-*The proposed specification indicates how to edit the codebase in order to solve the task*
+現在および提案された仕様に満足したら、Copilot Workspace に計画を生成するように依頼できます。計画は、提案された仕様の成功基準を達成するために変更する必要があるファイル（例：編集、作成、削除、移動、または名前変更）のリストです。さらに、各変更ファイルには、具体的な変更を示すステップのリストが含まれています。
 
-## Content Selection
+仕様と同様に、計画は完全に編集可能で再生成可能であり、Copilot Workspace を正しい方向に導くために洗練および指示することができます。
 
-To generate the current and proposed specifications, and for all following steps, Copilot Workspace needs to identify which files in the codebase are relevant to understanding and completing the task. It does this by a combination of LLM techniques and traditional code search. The contents of the highest-ranked files are then used as context for nearly all steps in the workflow.
+<img src="images/overview/plan.png" width=600 alt="計画"><br> *1 つのファイルを編集し、2 つ目のファイルを追加するために必要なステップを示す計画*
 
-Users may review the files selected by Copilot Workspace using the "View references" button in the Specification panel. To adjust which files are selected, users can edit the task and use natural language to specify which files are relevant.
+## 実装
 
-<img src="images/overview/references.png" width=600 alt="Show references dialog">
+計画に満足したら、「実装」ボタンをクリックして実装を開始できます。これにより、UI が右側に一連のキューに入れられたファイル更新を表示するように更新され、ファイルの内容を 1 つずつ生成し始めます。ファイルの生成が始まると、その計画に関連するエントリが進行中として表示されます。完了すると、計画は完了として表示されます。
 
-*The references that the model used to generate the original and modified specifications*
+ファイルが実装されると、Copilot Workspace はそのファイルの差分ビューをレンダリングし、最初の変更に自動的にスクロールします。差分エディタは編集可能であり、タスク、仕様、計画の変更を通じて反復するのではなく、コードに直接小さな修正を加えることができます。
 
-## Plan
+## ファイルの反復
 
-Once you are happy with the current and proposed specs, you can request Copilot Workspace to generate a plan, which is a list of the files that need to be modified (e.g. edited, created, deleted, moved, or renamed) in order to accomplish the success criteria of the proposed spec. Additionally, each changed file includes a list of specific steps that indicate the exact changes that need to be made.
+Copilot Workspace は常にすべてを正しく行うわけではないため、ユーザーがファイルごとに実装を反復することを容易にします。各ファイルの計画ステップに項目を追加、削除、編集し、チェックボックスを選択して「選択したファイルを更新」ボタンをクリックするだけです。これにより、選択したファイルの内容が再生成され、差分ビューが更新されます。
 
-Like the spec, the plan is fully editable and regeneratable, which allows you to refine and steer Copilot Workspace in the right direction.
+たとえば、差分を直接編集することも、計画に戻ってそこで変更を加えることもできます。より広範な変更が必要な場合は、計画全体を再生成することもできます。
 
-<img src="images/overview/plan.png" width=600 alt="Plan">
+<img src="images/overview/file-iteration.png" width=600 alt="ファイル反復の計画パネル"><br> *計画パネルは、ユーザーがファイルごとに実装を反復することを可能にします*
 
-*A plan, showing the steps needed to edit one file and add a second one*
+## 統合ターミナル
 
-## Implementation
+計画を実装したら、Copilot Workspace は統合ターミナルを起動し、シェルコマンドを実行することで変更の正確性を検証することができます。これにより、変更に対してビルド、リンティング、テストなどを実行し、タスクとその完了状態についての信頼性を迅速かつ効果的に得ることができます。ターミナルは Codespace によってバックアップされており、完全な開発環境がインストールされた安全なサンドボックスです。
 
-When you are happy with the plan, you can click the “Implement” button in order to begin implementing it. This will update the UI to display a series of queued file updates on the right side, and then begin generating the updated file contents one-by-one. When a file begins generating, its associated entry in the plan will show it as being in progress. And when it completes, the plan will indicate it as being done.
+<img src="images/overview/terminal.png" width=600 alt="統合ターミナル"><br> *統合ターミナル、生成されたブランチ名とジャストインタイムコンピュートへのアクセスを表示*
 
-Once a file is implemented, Copilot Workspace renders a diff view for it, and automatically scrolls to the first change. The diff editors are editable, which allows making minor tweaks directly to the code, as opposed to iterating via changes to the task, spec, or plan.
+より広範な変更を加えたり、リッチエディタ機能（例：ステップデバッグ）を活用したりする場合は、Copilot Workspace セッションを Codespace で開き、Codespace がサポートする任意のクライアントを使用できます。
 
-## Iterating on Files
+## セッション共有
 
-Copilot Workspace doesn't always get everything right, and so it makes it easy for users to iterate on the implementations file by file. Simply add, remove, edit the items in the plan steps for each file, select the checkbox, and click the "Update selected files" button. This will re-generate the contents of the selected files and update the diff view.
+アドホックなコードレビューを行ったり、初期の実装アイデアを共有したりするために、ワークスペースセッションを他の人と共有することを容易にするために、Copilot Workspace はユーザーが共有リンクを生成できるようにします。これらのリンクは、Copilot Workspace プレビューの一部でないゲストと共有することもできます。
 
-For example, you can edit the diff directly, or you can go back to the plan and make changes there. And if you need to make more extensive changes, you can regenerate the plan entirely.
+共有セッションは元のセッションのコピーです。非ゲストユーザーは、タスクを続行したり、元のセッションに干渉せずに代替ソリューションを探索するための出発点として使用できます。ゲストユーザーはセッションを表示できますが、ワークスペースを使用して変更を加えることはできません。
 
-<img src="images/overview/file-iteration.png" width=600 alt="Plan panel with file iteration">
+<img src="images/overview/share-link.png" width=600 alt="共有リンクの生成"><br> *ヘッダーバーから共有リンクを生成*
 
-*The plan panel enables users to iterate on implementation file by file*
+問題やプルリクエストを扱う際には、次のこともできます：
 
-## Integrated Terminal
+* 問題コメントに公開。Copilot Workspace は、セッションの共有リンクを含むコメントを自動的に生成し、問題に含めます。これにより、レビュアーはワークスペースセッションに迅速にアクセスし、提案された変更を確認できます。
 
-Once you have implemented the plan, Copilot Workspace enables you to validate the changes for correctness by bringing up an integrated terminal and executing shell commands. This allows performing a build, lint, test, etc. against the changes, and can be a quick and effective way to gain confidence about the task and its completion status. The terminal is backed by a Codespace, so it is a secure sandbox with a full development environment installed. 
+* プルリクエストコメントに公開。問題コメントと同様に、Copilot Workspace はセッションの共有リンクを含むコメントを自動的に生成し、プルリクエストに含めます。これにより、レビュアーはワークスペースセッションに迅速にアクセスし、提案された変更を確認できます。
 
-<img src="images/overview/terminal.png" width=600 alt="Integrated terminal">
+## タスク完了
 
-*Integrated terminal, showing the generated branch name and access to just-in-time compute*
+タスクが実装され、検証され、レビューされたら、作業しているタスクの種類に応じて、さまざまな方法でタスクを完了できます。
 
-If you want to make any more extensive changes or leverage rich editor features (e.g. step debugging), you can open the Copilot Workspace session in a Codespace, using any of Codespace’s supported clients.
+<img src="images/overview/task-completion.png" width=600 alt="プルリクエストの作成"><br> *実装された変更のプルリクエストを作成*
 
-## Session Sharing
+| タスクの種類 | 利用可能な完了方法 |
+|--------------|--------------------|
+| 問題 | — プルリクエストを作成 <br> — ドラフトプルリクエストを作成 <br> — 新しいブランチにプッシュ <br> — 現在のブランチに変更をプッシュ（リポジトリにコミット権限がある場合のみ利用可能） <br> <br> これらは、書き込みアクセス権がない場合、リポジトリをフォークすることがあります |
+| アドホックタスク | — *問題と同様* |
+| PR タスク | — プルリクエストを更新（変更を含む新しいコミットをプッシュ） <br> — *問題と同様* |
+| リポジトリタスク | — リポジトリを作成（選択したテンプレートリポジトリから新しいリポジトリを作成し、変更を含める） |
 
-In order to make it easy to share a workspace session with others (e.g. for doing an ad-hoc code review or sharing an initial implementation idea), Copilot Workspace allows users to generate shared links. These links can be shared with guests, even if they are not part of the Copilot Workspace preview.
+## セッションダッシュボード
 
-Shared sessions are copies of the original session. Non-guest users can use them as a starting point to continue the task or explore alternative solutions without interfering with the original session. Guest users can view the session but cannot use the workspace to make changes.
+Copilot Workspace は自動的に作業を保存します。また、セッションダッシュボードを提供し、後で作業を簡単に再開できるようにします。電話でタスクを開始し、その後ラップトップで完了することも、逆も可能です。
 
-<img src="images/overview/share-link.png" width=600 alt="Generating a share link">
+<img src="images/general/dashboard.png" width=600 alt="Copilot Workspace ダッシュボード"><br> *最近のセッション、ブックマークされたセッション、完了したセッションを表示する Copilot Workspace ダッシュボード*
 
-*Generating a share link from the header bar*
+ツールバーのボタンを使用して、セッション内で元に戻すおよびやり直しをサポートしています。
 
-When working with issues and pull requests, you can also
+## 付録：用語集
 
-* Publish to issue comment. Copilot Workspace automatically generates a comment with a share link for the session, which is included in the issue. This allows reviewers to quickly access the workspace session and see the proposed changes.
-
-* Publish to pull request comment. Similar to the issue comment, Copilot Workspace automatically generates a comment with a share link for the session, which is included in the pull request. This allows reviewers to quickly access the workspace session and see the proposed changes.
-
-## Task Completion
-
-When a task is implemented, validated, and reviewed, you can complete the task in different ways, depending on the type of task you’re working on.
-
-<img src="images/overview/task-completion.png" width=600 alt="Creating a pull request">
-
-*Creating a pull request for the implemented changes*
-
-| Task type | Available completions | 
-|-----------| -------------------- |
-| Issue | — Create pull request <br> — Create draft pull request <br> — Push to new branch <br> — Push changes to current branch (only available if you have commit permissions to the repo) <br> <br> These may fork the repository if you do not have write access |
-| Ad-hoc task | — *As for issues* |
-| PR task | — Update pull request (pushes a new commit with the changes) <br> — *As for issues* |
-| Repo task | — Create repository (creates a new repo from the selected template repo, and includes the changes) |
-
-## Session Dashboard
-
-Copilot Workspace automatically saves your work. It also provides a session dashboard, which allows you to easily resume your work later. You can start a task from your phone and then finish up on your laptop, or vice versa.
-
-<img src="images/general/dashboard.png" width=600 alt="Copilot Workspace dashboard">
-
-*The Copilot Workspace dashboard showing recent, bookmarked and completed sessions*
-
-Undo and redo are supported within the session via buttons on the toolbar.
-
-## Appendix: Glossary
-
-| Term | Definition |
-|------|------------|
-| Copilot Workspace | A Copilot-native dev environment that’s designed for exploring and completing every day tasks  |
-| Target | A branch of a codebase at a specific commit | 
-| Task | A natural language description of a change to a target | 
-| Topic | A brief single-sentence summary of a task, usually in question form |
-| Specification | A description of the current and proposed state of the target as it relates to the task |
-| Plan | A list of files to add, remove or change, with notes about each of them, that together transform the target from its current state to its proposed state |
-| Implementation | A set of changes to the target that, when applied, will complete the task |
-| Session | A user’s saved progress towards completing a task, a single task can have many sessions |
-| Snapshot session | A snapshot of a user’s session, created when you click “Share link”, including both the task progress and UX state |
+| 用語 | 定義 |
+|------|------|
+| Copilot Workspace | 毎日のタスクを探索し完了するために設計された Copilot ネイティブの開発環境 |
+| ターゲット | 特定のコミット時点でのコードベースのブランチ |
+| タスク | ターゲットに対する変更の自然言語による説明 |
+| トピック | 通常は質問形式のタスクの簡潔な 1 文の要約 |
+| 仕様 | タスクに関連するターゲットの現在および提案された状態の説明 |
+| 計画 | 現在の状態から提案された状態にターゲットを変換するために、追加、削除、変更するファイルのリストと、それぞれのファイルに関するメモ |
+| 実装 | タスクを完了するために適用されるターゲットへの変更のセット |
+| セッション | タスクを完了するためのユーザーの進行状況。1 つのタスクには多くのセッションが存在する可能性があります |
+| スナップショットセッション | 「共有リンク」をクリックしたときに作成されるユーザーのセッションのスナップショット。タスクの進行状況と UX 状態の両方を含む |

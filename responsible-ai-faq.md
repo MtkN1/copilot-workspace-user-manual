@@ -1,41 +1,41 @@
-# Responsible AI FAQ
+# 責任ある AI に関する FAQ
 
-## What is Copilot Workspace? 
+## Copilot Workspace とは何ですか？
 
-Copilot Workspace is a reimagined developer inner loop. The focal points of the experience are selecting a task, expressing intent, and then collaborating with AI towards a solution. We believe this can dramatically reduce complexity, improve productivity, and delight developers, without taking away the aspects of software development that they value most, such as decision making, creativity, and ownership. 
+Copilot Workspace は、再構築された開発者のインナーループです。体験の焦点は、タスクの選択、意図の表現、そして AI との協力による解決策の模索です。これにより、複雑さを劇的に減少させ、生産性を向上させ、開発者に喜びをもたらすことができると信じています。ソフトウェア開発の最も価値のある側面（意思決定、創造性、所有権など）を奪うことなく実現します。
 
-## What can Copilot Workspace do?  
+## Copilot Workspace は何ができますか？
 
-Copilot Workspace takes in a development task from a user, for example, a GitHub Issue, and produces a natural-language specification of the current behavior of the code, a plan for how to modify the code to complete the task, and eventually the actual code changes to all relevant files in the repo.  Each step (task, spec, plan, and implementation) is editable by the user, enabling the user to steer the AI to complete the task in the best way.     
+Copilot Workspace は、ユーザーからの開発タスク（例：GitHub Issue）を受け取り、コードの現在の動作の自然言語仕様、タスクを完了するためのコードの変更計画、最終的にはリポジトリ内のすべての関連ファイルへの実際のコード変更を生成します。各ステップ（タスク、仕様、計画、実装）はユーザーによって編集可能であり、ユーザーが AI を最適な方法でタスクを完了するように導くことができます。
 
-## What is/are Copilot Workspace’s intended use(s)? 
+## Copilot Workspace の意図された使用目的は何ですか？
 
-Copilot Workspace is intended to:
+Copilot Workspace の意図された使用目的は次のとおりです：
 
-1. Accelerate software developers, helping them make small- and medium-scale code changes quickly and correctly.   
-2. Reduce the activation energy for developers to start tasks, by giving them an AI-generated starting point. 
-3. Help experienced developers work with unfamiliar programming languages and frameworks. 
-4. Help developers contribute to unfamiliar codebases, for example, to open source projects. 
+1. ソフトウェア開発者を加速させ、小規模および中規模のコード変更を迅速かつ正確に行えるようにする。
+2. AI 生成の出発点を提供することで、開発者がタスクを開始するための活性化エネルギーを減少させる。
+3. 経験豊富な開発者が不慣れなプログラミング言語やフレームワークで作業するのを支援する。
+4. 開発者が不慣れなコードベース（例：オープンソースプロジェクト）に貢献するのを支援する。
 
-## How was Copilot Workspace evaluated? What metrics are used to measure performance? 
+## Copilot Workspace はどのように評価されましたか？パフォーマンスを測定するために使用される指標は何ですか？
 
-Copilot Workspace was evaluated in the following ways: 
+Copilot Workspace は次の方法で評価されました：
 
-* Offline evaluations.  We have a corpus of known tasks and an entrypoint that allows us to run Copilot Workspace over those tasks in a headless mode.  When we make changes to our prompts, switch to a different model, etc., we run those benchmarks and manually validate the changes to Copilot Workspace’s outputs.  If we see regressions, we iterate on the prompts until there are no more regressions.  In addition, we have a larger set of benchmarks that are mined from GitHub, and we use model-driven evaluations to ensure consistent quality. 
-* User studies.  In January, we ran a round of user studies with GitHub employees where we gave them a standard task and asked them to complete the task using Copilot Workspace.  We are planning additional user studies as part of the Technical Preview.
-* Extensive dogfooding within our team.  We used Copilot Workspace to build Copilot Workspace. 
-* Red teaming.  We have prepared a set of malicious prompts and run Copilot Workspace in headless mode over those prompts.  Then we do both human- and model-driven evaluations of the output for harmful responses, and if we see those, we update our prompts and filters so that users do not encounter them. 
+* オフライン評価。既知のタスクのコーパスがあり、Copilot Workspace をヘッドレスモードでこれらのタスクに対して実行するエントリポイントがあります。プロンプトを変更したり、異なるモデルに切り替えたりする際に、これらのベンチマークを実行し、Copilot Workspace の出力を手動で検証します。リグレッションが見られた場合、プロンプトを繰り返してリグレッションがなくなるまで調整します。さらに、GitHub からマイニングされた大規模なベンチマークセットがあり、モデル駆動の評価を使用して一貫した品質を確保します。
+* ユーザースタディ。1 月には、GitHub の従業員を対象にユーザースタディを実施し、標準的なタスクを与えて Copilot Workspace を使用してタスクを完了するように依頼しました。技術プレビューの一環として、追加のユーザースタディを計画しています。
+* チーム内での広範なドッグフーディング。Copilot Workspace を使用して Copilot Workspace を構築しました。
+* レッドチーミング。悪意のあるプロンプトのセットを準備し、これらのプロンプトに対してヘッドレスモードで Copilot Workspace を実行しました。その後、出力の有害な応答を人間およびモデル駆動の評価を行い、有害な応答が見られた場合、ユーザーがそれに遭遇しないようにプロンプトとフィルターを更新します。
 
-## What are the limitations of Copilot Workspace? How can users minimize the impact of Copilot Workspace’s limitations when using the system? 
+## Copilot Workspace の制限は何ですか？ユーザーがシステムを使用する際に Copilot Workspace の制限の影響を最小限に抑える方法は何ですか？
 
-Copilot Workspace is not always correct.  Users should carefully validate its output and should not blindly trust it.  If users detect inaccuracies in Copilot Workspace’s outputs, we have made it easy for them to edit and correct any model-generated outputs. We have also built validation tools, particularly a terminal which allows the user to execute the generated code in a sandboxed environment.  The user should use these tools to validate and correct Copilot Workspace’s outputs. 
+Copilot Workspace は常に正しいわけではありません。ユーザーはその出力を慎重に検証し、盲目的に信頼しないようにする必要があります。ユーザーが Copilot Workspace の出力に不正確さを検出した場合、モデル生成の出力を編集および修正するための手段を提供しています。また、生成されたコードをサンドボックス環境で実行できるターミナルなどの検証ツールも構築しています。ユーザーはこれらのツールを使用して Copilot Workspace の出力を検証および修正する必要があります。
 
-## What operational factors and settings allow for effective and responsible use of Copilot Workspace? 
+## Copilot Workspace の効果的かつ責任ある使用を可能にする運用要因と設定は何ですか？
 
-Copilot Workspace will perform best on common programming languages and frameworks and when the natural language is English.    
+Copilot Workspace は、一般的なプログラミング言語やフレームワーク、および自然言語が英語である場合に最も効果的に機能します。
 
-Code generated by Copilot Workspace should be held to the same standard as human-written code – it should be code reviewed, have automated tests, be analyzed by linters and static analyzers, etc.  Copilot Workspace can help add automated tests to in-progress PRs, helping improve the overall health of a software project. 
+Copilot Workspace によって生成されたコードは、人間が書いたコードと同じ基準で評価されるべきです。コードレビュー、自動テスト、リンターや静的解析ツールによる分析などが必要です。Copilot Workspace は、進行中の PR に自動テストを追加するのを支援し、ソフトウェアプロジェクトの全体的な健全性を向上させることができます。
 
-## What should a user do if they encounter offensive content while using Copilot Workspace? 
+## Copilot Workspace の使用中に不快なコンテンツに遭遇した場合、ユーザーはどうすればよいですか？
 
-Please report any examples of offensive content to copilot-safety@github.com.  Please include a share link so that we can investigate. 
+不快なコンテンツの例を copilot-safety@github.com に報告してください。調査のために共有リンクを含めてください。

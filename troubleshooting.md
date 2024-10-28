@@ -1,37 +1,34 @@
-## Troubleshooting
+## トラブルシューティング
 
-### Introduction
+### はじめに
 
-Welcome to the troubleshooting guide for Copilot Workspace! In this section, we will provide you with helpful tips and solutions to common issues you may encounter while working with organizations and private repositories in Copilot Workspace. Our goal is to ensure that you have a smooth and productive experience. Let's dive in!
+Copilot Workspace のトラブルシューティングガイドへようこそ！このセクションでは、Copilot Workspace で組織やプライベートリポジトリを操作する際に遭遇する可能性のある一般的な問題に対する役立つヒントと解決策を提供します。スムーズで生産的な体験を確保することを目指しています。それでは始めましょう！
 
-### Troubleshooting Organizations
+### 組織のトラブルシューティング
 
-When working with organizations in Copilot Workspace, you may encounter some common issues. Here are some troubleshooting tips to help you resolve them:
+Copilot Workspace で組織を操作する際に、いくつかの一般的な問題に遭遇することがあります。以下は、それらを解決するためのトラブルシューティングのヒントです：
 
-- **You are accessing an org that must approve OAuth apps**. As part of the login you authorize the OAuth app into various orgs, depending on the org policies with regard to OAuth apps. You can request access and the organization can approve the OAuth app. If you need to re-request access or revoke any access at all you can [control the status of your connection with the OAuth app](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f).
+- **OAuth アプリを承認する必要がある組織にアクセスしています**。ログインの一環として、OAuth アプリをさまざまな組織に承認します。組織のポリシーに応じて、OAuth アプリのアクセスをリクエストし、組織が承認することができます。アクセスを再リクエストする必要がある場合や、アクセスを取り消す必要がある場合は、[OAuth アプリとの接続のステータスを管理](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f) できます。
 
-- **Although you appear to have the correct authorization credentials, the `github` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited.** This is because an org restricts OAuth apps. Some of authorization attempts for orgs may fail if the org doesn't allow OAuth apps at all. This can affect even access to public repositories in organizations that deny access to OAuth apps.
+- **正しい認証資格を持っているように見えますが、`github` 組織は OAuth アプリのアクセス制限を有効にしており、サードパーティへのデータアクセスが制限されています**。これは、組織が OAuth アプリを制限しているためです。組織が OAuth アプリをまったく許可していない場合、認証試行の一部が失敗することがあります。これにより、OAuth アプリへのアクセスを拒否する組織のパブリックリポジトリへのアクセスにも影響を与える可能性があります。
 
-- **Resource protected by organization SAML enforcement. You must grant your OAuth token access to this organization**.You may be logging in to an organization with SAML control, e.g. Microsoft. They should
-  1. Log out of Copilot Workspace.
-  2. Go through SAML auth in the browser by looking at, say, a repository of the organization
-  3. Then log back into Copilot Workspace.
+- **組織の SAML 強制によって保護されたリソースです。OAuth トークンにこの組織へのアクセスを許可する必要があります**。SAML 制御を持つ組織にログインしている可能性があります（例：Microsoft）。次の手順を実行してください：
+  1. Copilot Workspace からログアウトします。
+  2. ブラウザで組織のリポジトリを表示するなどして SAML 認証を行います。
+  3. その後、Copilot Workspace に再度ログインします。
 
-### Troubleshooting Private Repositories
+### プライベートリポジトリのトラブルシューティング
 
-- **You can't access a private repository in your own account**. After login you should be able to access your personal private repositories unless you have removed access for the OAuth app. If you have trouble, it is possible it is because you landed in Copilot Workspace via a sharing link and have only given public repo privileges. You should log out and log back in again and this should restore access. Failing that you should [check the status of their connection with the OAuth app](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f).
+- **自分のアカウントのプライベートリポジトリにアクセスできません**。ログイン後、OAuth アプリのアクセスを削除していない限り、個人のプライベートリポジトリにアクセスできるはずです。問題が発生した場合、共有リンクを介して Copilot Workspace にアクセスしたためにパブリックリポジトリの権限しか付与されていない可能性があります。ログアウトして再度ログインすると、アクセスが復元されるはずです。それでも問題が解決しない場合は、[OAuth アプリとの接続のステータスを確認](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f) してください。
 
-## Ambiguity Warnings
+## 曖昧さの警告
 
-If Copilot Workspace detects that your task is overly ambiguous/unclear (e.g. it doesn’t seem aligned with the goals/focus of the repo), then it may warn you about that and ask you to clarify the task further, before you can carry on. This is done to prevent hallucination in the specification and help guide you towards the “pit of success”, since subsequent stages of the workflow work best with sufficient detail.
+Copilot Workspace がタスクが過度に曖昧であると検出した場合（例：リポジトリの目標や焦点と一致していないように見える場合）、そのことを警告し、続行する前にタスクをさらに明確にするように求めることがあります。これは、仕様の誤解を防ぎ、「成功の落とし穴」へと導くために行われます。ワークフローの後続のステージは、十分な詳細がある場合に最適に機能します。
 
-<img src="images/further-techniques/ambiguous-spec.png" width=600 alt="Ambiguous specification">
+<img src="images/further-techniques/ambiguous-spec.png" width=600 alt="曖昧な仕様"><br> *タスクが曖昧すぎるため、意図を明確にする必要があるという警告*
 
-*A warning that a task is too ambiguous and that their intent needs to be clarified*
+### コードスペースのトラブルシューティング
 
+- **新しいコードスペースの請求可能な所有者を特定できませんでした。リポジトリはコードスペースに使用できません**。CW OAuth アプリが請求可能な所有者の組織にインストールされていません。
 
-### Troubleshooting Codespaces
-
-- **Billable owner could not be determined for a new codespace, Repository may not be used for a codespace.** The CW OAuth app is not installed in the billable owner's organization.
-
-Please view the [Codespaces Guide](codespaces-guide.md) for more information on Codespaces and troubleshooting common errors.
+コードスペースと一般的なエラーのトラブルシューティングの詳細については、[コードスペースガイド](codespaces-guide.md) を参照してください。

@@ -1,20 +1,20 @@
-# Copilot Workspace for Repository Maintainers
+# リポジトリメンテナーのための Copilot Workspace
 
-Copilot Workspace can assist you as a repository maintainer in several ways:
+Copilot Workspace は、リポジトリメンテナーとして次のような方法で支援できます：
 
-1. Copilot Workspace can help you explore potential solutions to issues.
-2. Copilot Workspace can help you generate sketches of solutions to issues for potential contributors, lowering the barrier of entry.
-3. Copilot Workspace can help encourage a culture where issue-creators leave additional helpful notes on how to solve issues, for use by both contributors and AI assistants.
+1. Copilot Workspace は、問題の潜在的な解決策を探索するのに役立ちます。
+2. Copilot Workspace は、潜在的な貢献者のために問題の解決策のスケッチを生成し、参入障壁を下げるのに役立ちます。
+3. Copilot Workspace は、貢献者や AI アシスタントが使用するために、問題作成者が問題の解決方法に関する追加の有益なメモを残す文化を促進するのに役立ちます。
 
-For example, when a new issue is filed in your repository, you can use Copilot Workspace to generate a sketch of a solution to the issue. You can then use the "Share" button to publish this sketch back to the issue thread, with additional comments about whether you think it is useful or not, and where it might need improvement. This can help potential contributors understand the problem better and provide a starting point for their work.
+例えば、新しい問題がリポジトリに提出されたとき、Copilot Workspace を使用してその問題の解決策のスケッチを生成できます。その後、「共有」ボタンを使用して、このスケッチを問題スレッドに公開し、それが有用かどうか、どこで改善が必要かについての追加コメントを追加できます。これにより、潜在的な貢献者が問題をよりよく理解し、作業の出発点を提供するのに役立ちます。
 
-Similarly, when a new issue is filed, you can ask the contributor to create a Copilot Workspace session for the issue. This may help the contributor understand the problem better and provide a starting point for their work. You can also include this guidance in the issue template for your repository, assuming your users have access to Copilot Workspace. You can also ask contributors to leave additional notes in the Copilot Workspace session, which can help future contributors and AI assistants understand the problem better.
+同様に、新しい問題が提出されたとき、貢献者にその問題のための Copilot Workspace セッションを作成するよう依頼できます。これにより、貢献者が問題をよりよく理解し、作業の出発点を提供するのに役立ちます。このガイダンスをリポジトリの問題テンプレートに含めることもできます（ユーザーが Copilot Workspace にアクセスできる場合）。また、貢献者に Copilot Workspace セッションに追加のメモを残すよう依頼することもでき、これにより将来の貢献者や AI アシスタントが問題をよりよく理解するのに役立ちます。
 
-## Restricting the use of Copilot Workspace in your repository
+## リポジトリでの Copilot Workspace の使用を制限する
 
-It is possible for undisciplined contributors to over-use AI-assisted code generation. Because of this, we give repository maintainers the option of disabling the direct use of Copilot Workspaces for creating pull requests and/or issue comments in their repositories.
+無秩序な貢献者が AI 支援のコード生成を過度に使用する可能性があるため、リポジトリメンテナーには、リポジトリでのプルリクエストや問題コメントの作成に Copilot Workspace を直接使用することを無効にするオプションを提供しています。
 
-To disable the direct creation of pull requests using Copilot Workspace, create a file `.github/copilot-workspace/policy.json` in the default branch of the repository containing the following content:
+Copilot Workspace を使用してプルリクエストを直接作成することを無効にするには、リポジトリのデフォルトブランチに `.github/copilot-workspace/policy.json` ファイルを作成し、次の内容を含めます：
 
 ```json
 {
@@ -22,7 +22,7 @@ To disable the direct creation of pull requests using Copilot Workspace, create 
 }
 ```
 
-To disable the use of Copilot Workspace to directly generate issue comments that contain links to Copilot Workspace sessions, add the following content to the `policy.json` file:
+Copilot Workspace を使用して Copilot Workspace セッションへのリンクを含む問題コメントを直接生成することを無効にするには、`policy.json` ファイルに次の内容を追加します：
 
 ```json
 {
@@ -30,10 +30,10 @@ To disable the use of Copilot Workspace to directly generate issue comments that
 }
 ```
 
-Users of Copilot Workspace will still be able to:
+Copilot Workspace のユーザーは引き続き次のことができます：
 
-- create sharing links to Copilot Workspace sessions and paste them into issue comments
-- push to new branches in your repository (if they have write access)
-- push to new branches in forks of your repository
-- manually create pull requests from branches
-- use Copilot Workspace to generate code snippets and files for their own use in their own pull requests and issue comments to your repository
+- Copilot Workspace セッションへの共有リンクを作成し、それを問題コメントに貼り付ける
+- 新しいブランチにプッシュする（書き込みアクセス権がある場合）
+- リポジトリのフォークに新しいブランチをプッシュする
+- ブランチから手動でプルリクエストを作成する
+- Copilot Workspace を使用してコードスニペットやファイルを生成し、それを自分のプルリクエストやリポジトリへの問題コメントに使用する

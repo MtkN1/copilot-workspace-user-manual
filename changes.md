@@ -1,361 +1,361 @@
-## 📅 25 October 2024
+## 📅 2024年10月25日
 
-As the team prepares for [GitHub Universe](https://githubuniverse.com/) next week, we were primarily focused on stabilization, bug fixing, and welcoming new preview users (as we continue to ramp up the waitlist!). That said, we also managed to slip in a few enhancements as well 😄
+来週の [GitHub Universe](https://githubuniverse.com/) に向けて、チームは主に安定化、バグ修正、新しいプレビューユーザーの歓迎（待機リストを引き続き増やしています！）に集中していました。とはいえ、いくつかの強化も行いました 😄
 
-- [AI vision](#ai-vision)
-- [Auto-installed extension](#auto-installed-extension)
-- [Command status](#command-status)
+- [AI ビジョン](#ai-vision)
+- [自動インストールされた拡張機能](#auto-installed-extension)
+- [コマンドステータス](#command-status)
 
-### AI vision
+### AI ビジョン
 
-If you open an issue in CW, and that issue includes images in it's description, then those images will now be included in the context of the task. This is a pretty significant capability, since it unlocks new ways of defining your intent, such as using...
+CWで問題を開き、その問題の説明に画像が含まれている場合、それらの画像がタスクのコンテキストに含まれるようになりました。これは、次のような新しい方法で意図を定義できるため、非常に重要な機能です...
 
-1. **Architecture/class diagrams**, that outline the structure of code you want to generate ([example](https://copilot-workspace.githubnext.com/githubnext/workspace-blank?shareId=25cc2d17-3d00-4f6c-ad5b-ccf3e53a992c))
-2. **App screenshots**, which visually highlight a part of the UI you want to change
-3. **UI mock-ups**, which describe the layout/behavior of some client code you want to write
-4. **Photographs**, which capture hand-written notes or drawings from a meeting
+1. **アーキテクチャ/クラス図** - 生成したいコードの構造を示す ([例](https://copilot-workspace.githubnext.com/githubnext/workspace-blank?shareId=25cc2d17-3d00-4f6c-ad5b-ccf3e53a992c))
+2. **アプリのスクリーンショット** - 変更したいUIの部分を視覚的に強調する
+3. **UI モックアップ** - 作成したいクライアントコードのレイアウト/動作を説明する
+4. **写真** - 会議での手書きのメモや図をキャプチャする
 
 <img src="https://github.com/user-attachments/assets/2020b755-b2e3-4639-9871-973cad184b64" width="900px" /><br />
 
-When combined with [custom instructions](#custom-instructions) and [web URLs](#external-context), AI vision expands CW's support for managing task context, and defining your tasks in whichever way is most natural. And we're excited to hear how folks make use of it!
+カスタム指示や Web URL と組み合わせることで、AIビジョンはCWのタスクコンテキスト管理のサポートを拡張し、最も自然な方法でタスクを定義できるようになります。そして、皆さんがどのように活用するかを聞くのが楽しみです！
 
-> Note: If you want to give this feature a try, you need to enable the `Use summaries of images in the context` setting in the `Experiments` dialog (underneath the avatar menu).
+> 注：この機能を試してみたい場合は、アバターメニューの下にある`実験`ダイアログで`画像の要約をコンテキストに使用する`設定を有効にする必要があります。
 
-### Auto-installed extension
+### 自動インストールされた拡張機能
 
-When you click the `Open in Codespace` button in a session, the [Copilot Workspace](https://gh.io/cw-vscode) extension for VS Code is now automatically installed within the Codespace. Why is this cool? Because that allows you to transition to the editor, while still being able to view the details of the task and plan. Additionally, it allows you to continue performing NL-based revision, in addition to any many edits.
+セッションで `Open in Codespace` ボタンをクリックすると、VS Code 用の [Copilot Workspace](https://gh.io/cw-vscode) 拡張機能が Codespace 内に自動的にインストールされるようになりました。これがなぜクールなのか？それは、エディタに移行しながら、タスクとプランの詳細を表示できるからです。さらに、NL ベースの修正を続行することもできます。
 
 <img src="https://github.com/user-attachments/assets/8bb283d3-5a69-4dfa-a75c-22dc23e47daa" />
 
-### Command status
+### コマンドステータス
 
-The build/test/run button in the `Commands` tab now displays the status of the current/last run command. That way if you're actively using the `Terminal` tab, you can still see that a build (or test/run) is in-progress. Or that the build you were running in parallel, just succeeded 👍
+`Commands` タブのビルド/テスト/実行ボタンは、現在/最後の実行コマンドのステータスを表示するようになりました。これにより、`Terminal` タブを積極的に使用している場合でも、ビルド（またはテスト/実行）が進行中であることがわかります。また、並行して実行していたビルドが成功したことも確認できます 👍
 
 <img src="https://github.com/user-attachments/assets/f3c70fcb-c879-423e-bcaf-c7902723f11a" width="400px" />
 
 ## 📅 18 October 2024
 
-- [Error repair](#error-repair)
-- [Follow ups](#follow-ups)
-- [Brainstorm enhancements](#brainstorm-enhancements)
-- [Plan command enhancements](#plan-command-enhancements)
+- [エラー修復](#error-repair)
+- [フォローアップ](#follow-ups)
+- [Brainstorm の強化](#brainstorm-enhancements)
+- [Plan コマンドの強化](#plan-command-enhancements)
 
-### Error repair
+### エラー修復
 
-When a [build/test/run command](#commands) fails, CW now displays a lightbulb button in the command's toolbar. When you click this, it will trigger a [brainstorming](#brainstorming) action, and then offer a suggestion for how to fix the error.
+[ビルド/テスト/実行コマンド](#commands)が失敗した場合、CW はコマンドのツールバーに電球ボタンを表示するようになりました。これをクリックすると、[ブレインストーミング](#brainstorming)アクションがトリガーされ、エラーを修正するための提案が表示されます。
 
 <img src="https://github.com/user-attachments/assets/db1cc14e-f3b5-49ea-a9e0-80b8b2b98bba" width="450px" />
 
-When a suggestion comes back, it will include an explaination of the issue, and then present a fix in one of two forms:
+提案が返ってくると、問題の説明が含まれ、その後、次の2つの形式のいずれかで修正が提示されます：
 
-1. A **terminal command**, which can be run in order to resolve the issue (e.g. installing a missing environment dependency)
-2. A **plan update**, which can be applied, and then implemented in the impacted file(s) (e.g. missing imports, type errors)
+1. **ターミナルコマンド** - 問題を解決するために実行できるコマンド（例：不足している環境依存関係のインストール）
+2. **プランの更新** - 適用して影響を受けたファイルに実装できる修正（例：不足しているインポート、型エラー）
 
-| Terminal fix | Plan fix |
+| ターミナル修正 | プラン修正 |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/f81063fe-deca-455a-9c38-07bbb336b193" width="350px" /> | <img src="https://github.com/user-attachments/assets/029729bd-a50f-4078-b764-a464a35bf4f4" width="350px" /> |
 
-After accepting a suggestion, you can then re-run the failed command, and hopefully see it pass. That said, if you encounter another issue (e.g. a build with multiple errors), then you can just continue to command + repair as much as needed 🚀
+提案を受け入れた後、失敗したコマンドを再実行し、成功することを期待できます。とはいえ、別の問題が発生した場合（例：複数のエラーがあるビルド）、必要に応じてコマンド+修正を続けることができます 🚀
 
-### Follow ups
+### フォローアップ
 
-We've introduced a new capability into CW, that we're calling `Follow up`. And we're pretty excited about it 😃
+CWに新しい機能「フォローアップ」を導入しました。これには非常に興奮しています 😃
 
 <img src="https://github.com/user-attachments/assets/bd881a9f-f557-4f9d-8682-25075368ad00" width="400px" />
 
-#### Let's talk about why it's useful!
+#### なぜ役立つのか説明しましょう！
 
-When you're working against a large repository that has complex/inter-file dependencies, it's possible that a simple change/refactoring can impact many other places across the codebase (e.g. updating a shared method signature). And while the plan can do a great job of identifying the core changes needed for a task (the "primary edits"), it can sometimes miss transitive changes that are needed in response (e.g. updating callers of a changed function).
+複雑なファイル間依存関係を持つ大規模なリポジトリで作業している場合、単純な変更/リファクタリングがコードベース全体の他の多くの場所に影響を与える可能性があります（例：共有メソッドシグネチャの更新）。プランはタスクに必要なコア変更（「主要な編集」）を特定するのに優れていますが、時には必要な追加の変更（例：変更された関数の呼び出し元の更新）を見逃すことがあります。
 
-To address this, after you've implemented a plan, you can open up the `Commands` tab and click the new `Follow up` button. This will perform a thorough, fine-grained check on your codebase + edits, to see if any additional changes are required, in order to complete your task. And if any follow-ups are detected, it will edit the neccessary files, and add them to your existing implementation 👍
+これに対処するために、プランを実装した後、`Commands` タブを開き、新しい `Follow up` ボタンをクリックできます。これにより、コードベース+編集に対して徹底的で詳細なチェックが行われ、タスクを完了するために追加の変更が必要かどうかが確認されます。フォローアップが検出された場合、必要なファイルが編集され、既存の実装に追加されます 👍
 
 <img src="https://github.com/user-attachments/assets/4c33b6e9-9506-4726-a018-4889b0a2d210" width="400px" />
 
-This workflow is pretty slick, because it allows the initial CW plan to be both fast and focused, which makes it quicker for you to get to code, and easier for you to review the essence of the change. And in cases that a change has repo-wide impact, you can simply trigger a follow up and let Copilot do the rest 😎
+このワークフローは非常にスムーズで、初期の CW プランが迅速かつ集中しているため、コードにすばやくアクセスでき、変更の本質をレビューしやすくなります。リポジトリ全体に影響を与える変更がある場合は、フォローアップをトリガーし、Copilot に任せることができます 😎
 
-#### How can you try it?
+#### どうやって試すのか？
 
-At the moment, this experience supports codebases that are written in TypeScript/JavaScript, Python, Java, and C#. So if you're working in one of those languages, we'd love to hear your feedback! And if not, we'd love to hear whether this capability would be useful, in order to help us prioritize new languages in the future 🙏
+現在、この機能は TypeScript/JavaScript、Python、Java、および C# で書かれたコードベースをサポートしています。そのため、これらの言語で作業している場合は、フィードバックをお待ちしています！そうでない場合でも、この機能が役立つかどうかをお知らせいただければ、将来の新しい言語の優先順位を決定するのに役立ちます 🙏
 
-And while we let this capability bake a bit, it's currently disabled by default. So if you'd like to give it a try, simply open the `Experiments` panel (under the avatar menu) and check the `Enable follow up` setting. 
+この機能を試すには、`Experiments` パネル（アバターメニューの下）を開き、`Enable follow up` 設定をチェックするだけです。
 
-### Brainstorm enhancements
+### Brainstorm の強化
 
-When you open an issue in CW, or click the `Brainstorm` button for ad-hoc tasks, the initially-generated question (`How do I solve this issue?`) is now presented in a "special" structured format. The response includes two sections (`Current behavior` / `Proposed solution`), and has the advantage of allowing you to add/edit/delete/organize any of the steps, in a very granular way.
+CW で問題を開くか、アドホックタスクの `Brainstorm` ボタンをクリックすると、最初に生成される質問（`w do I solve this issue?`）が「特別な」構造化形式で表示されるようになりました。応答には2つのセクション（`Current behavior` / `Proposed solution`）が含まれており、非常に詳細な方法でステップを追加/編集/削除/整理することができます。
 
 <img src="https://github.com/user-attachments/assets/d11ad993-6ee7-4899-a3f4-f6c896b0472d" width="700px" />
 
-Additionally, since we're treating this question as "special", it's automatically updated any time you attach an additional brainstorming question/idea to the task. That way, you can continue to brainstorm further, and ensure that CW's understanding of the overall solution remains always up-to-date 👍
+さらに、この質問を「特別な」として扱っているため、タスクに追加のブレインストーミングの質問/アイデアを添付するたびに自動的に更新されます。これにより、さらにブレインストーミングを続け、CW の全体的な解決策の理解が常に最新であることを確認できます 👍
 
-### Plan command enhancements
+### Plan コマンドの強化
 
-When a plan includes a `Commands` section (e.g. because your task required installing 3rd-party dependencies), you can now execute an individual command, in addition to the existing "Execute all" support. Additionally, the completion status of commands are now persisted. So when you resume a CW session later, you can see which commands were already run, which failed, and which are still outstanding.
+プランに `Commands` セクションが含まれている場合（例：タスクにサードパーティの依存関係のインストールが必要な場合）、個々のコマンドを実行できるようになりました。さらに、コマンドの完了ステータスが保持されるようになりました。そのため、後でCWセッションを再開すると、どのコマンドが既に実行され、どれが失敗し、どれがまだ未完了であるかを確認できます。
 
 <img src="https://github.com/user-attachments/assets/ede11071-62a8-4f9c-a8a9-f91a4ddf71c0" width="300px" />
 
-## 📅 11 October 2024
+## 📅 2024年10月11日
 
-- [Commands](#commands)
-   - [Running commands](#running-commands) 
-   - [Command setup / inference](#command-setup--inference)
-   - [NL command suggestions](#nl-command-suggestions)
-   - [Plan commands](#plan-commands)   
-- [Action bar mode picker](#action-bar-mode-picker)
-- [Open in VS Code](#open-in-vs-code)
-- [External URL context](#external-url-context)
-- [Auto-completing sessions](#auto-completing-sessions)
-- [High contrast mode](#high-contrast-mode)
-- [Custom instructions](#custom-instructions)
+- [コマンド](#commands)
+   - [コマンドの実行](#running-commands) 
+   - [コマンドのセットアップ / 推論](#command-setup--inference)
+   - [NLコマンドの提案](#nl-command-suggestions)
+   - [プランコマンド](#plan-commands)   
+- [アクションバーモードピッカー](#action-bar-mode-picker)
+- [VS Codeで開く](#open-in-vs-code)
+- [外部URLコンテキスト](#external-url-context)
+- [セッションの自動完了](#auto-completing-sessions)
+- [ハイコントラストモード](#high-contrast-mode)
+- [カスタム指示](#custom-instructions)
 
-### Commands
+### コマンド
 
-As part of our continued revamp of the CW UX (e.g. brainstorming, the action bar, file tabs/tree, etc.), we've introduced a new capability called `Commands`, which replaces the integrated terminal with a full-height panel, and provides a simplified experience for executing and configuring a build/test/run against your code. Conceptually, you can think of this as being the centralized "hub" for all tasks in the workspace that require executing a shell command.
+CW UXの継続的な刷新の一環として（例：ブレインストーミング、アクションバー、ファイルタブ/ツリーなど）、統合ターミナルをフルハイトパネルに置き換え、コードに対してビルド/テスト/実行を実行および構成するための簡素化されたエクスペリエンスを提供する新しい機能「コマンド」を導入しました。概念的には、これはワークスペース内のすべてのタスクの中央「ハブ」として考えることができます。
 
 <img src="https://github.com/user-attachments/assets/bb5aa0b5-c0c0-4209-871d-5079a0b28f04" width="1000px" />
 
-And similar to [brainstorming](#brainstorming), this capability is significant enough in scope, that we need to describe it in four distinct parts 😄
+そして、[ブレインストーミング](#brainstorming)と同様に、この機能は範囲が広いため、4つの異なる部分で説明する必要があります 😄
 
-- [Running commands](#running-commands) 
-- [Command setup / inference](#command-setup--inference)
-- [NL command suggestions](#nl-command-suggestions)
-- [Plan commands](#plan-commands)  
+- [コマンドの実行](#running-commands) 
+- [コマンドのセットアップ / 推論](#command-setup--inference)
+- [NLコマンドの提案](#nl-command-suggestions)
+- [プランコマンド](#plan-commands)  
 
-#### Running commands
+#### コマンドの実行
 
-To begin using the new `Commands` hub, simply click the existing terminal icon in the header bar. Once opened, it will automatically create and connect to a backing Codespace, so you can start running commands as needed. And if your repository has been configured with a `postAttachCommand` (in your [`devcontainer.json` file](https://containers.dev/implementors/spec/#devcontainerjson)), then you'll see a `Post attach` entry appear, that let's you view the output of its underlying shell commands.
+新しい「コマンド」ハブを使用するには、ヘッダーバーの既存のターミナルアイコンをクリックするだけです。開くと、バックアップ用のCodespaceが自動的に作成され、接続されるため、必要に応じてコマンドを実行できます。リポジトリが[`devcontainer.json`ファイル](https://containers.dev/implementors/spec/#devcontainerjson)に`postAttachCommand`を設定している場合、その基になるシェルコマンドの出力を表示する「Post attach」エントリが表示されます。
 
-Additionally, if you've configured a `build`, `test`, or `launch` task in your `devcontainer.json`, then you can click to run any of those. This will result in the command being displayed in the list on the `Output` tab, and allow you to view its output, stop it, or re-run it once complete (e.g. to re-trigger a build after editing code).
+さらに、`devcontainer.json`に`build`、`test`、または`launch`タスクを設定している場合、それらのいずれかをクリックして実行できます。これにより、コマンドが「Output」タブのリストに表示され、その出力を表示したり、停止したり、完了後に再実行したりできます（例：コードを編集した後にビルドを再トリガーするため）。
 
 <img src="https://github.com/user-attachments/assets/6a0f0ecc-64f0-4871-b5f3-0840c684b85e" width="450px" />
 
-And just like the existing terminal, if a build/test/run command starts a server, then it will be automatically forwarded, so you can securely view it. 
+そして、既存のターミナルと同様に、ビルド/テスト/実行コマンドがサーバーを起動する場合、それは自動的に転送され、セキュアに表示できます。
 
-#### Command setup / inference
+#### コマンドのセットアップ / 推論
 
-If you haven't configured any tasks in your `devcontainer.json`, then you can simply click on either the build, test, or run command, and then type the respective shell commands into the task editor. When you do that, the entered commands will be automatically added to a `devcontainer.json` file for you, so you can include them in your subsequent PR.
+`devcontainer.json`にタスクを設定していない場合、ビルド、テスト、または実行コマンドのいずれかをクリックし、タスクエディタにそれぞれのシェルコマンドを入力するだけです。これを行うと、入力されたコマンドが自動的に`devcontainer.json`ファイルに追加され、次のPRに含めることができます。
 
-And if you don't know how to perform a build/test/run on the current repo, then simply click the lightbulb icon next to a task and let CW suggest how to do it for you 🚀
+現在のリポジトリでビルド/テスト/実行を行う方法がわからない場合は、タスクの横にある電球アイコンをクリックして、CWに提案してもらいましょう 🚀
 
 <img src="https://github.com/user-attachments/assets/2db837df-33db-4608-8674-54d36ae5e9f7" width="500px" />
 
-#### NL command suggestions
+#### NLコマンドの提案
 
-While we've optimized the UX for building, testing, and running your code, there are many other tasks you might need to perform during a session (e.g. linting, formatting, etc.). And to make that simpler, the action bar now enters "command mode" (when you're focused on the `Commands` tab), which lets you describe a shell command you want to run, using only natural language.
+コードのビルド、テスト、実行のUXを最適化しましたが、セッション中に他の多くのタスクを実行する必要がある場合があります（例：リンティング、フォーマットなど）。これを簡単にするために、アクションバーは「コマンドモード」に入り（「コマンド」タブにフォーカスしているとき）、自然言語を使用して実行したいシェルコマンドを説明できます。
 
-After typing an NL request, you'll be presented with a command suggestion, which you can edit or regenerate. And if you click the `Run` button, it will open the `Terminal` tab on the `Commands` hub, and execute it on your behalf. 
+NLリクエストを入力すると、コマンドの提案が表示され、編集または再生成できます。そして、「Run」ボタンをクリックすると、「コマンド」ハブの「ターミナル」タブが開き、代わりに実行されます。
 
 <img src="https://github.com/user-attachments/assets/d4dbb27e-3f78-43f7-8e94-d68caa2ae9ce" width="500px" />
 
-#### Plan commands
+#### プランコマンド
 
-The "plan commands" feature is now on by default, and when a plan includes shell commands (e.g. running a package manager to include a new dependency), it will execute them via a new `Plan` command entry in the `Commands` tab. 
+「プランコマンド」機能はデフォルトでオンになっており、プランにシェルコマンドが含まれている場合（例：新しい依存関係を含めるためにパッケージマネージャーを実行する）、それらは「コマンド」タブの新しい「Plan」コマンドエントリを介して実行されます。
 
 <img src="https://github.com/user-attachments/assets/60ed8f3d-013f-461f-a143-9d642be5e64e" width="700px" />
 
-### Action bar mode picker
+### アクションバーモードピッカー
 
-The action bar now allows you to seamlessly switch between its three modes: `Ask`, `Revise`, and `Command`. This ensures that regardless what state your session is in, you can ask a question, revise the plan/implemented files, or execute a terminal command. All using natural language 💙
+アクションバーは、3つのモード（`Ask`、`Revise`、`Command`）の間をシームレスに切り替えることができます。これにより、セッションの状態に関係なく、質問をしたり、プラン/実装ファイルを修正したり、ターミナルコマンドを実行したりできます。すべて自然言語を使用して 💙
 
 <img src="https://github.com/user-attachments/assets/93c6664e-66ad-42a3-96b5-3e9a4cdad099" width="600px" />
 
-Even cooler, you can switch between any of these modes using the following keyboard shortcuts, which make it really easy to navigate a session, while jumping between brainstorming, code iteration, and terminal actions. 
+さらにクールなのは、次のキーボードショートカットを使用してこれらのモード間を切り替えることができるため、ブレインストーミング、コードの反復、ターミナルアクションの間を移動しながらセッションを簡単にナビゲートできます。
 
-| Mode | Keyboard shortcut |
+| モード | キーボードショートカット |
 |-|-|
 | Ask | <kbd>?</kbd> |
 | Revise | <kbd>></kbd> |
 | Command | <kbd>$</kbd> |
 
-Additionally, each mode retains a history of its previous request. So if you realize you wanted to ask a question a slightly different way, or make a subtly different revision, then simply hit the up arrow, edit, and submit 👍
+さらに、各モードは以前のリクエストの履歴を保持します。質問を少し異なる方法で尋ねたい場合や、微妙に異なる修正を行いたい場合は、上矢印を押して編集し、送信するだけです 👍
 
-> By introducing the new `Commands` tab, and allowing all three of the action bar's modes to be usable at any time, the action bar is now the official "central nervous system" for the entire CW experience. We've really fallen in love with how it feels to start and iterate on tasks now. And we're excited to hear how it feels for everyone else! 👋
+> 新しい「コマンド」タブを導入し、アクションバーのすべてのモードをいつでも使用できるようにすることで、アクションバーはCWエクスペリエンス全体の「中枢神経系」となりました。タスクを開始し、反復する方法が本当に気に入っています。そして、他の皆さんがどのように感じるかを聞くのが楽しみです！ 👋
 
-### Open in VS Code
+### VS Codeで開く
 
-After a month of _amazing_ feedback from our preview users, we've officially published the [Copilot Workspace extension](https://gh.io/cw-vscode ) to the VS Code marketplace 🥳
+プレビューユーザーからの素晴らしいフィードバックを受けて、[Copilot Workspace拡張機能](https://gh.io/cw-vscode)をVS Codeマーケットプレイスに正式に公開しました 🥳
 
-And in order to make it even easier to use, we've introduced a new `Open in VS Code` button to the CW session header. When you click it, we'll launch VS Code, and open your current session directly from within the editor. That way you can start tasks and brainstorm from the web (or your phone!), and when you want to jump into VS Code to finish it off (e.g. step-debug some code), you can now do that in a single-click 💪
+さらに、使用をさらに簡単にするために、CWセッションヘッダーに新しい「VS Codeで開く」ボタンを導入しました。これをクリックすると、VS Codeが起動し、現在のセッションがエディタ内で直接開かれます。これにより、Web（または電話）からタスクを開始し、VS Codeにジャンプして完了させることができます（例：コードのステップデバッグ）。これで、ワンクリックで実行できます 💪
 
 <img src="https://github.com/user-attachments/assets/1928f16e-3663-4d6e-becb-8cd409fb4430" width="500px" />
 
-Additionally, the official extension release also includes a ton of new capabilities that make the E2E experience a lot better. In particular, we've enhanced the `Sessions` and `Plan` views in the following ways...
+さらに、公式の拡張機能リリースには、E2Eエクスペリエンスを大幅に向上させる新機能が多数含まれています。特に、「セッション」ビューと「プラン」ビューを次のように強化しました...
 
-#### `Sessions` view
+#### `セッション`ビュー
 
-In order to make it easier to manage _many_ sessions, your sessions list is now grouped by repository, and each session displays an icon based on its respective type: issue, task, or PR. Additionally, when you're done with a session, you can now delete it directly from the editor, by hovering over it and clicking the trash can icon.
+多くのセッションを管理しやすくするために、セッションリストはリポジトリごとにグループ化され、各セッションはそれぞれのタイプ（問題、タスク、PR）に基づいてアイコンが表示されます。さらに、セッションが完了したら、エディタから直接削除できるようになりました。セッションにカーソルを合わせてゴミ箱アイコンをクリックするだけです。
 
 <img src="https://github.com/user-attachments/assets/70513fd2-cb7e-416c-9ee6-90c0780d4f21" width="350px" />
 
-#### `Plan` view
+#### `プラン`ビュー
 
-The VS Code extension now has full parity with the CW web client, when it comes to iterating on the plan and code in a session. And in particular, you can now perform the following actions on the plan, directly from the `Plan` view:
+VS Code拡張機能は、セッション内のプランとコードの反復に関して、CW Webクライアントと完全に同等の機能を持っています。特に、次のアクションをプランビューから直接実行できます：
 
-1. Adding, editing, and deleting files
-2. Adding, editing, and deleting steps for a file
-3. Re-organizing the plan, by moving/indenting files and steps
+1. ファイルの追加、編集、削除
+2. ファイルのステップの追加、編集、削除
+3. ファイルとステップの移動/インデントによるプランの再編成
 
-To access these new capabilities, simply click the `...` menu next to a file or step in the plan. We're pretty happy with how this experience "feels", and we're looking forwarding to hearing more feedback 🙌
+これらの新機能にアクセスするには、プラン内のファイルまたはステップの横にある`...`メニューをクリックします。このエクスペリエンスの「感触」に非常に満足しており、さらにフィードバックをお待ちしています 🙌
 
-| Plan file actions | Plan step actions |
+| プランファイルアクション | プランステップアクション |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/6836d12c-7977-4d34-8760-0456d547e89f" width="400px" /> | <img src="https://github.com/user-attachments/assets/62e0b417-2d64-4597-8055-d7e34bdd70ce" width="360px" /> |
 
-> If you use VS Code Insiders, then set the `Open in VS Code Insiders` setting, and the `Open in VS Code` button which launch Insiders instead of Stable.
+> VS Code Insidersを使用している場合、「VS Code Insidersで開く」設定を設定し、「VS Codeで開く」ボタンがStableの代わりにInsidersを起動します。
 
-### External URL context
+### 外部URLコンテキスト
 
-We've enabled external URL fetching by default, and made the following improvements to the overall user experience:
+外部URLのフェッチをデフォルトで有効にし、全体的なユーザーエクスペリエンスを次のように改善しました：
 
-1. The content of external URLs are now included in the context while brainstorming. This is cool because it allows you to ask questions and ensure they can "see" any meaningful context you've added to the task (e.g. GitHub issues, external documentation)
-1. You can now enable/disable individual URLs from the `Task` panel, which allows you to control which external content is used as context, without needing to modify the task description.
+1. 外部URLの内容がブレインストーミング中にコンテキストに含まれるようになりました。これにより、タスクに追加した意味のあるコンテキスト（例：GitHubの問題、外部ドキュメント）を「見る」ことができるため、質問をしたり、確認したりすることができます。
+2. `タスク`パネルから個々のURLを有効/無効にできるようになりました。これにより、タスクの説明を変更せずに、使用する外部コンテンツを制御できます。
 
 <img src="https://github.com/user-attachments/assets/3937dcfd-db48-4e4b-8366-a76d1e06fee1" width="350px" />
 
-> Note: If you'd like to disable external URLs from being enabled by default, then you can turn off the `Automatically include external URLs in context` setting in your `Settings` panel (underneath the avatar menu).
+> 注：外部URLをデフォルトで有効にしたくない場合は、`設定`パネル（アバターメニューの下）で`外部URLを自動的にコンテキストに含める`設定をオフにできます。
 
-### Auto-completing sessions
+### セッションの自動完了
 
-We introduced a new setting that allows you to automatically mark sessions as complete after creating a PR/branch/repo for them. For users that create many sessions, this can help keep your `Recent sessions` list (on the [dashboard](https://copilot-workspace.githubnext.com)) nice and clean. And if you later decide that you need to continue a session that was marked as complete, you can always resume it from the [Completed sessions list](https://copilot-workspace-dev.githubnext.com/?view=completed) at any time :thumb:
+PR/ブランチ/リポジトリを作成した後にセッションを自動的に完了としてマークする新しい設定を導入しました。多くのセッションを作成するユーザーにとって、`最近のセッション`リスト（[ダッシュボード](https://copilot-workspace.githubnext.com)）をきれいに保つのに役立ちます。後で完了としてマークされたセッションを続行する必要がある場合は、いつでも[完了したセッションリスト](https://copilot-workspace-dev.githubnext.com/?view=completed)から再開できます :thumb:
 
-> To enable this behavior, open your user `Settings` (underneath the avatar menu in the upper-right), and select the `Mark sessions as complete after committing` option.
+> この動作を有効にするには、ユーザー`設定`（右上のアバターメニューの下）を開き、`コミット後にセッションを完了としてマークする`オプションを選択します。
 
-### High contrast mode
+### ハイコントラストモード
 
-CW already supports a light and dark color theme, and will match your system preference automatically. However, to further improve usability for all users, we've introduced support for a new high-contrast mode of both color themes.
+CWはすでにライトとダークのカラーテーマをサポートしており、システムの設定に自動的に一致します。ただし、すべてのユーザーの使いやすさをさらに向上させるために、両方のカラーテーマの新しいハイコントラストモードのサポートを導入しました。
 
 <img src="https://github.com/user-attachments/assets/e54a0d92-901e-44c5-9d11-d7c3f812a6c5" width="800px" />
 
-> To enable this behavior, open your user `Settings` (underneath the avatar menu in the upper-right), and select the `Enable high contrast mode` option.
+> この動作を有効にするには、ユーザー`設定`（右上のアバターメニューの下）を開き、`ハイコントラストモードを有効にする`オプションを選択します。
 
-### Custom instructions
+### カスタム指示
 
-CW now supports configuring repo-wide custom instructions via a `.github/copilot-instructions.md` file, in addition to the existing file location (`.github/copilot-workspace/CONTRIBUTING.md`). If a repo includes a `.github/copilot-instructions.md` file, then it will take precedence over `.github/copilot-workspace/CONTRIBUTING.md` (we don't "merge" the contents if you define both). Otherwise, both files support the exact same set of features and user experience (e.g. the `Task` panel will show custom instructions as additional context, and external URLs in the instructions will be fetched).
+CWは、既存のファイルの場所（`.github/copilot-workspace/CONTRIBUTING.md`）に加えて、`.github/copilot-instructions.md`ファイルを介してリポジトリ全体のカスタム指示を設定することをサポートするようになりました。リポジトリに`.github/copilot-instructions.md`ファイルが含まれている場合、それは`.github/copilot-workspace/CONTRIBUTING.md`よりも優先されます（両方を定義している場合、内容を「マージ」しません）。それ以外の場合、両方のファイルは同じ機能とユーザーエクスペリエンスをサポートします（例：`タスク`パネルはカスタム指示を追加のコンテキストとして表示し、指示内の外部URLがフェッチされます）。
 
-## 📅 27 September 2024
+## 📅 2024年9月27日
 
-- [Brainstorming](#brainstorming)
-   - [Project exploration / learning](#project-exploration--learning)
-   - [Solution proposals](#solution-proposals)
-   - [Asking questions](#asking-questions)
-   - [Explaining / reviewing code](#explaining--reviewing-code)
-- [Create new repository](#create-new-repository)
-- [VS Code: Implement/revise specific files](#vs-code-implementrevise-specific-files)
-- [File tree filtering](#file-tree-filtering)
-- [Plan step filtering](#plan-step-filtering)
-- [Improved build/test/run inference](#improved-buildtestrun-inference)
-- [Plan + implement](#plan--implement)
-- [URL context management](#url-context-management)
+- [ブレインストーミング](#brainstorming)
+   - [プロジェクトの探索 / 学習](#project-exploration--learning)
+   - [ソリューションの提案](#solution-proposals)
+   - [質問をする](#asking-questions)
+   - [コードの説明 / レビュー](#explaining--reviewing-code)
+- [新しいリポジトリを作成する](#create-new-repository)
+- [VS Code: 特定のファイルを実装/修正する](#vs-code-implementrevise-specific-files)
+- [ファイルツリーのフィルタリング](#file-tree-filtering)
+- [プランステップのフィルタリング](#plan-step-filtering)
+- [ビルド/テスト/実行の推論の改善](#improved-buildtestrun-inference)
+- [プラン + 実装](#plan--implement)
+- [URLコンテキストの管理](#url-context-management)
 
-### Brainstorming
+### ブレインストーミング
 
-We've introduced a major new CW capability that we're calling "brainstorming" (💡). And it represents such a significant change, that it needs to be described in four distinct parts 🤗
+「ブレインストーミング」（💡）と呼ばれる新しいCW機能を導入しました。そして、それは非常に重要な変更を表しているため、4つの異なる部分で説明する必要があります 🤗
 
-- [Project exploration / learning](#project-exploration--learning)
-- [Solution proposals](#solution-proposals)
-- [Asking questions](#asking-questions)
-- [Explaining / reviewing code](#explaining--reviewing-code)
+- [プロジェクトの探索 / 学習](#project-exploration--learning)
+- [ソリューションの提案](#solution-proposals)
+- [質問をする](#asking-questions)
+- [コードの説明 / レビュー](#explaining--reviewing-code)
 
 <img src="https://github.com/user-attachments/assets/a4884997-43cb-4b84-a414-d407f3a87e28" width="700px" />
 
-> Note: This feature isn't currently enabled by default. So if you'd like to try it, then enable the `Activate brainstorming` setting in your `Experiments` panel.
+> 注：この機能は現在デフォルトで有効になっていません。試してみたい場合は、`実験`パネルで`ブレインストーミングを有効にする`設定を有効にしてください。
 
-#### Project exploration / learning
+#### プロジェクトの探索 / 学習
 
-At its core, CW aspires to be an "AI thought partner" that can enable developers to complete everyday tasks, **while learning along the way**. And while the `Specification` panel has successfully helped preview users create thousands of pull requests, it's been clear for a while that we could do a lot better. And in particular, help reduce the activation energy in getting started, **even before you've typed a single character.**
+その核心において、CWは開発者が日常のタスクを完了しながら、**学びながら**、AIの思考パートナーとして機能することを目指しています。そして、`仕様`パネルはプレビューユーザーが数千のプルリクエストを作成するのに成功しましたが、しばらくの間、私たちはもっと良いことができると感じていました。特に、**まだ1文字も入力していない段階で**、開始するための活性化エネルギーを削減するのに役立ちます。
 
-To that end, when you start a new task in CW, you'll now notice a green `Brainstorm` button in the `Task` panel.
+そのために、CWで新しいタスクを開始すると、`タスク`パネルに緑色の`ブレインストーム`ボタンが表示されるようになりました。
 
 <img src="https://github.com/user-attachments/assets/0cb62eff-f676-403e-962b-2becf13f7a5c" width="600px" />
 
-If you click it, it will open a new tab (called `Brainstorm`) and suggest a list of questions that might be relevant for you, in either onboarding to the repository, or learning a bit more about specific behavior/topics (e.g. how to buikd VS Code extensions).
+これをクリックすると、新しいタブ（`ブレインストーム`と呼ばれる）が開き、リポジトリにオンボードするため、または特定の動作/トピック（例：VS Code拡張機能のビルド方法）について少し学ぶために関連する質問のリストが提案されます。
 
 <img src="https://github.com/user-attachments/assets/29cb8a3b-89c6-4479-8c81-2dc95fd8758b" width="850px" />
 
-When you click one of these questions, CW will generate an answer to it, using the same repository-wide context that you've already come to know and love 💙
+これらの質問の1つをクリックすると、CWはリポジトリ全体のコンテキストを使用して質問に回答を生成します 💙
 
 <img src="https://github.com/user-attachments/assets/ffa12858-e332-4407-bc9a-fe9c2a8dcd37" width="800px" />
 
-Even cooler, as you select questions, the `Suggestion questions` list will dynamically update to include new, and potentially interesting questions based on your selections. Kind of like a dynamic search engine for code, that can "push" insights at you, instead of waiting for you to ask ⭐
+さらにクールなのは、質問を選択すると、`提案された質問`リストが動的に更新され、選択に基づいて新しい、そして潜在的に興味深い質問が含まれることです。これは、コードのための動的な検索エンジンのようなもので、あなたが尋ねるのを待つのではなく、洞察を「プッシュ」することができます ⭐
 
-And as with all things in CW, a generated answer can be edited, regenerated, or deleted. And if you find something especially useful, you can even add it as context to the task, which will inform the subsequent planning/code generation.
+そして、CWのすべてのことと同様に、生成された回答は編集、再生成、または削除できます。そして、特に役立つものが見つかった場合、それをタスクのコンテキストとして追加し、後続の計画/コード生成に情報を提供することができます。
 
 <img src="https://github.com/user-attachments/assets/9f6402ca-fdda-461e-a8be-b34feb737bd4" width="300px" />
 
-When a brainstorming question is added to the task, it will show up in the task via a new section called `Ideas from brainstorming`. And while it may seem silly, we love this title so much. Why? Because it represents the notion that ideas are the output of brainstorming. And ultimately, we want CW to help you produce new and better ideas 💙
+ブレインストーミングの質問がタスクに追加されると、`ブレインストーミングからのアイデア`という新しいセクションを通じてタスクに表示されます。そして、それが愚かに思えるかもしれませんが、このタイトルが本当に気に入っています。なぜなら、アイデアはブレインストーミングの出力であるという概念を表しているからです。そして最終的には、CWが新しい、そしてより良いアイデアを生み出すのを助けることを望んでいます 💙
 
 <img src="https://github.com/user-attachments/assets/d56781db-ae8a-4973-bf75-d9bcf5d57af8" width="300px" />
 
-Interestingly enough, this behavior means that you can actually work on tasks with CW, without ever actually typing a task description. You simply perform brainstorming, attach the associated ideas, and then move on to the plan/implementation. However, in order for this to work well, you obviously need to be able to describe your intent or to guide CW in the direction that you want to go. So let's see how that works!
+興味深いことに、この動作は、実際にタスクの説明を入力せずにCWでタスクに取り組むことができることを意味します。単にブレインストーミングを行い、関連するアイデアを添付し、その後、計画/実装に進むだけです。ただし、これがうまく機能するためには、意図を説明したり、CWを望む方向に導く必要があります。では、それがどのように機能するかを見てみましょう！
 
-#### Solution proposals
+#### ソリューションの提案
 
-If you click the `Brainstorm` button _after_ you've typed a task description, then instead of simply getting a list of suggested questions, CW will actually present you with a proposal for how to solve your task. And this is where things get really fun 😎
+タスクの説明を入力した後に`ブレインストーム`ボタンをクリックすると、提案された質問のリストが表示される代わりに、CWは実際にタスクを解決するための提案を提示します。そして、ここからが本当に楽しい部分です 😎
 
-When a brainstorming question can result in multiple solutions/parts, then instead of simply answering it, CW will present you with a list of **ideas**, and allow you to select one, many, or all of them. That way, you can compose your intent by brainstorming with CW, and derive ideas through this collaborative process. Additionally, just like "single answer questions", you can regenerate the question to get new ideas, and then edit/refine them as needed. And as you select ideas, the `Suggested questions` will dynamically update, in order to provide you a pathway towards other interesting questions, which might be worthy of further brainstorming 🧠
+ブレインストーミングの質問が複数のソリューション/部分をもたらす場合、単に回答するのではなく、CWは**アイデア**のリストを提示し、それらの1つ、複数、またはすべてを選択できるようにします。これにより、CWとブレインストーミングを行い、この共同プロセスを通じてアイデアを導き出すことができます。さらに、「単一回答の質問」と同様に、質問を再生成して新しいアイデアを取得し、必要に応じて編集/修正できます。そして、アイデアを選択すると、`提案された質問`が動的に更新され、他の興味深い質問への道を提供します。
 
 <img src="https://github.com/user-attachments/assets/21c3d2bb-1e2b-44ff-85ac-499e28018033" width="600px" />
 
-> Note: When you open an issue in CW, it will automatically launch the `Brainstorm` tab, and present you with the same experience as manually entered tasks. In this sense, the default `How do I solve this issue?` brainstorming question represents an alternative to the `Specification` panel, but has the benefit of being much more rich and flexible in nature.
+> 注：CWで問題を開くと、手動で入力されたタスクと同じエクスペリエンスが自動的に起動されます。この意味で、デフォルトの`この問題をどのように解決しますか？`ブレインストーミングの質問は、`仕様`パネルの代替を表していますが、はるかに豊かで柔軟な性質を持っています。
 
-#### Asking questions
+#### 質問をする
 
-While the default brainstorming experience can help you to learn about repositories, and think through solutions for tasks/issues, it's also important that you can ask arbitrary other questions, in your pursuit of learning/task completion. And to solve that, the existing "NL revision bar" (the pretty textbox that let's you revise the plan/code) has now been converted into an "action bar". This bar is now always visible, and when you start a new task or open an issue/repo, it will present you with a new prompt: `Ask a question...`.
+デフォルトのブレインストーミングエクスペリエンスは、リポジトリについて学び、タスク/問題の解決策を考えるのに役立ちますが、学習/タスクの完了を追求する中で任意の他の質問をすることも重要です。そして、それを解決するために、既存の「NL修正バー」（プラン/コードを修正するための美しいテキストボックス）は「アクションバー」に変換されました。このバーは常に表示され、新しいタスクを開始したり、問題/リポジトリを開いたりすると、新しいプロンプトが表示されます：`質問をする...`。
 
 <img src="https://github.com/user-attachments/assets/951c8391-7f42-40d9-a53d-52e0a028a6ce" width="500px" />
 
-When you enter and submit a question, it will launch the `Brainstorm` tab, and start to generate an answer, which will include multiple ideas if relevant, and allow you to edit/refine it as needed. And again, as you ask new and interesting questions, you can attach those as context for the task, and the `Suggested questions` list will continue to provide you would potentially interesting follow-ups.
+質問を入力して送信すると、`ブレインストーム`タブが開き、回答の生成が開始されます。関連する場合は複数のアイデアが含まれ、必要に応じて編集/修正できます。そして、興味深い質問をするたびに、それらをタスクのコンテキストとして添付でき、`提案された質問`リストは引き続き潜在的に興味深いフォローアップを提供します。
 
-Additionally, questions can be asked at any time. And so while you can ask questions at the start of a task, you can also ask them after planning, impmementing or revising. Which leads up to our next part!
+さらに、質問はいつでも行うことができます。タスクの開始時に質問をすることもできますし、計画、実装、修正の後に質問することもできます。これが次の部分につながります！
 
-#### Explaining / reviewing code
+#### コードの説明 / レビュー
 
-After you've implemented a plan, you'll notice two new buttons in the file diff headers (within the `Files changed` tab), which allow you to enter brainstorming mode in two interesting ways:
+プランを実装した後、`変更されたファイル`タブ内のファイル差分ヘッダーに2つの新しいボタンが表示され、次の2つの興味深い方法でブレインストーミングモードに入ることができます：
 
-1. Explaining the changes that were made to the file
-2. Exploring ideas about how to improve the file further
+1. ファイルに加えられた変更を説明する
+2. ファイルをさらに改善するためのアイデアを探る
 
 <img src="https://github.com/user-attachments/assets/3968d4ba-a5b5-42bf-96f4-0df4ecf241b9" width="600px" />
 
-These allow you to extend the learning process into a specific change, and make sure that you fully understand the "what?" and "why?" behind an edit, before you ever send a PR.
+これにより、特定の変更に対する学習プロセスを拡張し、PRを送信する前に編集の「何？」と「なぜ？」を完全に理解することができます。
 
 <img src="https://github.com/user-attachments/assets/16d6f4f9-5e78-4964-8233-177fcacba980" width="800xp" />
 
-Additionally, by being able to brainstorm with CW on a changed file, you can effectively perform a lightweight code review with it, and get some simple follow-up suggestions. Just in case there's anything else worth doing 👍
+さらに、変更されたファイルでCWとブレインストーミングを行うことで、軽量なコードレビューを実行し、いくつかの簡単なフォローアップの提案を得ることができます。何か他に価値のあることがあるかどうかを確認するために 👍
 
 <img src="https://github.com/user-attachments/assets/36193fcb-a5f8-4e72-abe0-0822eb3a7440" width="800px" />
 
-And as if that wasn't enough...the next section is effectively also an extension of brainstorming. But I felt like this section was getting long enough, so I decided to break it up 😄
+そして、それだけでは不十分な場合...次のセクションも実際にはブレインストーミングの拡張です。しかし、このセクションが十分に長くなってきたので、分割することにしました 😄
 
-### Create new repository
+### 新しいリポジトリを作成する
 
-You can now easily create new repositories from CW, by visiting the [dashboard](https://copilot-workspace.githubnext.com) and clicking the `Create new repository` button at the bottom of the `Recent repositories` section.
+[ダッシュボード](https://copilot-workspace.githubnext.com)にアクセスし、`最近のリポジトリ`セクションの下部にある`新しいリポジトリを作成`ボタンをクリックすることで、新しいリポジトリを簡単に作成できるようになりました。
 
 <img src="https://github.com/user-attachments/assets/bf25ea62-db58-489b-ba81-55aeaf49d796" width="500px" />
 
-This will take you into a new session where you can define (or brainstorm!) what you want the new repo to include. And when you finish planning/implementing the code, you can click the `Create repository` button to create the repository and then commit your changes.
+これにより、新しいリポジトリに含めたい内容を定義（またはブレインストーミング）する新しいセッションに移動します。そして、コードの計画/実装が完了したら、`リポジトリを作成`ボタンをクリックしてリポジトリを作成し、変更をコミットできます。
 
-<img src="https://github.com/user-attachments/assets/e1c8b1b9-ca3a-40ea-a25f-3929772aa19e" width="800px" />
+<img src="https://github.com/user-attachments/assets/e1c8b1b9-ca2a-40ea-a25f-3929772aa19e" width="800px" />
 
-Additionally, if you'd like to create a repository from an existing template (as opposed to a blank repo), then simply click the `Choose a repository` link from the dashboard, search for the template you want to use (e.g. `express starter`), and then select it. This will take you into the same "new repo" flow as above, but will display a `Template` panel with the template's `README` contents in it. Between the new repo + template repo flow, and the addition of brainstorming, we're excited to see how much we can improve the process of bootstrapping new projects 💙
+さらに、空のリポジトリではなく既存のテンプレートからリポジトリを作成したい場合は、ダッシュボードから`リポジトリを選択`リンクをクリックし、使用したいテンプレートを検索（例：`express starter`）して選択するだけです。これにより、上記の「新しいリポジトリ」フローと同じフローに移動しますが、テンプレートの`README`内容が表示される`テンプレート`パネルが表示されます。新しいリポジトリ+テンプレートリポジトリフローとブレインストーミングの追加により、新しいプロジェクトのブートストラッププロセスをどれだけ改善できるか楽しみです 💙
 
-### VS Code: Implement/revise specific files
+### VS Code: 特定のファイルを実装/修正する
 
-The CW extension for VS Code now allows you to select specific files in the plan that you'd like to implement (by selecting their respective checkboxes in the `Plan` view). Additionally, you can now NL-revise specific files as well, by clicking the target icon in their file tab, and then entering the change you'd like to make.
+VS Code用のCW拡張機能では、プラン内の特定のファイルを選択して実装できるようになりました（`プラン`ビューのそれぞれのチェックボックスを選択することで）。さらに、ファイルタブのターゲットアイコンをクリックして、特定のファイルをNL修正することもできます。
 
-Even cooler, you can NL-revise a file that isn't even part of the plan, and it will be added + revised automatically for you. These two changes match the behavior of the CW web/mobile client, and effectively round out the core iteration/feedback loop within VS Code.
+さらにクールなのは、プランに含まれていないファイルをNL修正し、それが自動的に追加されて修正されることです。これらの2つの変更は、CW Web/モバイルクライアントの動作と一致し、VS Code内のコア反復/フィードバックループを完全に整えます。
 
 <img src="https://github.com/user-attachments/assets/a57ac8d8-d7a4-4cb9-b3da-c24bd91412a6" width="800px" />
 
-> Note: Since this extension is early, we're still not quite ready to publish it to the marketplace. We'll likely do that in the next couple of weeks, but until then, simply hit us up in [Discord](https://gh.io/next-discord) to grab the latest VSIX 😎
+> 注：この拡張機能は初期段階であるため、まだマーケットプレイスに公開する準備が整っていません。おそらく数週間以内に公開する予定ですが、それまでは[Discord](https://gh.io/next-discord)で最新のVSIXを入手してください 😎
 
-### File tree filtering
+### ファイルツリーのフィルタリング
 
-The integrated file tree now allows filtering it to show only the files that have changed in the session (along with their parent directories). This makes it easier to contextualize the changes being made, through the lens of your repository's folder structure. Additionally, this setting is persisted as part of the session, and so if you toggle it, it will remain filtered whenever you resume working on it later (including from your phone!). 
+統合ファイルツリーでは、セッション中に変更されたファイル（およびその親ディレクトリ）のみを表示するようにフィルタリングできるようになりました。これにより、リポジトリのフォルダ構造を通じて行われた変更を文脈化しやすくなります。さらに、この設定はセッションの一部として保持されるため、後で作業を再開する際に（電話からも含めて）フィルタリングされた状態が維持されます。
 
 <table>
    <tr>
-      <th>Before filtering</th>
-      <th>After filtering</th>
+      <th>フィルタリング前</th>
+      <th>フィルタリング後</th>
    </tr>
    <tr>
       <td><img src="https://github.com/user-attachments/assets/9b98e458-bc2d-464b-ab23-9e7aace17802" width="300px" /></td>
@@ -363,14 +363,14 @@ The integrated file tree now allows filtering it to show only the files that hav
    </tr>
 </table>
 
-### Plan step filtering
+### プランステップのフィルタリング
 
-The `Plan` panel now allows filtering it to show only the steps that were introduced in the last revision/edit (and their associated files). As a plan grows in size/complexity, this filter can make it alot easier to focus your attention on only the steps that were recently made, and therefore, would benefit from a closer review. This filter builds upon the previously-added blue dots (which indicate an "unseen" plan step), and represent another step towards making plan revision feel much more incremental and easy to follow :muscle:
+`プラン`パネルでは、最後の修正/編集で導入されたステップ（およびそれに関連するファイル）のみを表示するようにフィルタリングできるようになりました。プランがサイズ/複雑さを増すにつれて、このフィルタは最近行われたステップに焦点を当てるのに役立ち、より詳細なレビューが必要な場合に役立ちます。このフィルタは、以前に追加された青いドット（「未確認」のプランステップを示す）に基づいており、プランの修正をより段階的で追跡しやすくするためのもう一つのステップを表しています :muscle:
 
 <table>
    <tr>
-      <th>Before filtering</th>
-      <th>After filtering</th>
+      <th>フィルタリング前</th>
+      <th>フィルタリング後</th>
    </tr>
    <tr>
       <td><img src="https://github.com/user-attachments/assets/88a5e18f-cfce-4cc1-8291-d807e9e92908" width="300px" /></td>
@@ -378,392 +378,392 @@ The `Plan` panel now allows filtering it to show only the steps that were introd
    </tr>
 </table>
 
-### Improved build/test/run inference
+### ビルド/テスト/実行の推論の改善
 
-When you click the `Build`, `Test` or `Run` buttons in the integrated terminal, CW will now provide better suggestions for the neccessary shell commands needed to run them. In particular, we now include any Actions workflows, package manifests (e.g. `package.json`), and the `CONTRIBUTING.md` file (if it exists) in the context, which allows CW to more properly infer the best way to build/test/run your code.
+統合ターミナルで`Build`、`Test`、`Run`ボタンをクリックすると、CWはそれらを実行するために必要なシェルコマンドのより良い提案を提供します。特に、アクションワークフロー、パッケージマニフェスト（例：`package.json`）、および`CONTRIBUTING.md`ファイル（存在する場合）をコンテキストに含めることで、CWがコードをビルド/テスト/実行する最良の方法をより適切に推論できるようにします。
 
 <img src="https://github.com/user-attachments/assets/d0a89f46-d447-49d6-84f1-b623e41441f2" width="600px" />
 
-### Plan + implement
+### プラン + 実装
 
-After writing/editing a task, you can now generate the plan and implementation in a single step. As opposed to generating the plan, and then clicking the `Implement` button after its done. For simple/straight-forward tasks, this gives you the option to jump straight to code, and then refine things further from there. And if you notice that the plan isn't quite right while the code is being generated, you can easily cancel, revise the plan, and then re-implement. That way you don't lose any steerability when taking advantage of this shortcut 😎 
+タスクを書いたり編集したりした後、プランと実装を一度に生成できるようになりました。プランを生成し、その後完了したら`実装`ボタンをクリックする代わりに。シンプル/ストレートフォワードなタスクの場合、コードに直接ジャンプし、そこからさらに修正するオプションを提供します。そして、コードが生成されている間にプランが正しくないことに気付いた場合、簡単にキャンセルしてプランを修正し、再実装できます。このショートカットを利用する際に、操作性を失うことはありません 😎
 
 <img src="https://github.com/user-attachments/assets/827a850a-ca2b-4e05-8abf-15eec6d3609b" width="400px" />
 
-### URL context management
+### URLコンテキストの管理
 
-When a task references external URLs (e.g. docs), you can now exclude them from the session context, by clicking their associated trash can icon (within the `Additional context` section of the `Task` panel). Behind the scenes, this simply updates the task description by wrapping the selected URL in backticks (so that it's treated as raw markdown). But since a URL might be buried in an issue description/call stack, or could occur multiple times within the task definition, this new button should make it a lot easier to properly manage the context that you want CW to consider 👍
+タスクが外部URL（例：ドキュメント）を参照する場合、`タスク`パネルの`追加のコンテキスト`セクション内の関連するゴミ箱アイコンをクリックして、セッションコンテキストから除外できるようになりました。内部的には、これは選択したURLをバックティックで囲むことでタスクの説明を更新するだけです（生のマークダウンとして扱われるように）。ただし、URLが問題の説明/コールスタックに埋もれている場合や、タスク定義内で複数回出現する場合があるため、この新しいボタンはCWが考慮するコンテキストを適切に管理するのをはるかに簡単にするはずです 👍
 
 <img src="https://github.com/user-attachments/assets/0366732a-b949-4f6f-b471-8e4bb1526081" width="600px" />
 
-## 📅 20 September 2024
+## 📅 2024年9月20日
 
-- [Plan commands](#plan-commands)
-- [Integrated file tree](#integrated-file-tree)
-- [New plan step indicators](#new-plan-step-indicators)
-- [Latest changes filter](#latest-changes-filter)
-- [Devcontainer tasks improvements](#devcontainer-tasks-improvements)
-- [VS Code: Planning & implementing](#vs-code-planning--implementing)
-- [URL task context](#url-task-context)
-- [Cancellation improvements](#cancellation-improvements)
+- [プランコマンド](#plan-commands)
+- [統合ファイルツリー](#integrated-file-tree)
+- [新しいプランステップインジケーター](#new-plan-step-indicators)
+- [最新の変更フィルター](#latest-changes-filter)
+- [Devcontainerタスクの改善](#devcontainer-tasks-improvements)
+- [VS Code: プランニングと実装](#vs-code-planning--implementing)
+- [URLタスクコンテキスト](#url-task-context)
+- [キャンセルの改善](#cancellation-improvements)
 
-### Plan commands
+### プランコマンド
 
-In addition to adding/editing/deleting code, the `Plan` can now include terminal commands, whenever they're needed to properly complete a task. For example, if a task requires the use of a new 3rd-party dependency, then instead of editing a package manifest file (e.g. `package.json`), the plan will now suggest running the appropriate package manager (e.g. `npm install`). This has the advantage of ensuring you install the latest dependency version, as well as updating any respective lock files.
+コードの追加/編集/削除に加えて、`プラン`にはタスクを適切に完了するために必要なターミナルコマンドを含めることができます。たとえば、タスクに新しいサードパーティの依存関係の使用が必要な場合、パッケージマニフェストファイル（例：`package.json`）を編集する代わりに、プランは適切なパッケージマネージャー（例：`npm install`）を実行することを提案します。これには、最新の依存関係バージョンをインストールし、関連するロックファイルを更新する利点があります。
 
-Like everything else in CW, this new `Commands` section is fully editable, and so you can take, tweak, or ignore the provided suggestions. However, once you're happy with them, you can simply click the `Execute all` button, which will spin up the integrated terminal (if needed), run the commands, and then display their status. Any files that are edited as a result of these commands being executed, will then be displayed in the `Files changed` list, just like if you edited them directly 🙌
+他のすべてのCWと同様に、この新しい`コマンド`セクションは完全に編集可能であり、提供された提案を受け入れたり、調整したり、無視したりできます。ただし、満足したら、`すべて実行`ボタンをクリックするだけで、統合ターミナルが起動し（必要に応じて）、コマンドを実行し、そのステータスを表示します。これらのコマンドの実行結果として編集されたファイルは、直接編集した場合と同様に、`変更されたファイル`リストに表示されます 🙌
 
 <img src="https://github.com/user-attachments/assets/98e82301-450e-45f0-8f02-3ff422cc3695" width="400px" />
 
-> Note: This feature isn't currently enabled by default. So if you'd like to give it a try, you'll need to open your avatar menu in the upper-right, select `Experiments`, and then check the `Allow shell command generation in the plan` setting.
+> 注：この機能は現在デフォルトで有効になっていません。試してみたい場合は、右上のアバターメニューを開き、`実験`を選択し、`プランでシェルコマンドの生成を許可する`設定をオンにする必要があります。
 
-### Integrated file tree
+### 統合ファイルツリー
 
-We've replaced the file explorer modal with a new integrated file tree, which is displayed as a right-side panel, and retains all of the same features as before (e.g. file name filtering, change annotations). This has the advantage of allowing you to navigate the repository's files, while simultaneously viewing the task/spec/plan and code. Additionally, when you select a file from the tree, it now opens the file as a tab. This is nice, because you can then immediately perform an NL revision to it, which makes the flow of editing new files extremely simple: filter for it in the tree, open it, then revise it 💙
+ファイルエクスプローラーモーダルを右側のパネルとして表示される新しい統合ファイルツリーに置き換え、以前と同じ機能（例：ファイル名フィルタリング、変更注釈）をすべて保持しています。これにより、タスク/仕様/プランとコードを同時に表示しながら、リポジトリのファイルをナビゲートできます。さらに、ツリーからファイルを選択すると、ファイルがタブとして開かれます。これにより、すぐにNL修正を実行できるため、新しいファイルの編集フローが非常に簡単になります：ツリーでフィルタリングし、開き、修正します 💙
 
 ![image](https://github.com/user-attachments/assets/24c299a9-54d8-4d15-8b35-f28489997403)
 
-### New plan step indicators
+### 新しいプランステップインジケーター
 
-When you perform an NL revision against the plan, new plan steps are now annotated with a blue dot. This is meant to indicate that they are "unseen", and help focus your attention on the net-new changes that were made, as a result of your revision. This experience builds upon the previous change to make plan revision incremental, and we think it makes the overall iteration flow feel a lot more predictable (e.g. you don't have to try to spot what changes CW made based on your request).
+NL修正を実行すると、新しいプランステップが青いドットで注釈されます。これは「未確認」であることを示し、修正の結果として行われた新しい変更に焦点を当てるのに役立ちます。このエクスペリエンスは、プラン修正を段階的にするための以前の変更に基づいており、全体的な反復フローがはるかに予測可能に感じられるようにします（例：リクエストに基づいてCWが行った変更を見つける必要がありません）。
 
-In order to prevent these dots from becoming noisy, they're only visible until the next time you 1) edit the plan, or 2) perform a subsequent revision/implementation. That way, they always indicate steps you haven't "seen", and don't accumulate as you further iterate on your session. Additionally, the dots aren't added to plan steps you add/edit yourself. And they don't persist across browser refreshes. That way, they simply represent AI-contributed changes, that were introduced by a just-made revision 👍
+これらのドットがノイズにならないようにするために、次のいずれかの操作を行うまで表示されます：1）プランを編集する、または2）後続の修正/実装を実行する。そのため、常に「未確認」のステップを示し、セッションをさらに反復するにつれて蓄積されません。さらに、ドットは自分で追加/編集したプランステップには追加されません。そして、ブラウザのリフレッシュを超えて持続しません。これにより、最近行われた修正によって導入されたAIによる変更を単に表します 👍
 
 <img src="https://github.com/user-attachments/assets/88d2cb07-0897-46c4-b4e3-6c5c61b1b006" width="400px" />
 
-### Latest changes filter
+### 最新の変更フィルター
 
-The `Files changed` section has a new filter called `Latest changes`, which allows you to focus on the edits that were made by the most recent NL revision/implementation. This makes it a lot easier to perform iterations, and then immediately see the impact of that change (as opposed to all the changes from the session). And when combined with the new plan step indicators, this makes NL revision a lot nicer, since you can perform a revision, and then quickly spot the resulting change in both the plan and the code.
+`変更されたファイル`セクションには、新しいフィルター`最新の変更`が追加され、最新のNL修正/実装によって行われた編集に焦点を当てることができます。これにより、反復を実行し、その変更の影響をすぐに確認することがはるかに簡単になります（セッションのすべての変更とは対照的に）。そして、新しいプランステップインジケーターと組み合わせることで、NL修正がはるかに快適になります。修正を実行し、その後、プランとコードの両方で結果の変更をすぐに確認できます。
 
 <img src="https://github.com/user-attachments/assets/c15376cd-e2e1-4fba-b115-34036fda2698" width="300px" />
 
-### Devcontainer tasks improvements
+### Devcontainerタスクの改善
 
-When you open the integrated terminal, the `Build`, `Test`, `Run` buttons are now always visible, even if the repo you're working against doesn't define them in a `devcontainer.json` file. And when you click any of them, CW will generate an AI-suggestion for the appropriate command(s) needed to run them (e.g. `npm run compile`).
+統合ターミナルを開くと、`Build`、`Test`、`Run`ボタンが常に表示されるようになりました。リポジトリが`devcontainer.json`ファイルにそれらを定義していない場合でも。そして、それらのいずれかをクリックすると、CWは適切なコマンド（例：`npm run compile`）のAI提案を生成します。
 
 <img src="https://github.com/user-attachments/assets/d0a89f46-d447-49d6-84f1-b623e41441f2" width="600px" />
 
-If the command looks right, then you can submit it, which will execute it in the terminal, and then persist it to the `devcontainer.json` file. You can then include this file in your PR/commit, and then all subsequent runs of that task (either build, test, or run) will be able to use this configured command in a single-click. The nice thing about this flow, is that it makes it easier for every repo to configure their build/test/run commands, without needing to remember how to do it. Simply click the buttons, and then let CW suggest and configure it for you 🚀
+コマンドが正しいと思われる場合は、送信してターミナルで実行し、その後、`devcontainer.json`ファイルに保存します。その後、そのタスク（ビルド、テスト、または実行）のすべての後続の実行は、この構成されたコマンドをワンクリックで使用できます。このフローの良い点は、ビルド/テスト/実行コマンドを構成するための方法を覚える必要がなく、すべてのリポジトリが簡単に構成できるようにすることです。ボタンをクリックし、CWに提案と構成を任せるだけです 🚀
 
 <img src="https://github.com/user-attachments/assets/86555379-98cd-4314-bf5b-9d481dc6ff8d" width="600xp" />
 
-### VS Code: Planning & implementing
+### VS Code: プランニングと実装
 
-The CW extension for VS Code now allows you to generate, regenerate, revise, and implement the plan. Entirely within the editor 🔥 We still require you to **start** sessions from the CW web/mobile client, but once you have a task started, you can resume it within VS Code, and perform the most common iteration operations from there.
+VS Code用のCW拡張機能では、プランの生成、再生成、修正、実装をすべてエディタ内で行えるようになりました 🔥 まだCW Web/モバイルクライアントからセッションを開始する必要がありますが、タスクを開始したら、VS Code内で再開し、最も一般的な反復操作をそこから実行できます。
 
-> Note: Since this extension is early, we're still not quite ready to publish it to the marketplace. We'll likely do that in the next couple of weeks, but until them, simply hit us up in [Discord](https://gh.io/next-discord) to grab the latest VSIX 😎
+> 注：この拡張機能は初期段階であるため、まだマーケットプレイスに公開する準備が整っていません。おそらく数週間以内に公開する予定ですが、それまでは[Discord](https://gh.io/next-discord)で最新のVSIXを入手してください 😎
 
-### URL task context
+### URLタスクコンテキスト
 
-When a task references URLs, they will now be displayed in the `Additional context` section of the `Task` panel. This ensures that you're always aware of any external context being considered, and you can control if it needed (e.g. deleting a link that is confusing the plan/etc.).
+タスクがURLを参照する場合、それらは`タスク`パネルの`追加のコンテキスト`セクションに表示されるようになりました。これにより、考慮される外部コンテキストを常に把握し、必要に応じて制御できるようになります（例：プランを混乱させるリンクを削除する）。
 
 <img src="https://github.com/user-attachments/assets/ce02119f-35c4-49dc-bd3e-c4c831f41e01" width="400px" />
 
-> Note: By default, CW will spider URLs that point at GitHub issues, PRs, and repo files. However, if you want it to spider external web URLs, then you need to enable the `Utilize referenced generic web content in analysis` setting in the `Experiments` dialog (underneath your avatar menu).
+> 注：デフォルトでは、CWはGitHubの問題、PR、およびリポジトリファイルを指すURLをスパイダーします。ただし、外部のWeb URLをスパイダーする場合は、`実験`ダイアログ（アバターメニューの下）で`参照された一般的なWebコンテンツを分析に利用する`設定を有効にする必要があります。
 
-### Cancellation improvements
+### キャンセルの改善
 
-When a plan or implementation is in-progress, clicking the cancel button should now feel immediate. Additionally, if you cancel a file implementation mid-way, it will now revert the file back to its previous state (before editing it), as opposed to the previous behavior (which marked the file as `Cancelled`, and looked pretty weird). This is meaningful because when you perform an NL revision, CW automatically updates the plan and then implements it. And in order to make this UX feel delightful, we wanted to make sure you could cancel it at any time, and get the immediate/expected results.
+プランまたは実装が進行中の場合、キャンセルボタンをクリックすると、すぐに感じられるはずです。さらに、ファイルの実装を途中でキャンセルすると、ファイルが以前の状態（編集前）に戻るようになりました。以前の動作（ファイルが`キャンセル`としてマークされ、非常に奇妙に見える）とは異なります。これは、NL修正を実行すると、CWがプランを自動的に更新し、その後実装するためです。そして、このUXを楽しいものにするために、いつでもキャンセルでき、即座に予想される結果を得ることができるようにしたいと考えました。
 
-## 📅 13 September 2024
+## 📅 2024年9月13日
 
-- [VS Code session continuation](#vs-code-session-continuation)
-- [Incremental plan revision](#incremental-plan-revision)
-- [Improved task context](#improved-task-context)
-- [New specification UX](#new-specification-ux)
-- [Planned file placeholders](#planned-file-placeholders)
-- [Branch switching](#branch-switching)
-- [Whitespace changes](#whitespace-changes)
+- [VS Codeセッションの継続](#vs-code-session-continuation)
+- [段階的なプラン修正](#incremental-plan-revision)
+- [タスクコンテキストの改善](#improved-task-context)
+- [新しい仕様UX](#new-specification-ux)
+- [計画されたファイルプレースホルダー](#planned-file-placeholders)
+- [ブランチの切り替え](#branch-switching)
+- [空白の変更](#whitespace-changes)
 
-### VS Code session continuation
+### VS Codeセッションの継続
 
-We're introducing a new VS Code extension, which allows you to resume CW sessions within your editor. This allows you to start tasks from the CW web app/PWA, and after feeling good about the implementation, finish the task from the comfort of your fully-configured dev environment (e.g. using your favorite extensions, color theme, keybindings, etc.) 🤗
+新しいVS Code拡張機能を導入し、CWセッションをエディタ内で再開できるようにしました。これにより、CW Webアプリ/PWAからタスクを開始し、実装に満足したら、完全に構成された開発環境（例：お気に入りの拡張機能、カラーテーマ、キーバインディングなど）からタスクを完了できます 🤗
 
-Additionally, this extension allows you to debug and run arbitrary client/desktop projects (e.g. mobile apps, Chrome extensions, etc.), without needing to push/pull the session's code to an intermediate branch. This works because the VS Code extension supports bi-directional file syncing with the CW service/web client. And so as you make changes in one client, they're immediately available in the other. Collectively, this allows you to start and finish work from whichever client is most convenient 😎
+さらに、この拡張機能により、セッションのコードを中間ブランチにプッシュ/プルすることなく、任意のクライアント/デスクトッププロジェクト（例：モバイルアプリ、Chrome拡張機能など）をデバッグおよび実行できます。これは、VS Code拡張機能がCWサービス/Webクライアントとの双方向ファイル同期をサポートしているためです。そのため、1つのクライアントで変更を加えると、すぐに他のクライアントで利用できるようになります。これにより、最も便利なクライアントから作業を開始および完了できます 😎
 
 <img src="https://github.com/user-attachments/assets/5ae9c6fb-c4de-4f4e-b37a-83b93e373c74" width="700px" /><br />
      
-> Note: This extension is very early, and therefore, we're not publishing it to the VS Code marketplace just yet. So if you'd like to give it a try and send us feedback, hit us up on the [GitHub Next Discord server](https://gh.io/next-discord) and we'll send you the VSIX. 
+> 注：この拡張機能は非常に初期段階であるため、まだVS Codeマーケットプレイスに公開していません。試してみてフィードバックを送っていただける場合は、[GitHub Next Discordサーバー](https://gh.io/next-discord)でご連絡いただければ、VSIXをお送りします。
      
-### Incremental plan revision
+### 段階的なプラン修正
 
-When you perform a NL revision (using the pretty input bar at the bottom 💙), the plan is now updated incrementally, as opposed to being completely regenerated. This not only makes it faster to perform iterations, but it also makes it clearer what did and didn't change as a result of your request. To get a sense for how much nicer this feels, check out the following demo 😻
+NL修正を実行すると（下部の美しい入力バーを使用して 💙）、プランは完全に再生成されるのではなく、段階的に更新されます。これにより、反復を実行するのが速くなり、リクエストの結果として何が変わったか、何が変わらなかったかが明確になります。この感触がどれほど快適かを理解するために、次のデモをチェックしてください 😻
 
 <img src="https://github.com/user-attachments/assets/155e0f56-2707-44dc-98f4-9f704b119496" width="800px" />
 
-### Improved task context
+### タスクコンテキストの改善
 
-The `Task` panel now includes an `Additional context` footer, which is visible when you open an issue (that has comments), or when you're working on a project that includes repository-wide instructions (e.g. a `.github/copilot-workspace/CONTRIBUTING.md` file).
+`タスク`パネルには、問題（コメントがある場合）を開いたとき、またはリポジトリ全体の指示（例：`.github/copilot-workspace/CONTRIBUTING.md`ファイル）を含むプロジェクトで作業しているときに表示される`追加のコンテキスト`フッターが含まれています。
 
 <img src="https://github.com/user-attachments/assets/2a8494fd-adcb-48a6-9414-658b72e62ad2" width="500px" />
      
-This is helpful, because it provides visibility into the external context that will be taken into account when analyzing/planning your task. Additionally, it lets you better predict and control the outcome of your session. For example, if you see a `Repository instructions` context item, then you can click it and immediately see the contents of the file (e.g. so you can know what it defines). And if you're working on an issue, that has comments you don't want included (e.g. becuase they're just "conversational noise"), then you can click the trash can icon next to them, and remove them consideration.
+これは、タスクを分析/計画する際に考慮される外部コンテキストの可視性を提供するために役立ちます。さらに、セッションの結果をより予測しやすく、制御しやすくします。たとえば、`リポジトリの指示`コンテキストアイテムが表示された場合、それをクリックしてファイルの内容をすぐに確認できます（例：何が定義されているかを知るため）。そして、コメントが含まれている問題に取り組んでいる場合（例：単なる「会話のノイズ」であるため）、それらを考慮から削除するために、コメントの横にあるゴミ箱アイコンをクリックできます。
 
-### New specification UX
+### 新しい仕様UX
 
-In order to simplify the CW workflow, we're removing the `Specification` panel from the timeline, and introducing it as optional context to the `Task`. That way, if your task description already defines the sufficient details for your intent, then you can jump straight to planning. However, if you'd like CW to help expand/ellaborate/explore on your description, then you can ask it to add a spec, and then treat that as additional input to the plan 🚀 (along with any comments and repo-wide instructions).
+CWワークフローを簡素化するために、タイムラインから`仕様`パネルを削除し、`タスク`にオプションのコンテキストとして導入しています。これにより、タスクの説明が意図に対して十分な詳細を定義している場合、計画に直接進むことができます。ただし、CWに説明を拡張/詳述/探索するのを手伝ってもらいたい場合は、仕様を追加するように依頼し、それを計画の追加入力として扱うことができます 🚀（コメントやリポジトリ全体の指示とともに）。
 
-Since this is a noticeable change, we're initially introducing it as an opt-in setting, which you can enable via the `Move specficiation to task panel` option in the `Experiments` dialog. When enabled, you'll see an `Add specification` button in the `Additional context` section of the `Task` panel. When you click that, it will generate the spec as usual, and then display a `Specification` entry in the context section for the task. If you click this, it will open the spec as a file tab, which let's you edit, revise, or regenerate the content. But with a much nicer, and full-screen view ⭐
+これは目立つ変更であるため、最初はオプトイン設定として導入しています。`実験`ダイアログで`仕様をタスクパネルに移動`オプションを有効にすることで有効にできます。有効にすると、`タスク`パネルの`追加のコンテキスト`セクションに`仕様を追加`ボタンが表示されます。それをクリックすると、通常通り仕様が生成され、タスクのコンテキストセクションに`仕様`エントリが表示されます。これをクリックすると、ファイルタブとして仕様が開かれ、内容を編集、修正、再生成できます。しかし、はるかに快適でフルスクリーンのビューで ⭐
 
 <img src="https://github.com/user-attachments/assets/41b2864a-3b9f-45e0-a62e-071b3b9a6412" width="800px" />
 
-### Planned file placeholders
+### 計画されたファイルプレースホルダー
 
-After a plan has been generated, the `Files changed` section now immediately displays placeholders for all of the to-be-implemented files. This helps clarify the state you're in (i.e. there are files that are "planned", but not implemented), and creates a stronger association between the plan and the code.
+プランが生成された後、`変更されたファイル`セクションには、すぐに実装されるファイルのプレースホルダーが表示されます。これにより、現在の状態が明確になり（つまり、「計画された」ファイルがあるが、実装されていない）、プランとコードの間の関連性が強化されます。
 
-Additionally, the new `Planned` placeholders contain a delete icon, which let's you quickly delete a file from the plan. This is useful when using CW on mobile, and you want to delete a file from the implementation, without needing to switch back to the timeline view in order to do it.
+さらに、新しい`計画された`プレースホルダーには削除アイコンが含まれており、プランからファイルをすばやく削除できます。これは、モバイルでCWを使用している場合に便利で、実装からファイルを削除したいが、タイムラインビューに戻る必要がない場合に役立ちます。
 
 <img src="https://github.com/user-attachments/assets/d1aa515d-2a5e-4802-9279-aa0a8a670a7e" width="600px" />
 
-### Branch switching
+### ブランチの切り替え
 
-You can now easily start a CW session against a new branch, by clicking the branch name label in the header bar. This will bring up a dialog with the list of all active branches, and when selected, starts a new task which targets that branch.
+CWセッションを新しいブランチに対して簡単に開始できるようになりました。ヘッダーバーのブランチ名ラベルをクリックするだけです。これにより、すべてのアクティブなブランチのリストが表示され、選択すると、そのブランチをターゲットとする新しいタスクが開始されます。
 
 <img src="https://github.com/user-attachments/assets/9635f9f1-d860-4279-8f16-03f9c9b7d10d" width="600px" />
 
-### Whitespace changes
+### 空白の変更
 
-By default, whitespace changes are now visible within the file diff editors. This makes it easier to spot when Copilot (or you 😄) make any unintended changes to formatting, and can prevent any surprises after creating a PR. And if you'd like to turn this off (e.g. because a file has a lot of "whitespace churn"), you can click the settings icon in the `Files changed` section, and then select `Ignore whitespace changes`.
+デフォルトでは、空白の変更がファイル差分エディタ内で表示されるようになりました。これにより、Copilot（またはあなた 😄）がフォーマットに対して意図しない変更を加えた場合に簡単に見つけることができ、PRを作成した後の驚きを防ぐことができます。そして、これをオフにしたい場合（例：ファイルに多くの「空白の変動」がある場合）、`変更されたファイル`セクションの設定アイコンをクリックし、`空白の変更を無視する`を選択できます。
 
 <img src="https://github.com/user-attachments/assets/10d0d291-c17e-4240-adf6-b04ef552aa24" width="200px" />
 
-## 📅 30 August 2024
+## 📅 2024年8月30日
 
-### Features / Enhancements
+### 機能 / 強化
 
-* **Multi-file revision** - You can now select multiple files in the `Files changed` section, and perform an NL revision against them all. This makes it easier to make changes against multiple files, but in a very precise way (e.g. updating an implementation + associated tests, modifying a UI component and the places it's consumed).
+* **マルチファイル修正** - `変更されたファイル`セクションで複数のファイルを選択し、それらすべてに対してNL修正を実行できるようになりました。これにより、複数のファイルに対して変更を加えるのが簡単になりますが、非常に正確な方法で行うことができます（例：実装と関連するテストの更新、UIコンポーネントとその消費場所の変更）。
 
      <img src="https://github.com/user-attachments/assets/cd46d775-fe3a-4c14-9f8a-6e89a0be25b6" width="500px" />
 
-     To use it, simply click the target icon (in the file header) for all of the files you'd lke to revise. You can then type your intent, and when submitted, all selected files will begin updating their code based on your request.
+     使用するには、修正したいすべてのファイルのターゲットアイコン（ファイルヘッダー内）をクリックするだけです。その後、意図を入力し、送信すると、選択したすべてのファイルがリクエストに基づいてコードを更新し始めます。
 
-* **File tabs** - You can now open a file in a full-screen tab, in order to view its contents more easily. This compliments the existing "stacked diffs" view (which is useful for gaining a high-level overview of the changes), and allows you to simultaneously browse a file, while also reading the spec/plan and/or using the terminal (which wasn't possible using the file explorer modal).
+* **ファイルタブ** - ファイルの内容をより簡単に表示するために、ファイルをフルスクリーンタブで開くことができるようになりました。これは、変更の概要を把握するのに役立つ既存の「スタックドディフ」ビューを補完し、タスク/仕様/プランを読みながらファイルを同時に閲覧することができます（ファイルエクスプローラーモーダルでは不可能でした）。
 
    <img src="https://github.com/user-attachments/assets/be60dc55-79da-49f4-bda4-7aea2fc5b2b3" width="700px" />
 
-     To use it, simply click the arrow icon in a file diff's header, which will open that file in a new tab. Additionally, if you click a file link in the task/spec/plan panels, or select the `Open file` menu item for a file in the plan, then the selected file will now open in a tab (as opposed to the file explorer modal).
-  
+     使用するには、ファイル差分のヘッダーにある矢印アイコンをクリックするだけで、そのファイルが新しいタブで開かれます。さらに、タスク/仕様/プランパネル内のファイルリンクをクリックするか、プラン内のファイルの`ファイルを開く`メニュー項目を選択すると、選択したファイルがタブで開かれます（ファイルエクスプローラーモーダルではなく）。
+
      <img src="https://github.com/user-attachments/assets/0ec519b6-3859-46b7-a331-52123f549dae" width="500px" />
 
-     Even cooler: the list of open files, and the currently active tab, are persisted as part of your session. So when you resume a session later, or share a session with others, the workspace will be in exactly the same place that you left it 💙 Check out [this example](https://copilot-workspace.githubnext.com/lostintangent/gitdoc/issues/77?shareId=910861ee-876e-428d-b25a-c388fa8cea84) to see what we mean.
+     さらにクールなのは、開いているファイルのリストと現在アクティブなタブがセッションの一部として保持されることです。そのため、後でセッションを再開したり、他の人とセッションを共有したりすると、ワークスペースは正確にそのままの状態で表示されます 💙 [この例](https://copilot-workspace.githubnext.com/lostintangent/gitdoc/issues/77?shareId=910861ee-876e-428d-b25a-c388fa8cea84)をチェックしてみてください。
 
-* **URLs in repo-wide instructions** - You can now include URLs in a repo-wide instruction file (`.github/copilot-workspace/CONTRIBUTING.md`), and those URLs will be fetched and included in the context of the session. This makes it easy to augment your repo instructions with documentation, or other reference materials, that can help inform all tasks/issues performed against it.
+* **リポジトリ全体の指示にURLを含める** - リポジトリ全体の指示ファイル（`.github/copilot-workspace/CONTRIBUTING.md`）にURLを含めることができるようになり、それらのURLがセッションのコンテキストに含まれるようになりました。これにより、リポジトリの指示にドキュメントや他の参考資料を追加し、すべてのタスク/問題に対して情報を提供するのが簡単になります。
 
-* **Issue comments** - The `Issue` panel now displays how many comments the issue has (if any), and allows you to one-click navigate to them for more details. Copilot Workspace has always included issue comments as context for a session, but this change makes it easier to have visibility into when comments exist (since they may impact CW's understanding of the task).
+* **問題コメント** - `問題`パネルには、問題にコメントがある場合（ある場合）、そのコメント数が表示され、詳細を確認するためにワンクリックでナビゲートできるようになりました。Copilot Workspaceは常にセッションのコンテキストとして問題コメントを含めていましたが、この変更により、コメントが存在する場合に可視性が向上します（それらがCWのタスクの理解に影響を与える可能性があるため）。
 
    <img src="https://github.com/user-attachments/assets/29b27332-d30b-464f-9506-14af2684933d" width="500px" />
 
-* **PR improvements** - We made a handul of improvements to the flow of creating and updating pull requests from Copilot Workspace. In particular...
-  
-   * The option to create a draft PR is now properly disabled, when working against repos that don't support them
-   * When you update a PR, we no longer create a PR comment for the changes. We simply push a new commit with the specified (or generated) message
-   * If you manually edit a file, we now automatically switch to `Unpushed` changes mode, when your session is continuing an existing PR (that way the diff view focuses on only net-new changes)
+* **PRの改善** - Copilot Workspaceからプルリクエストを作成および更新するフローにいくつかの改善を加えました。特に...
 
-## 📅 23 August 2024
+   * ドラフトPRを作成するオプションは、対応していないリポジトリで正しく無効になります
+   * PRを更新する場合、PRコメントを作成せず、指定された（または生成された）メッセージで新しいコミットをプッシュします
+   * ファイルを手動で編集する場合、セッションが既存のPRを続行している場合、`未プッシュ`変更モードに自動的に切り替わります（これにより、差分ビューが新しい変更に焦点を当てます）
 
-### Features / Enhancements
+## 📅 2024年8月23日
 
-* **Repo-wide instructions** - You can now define instructions for Copilot Workspace, that will be automatically applied to every issue or task performed against a repository. This allows you to document policies, suggestions, and other important guidelines that may not be evident from the codebase, but should always be considered.
+### 機能 / 強化
 
-   For example, the following screenshot shows a `Proposed` spec that indicates the need to update the `CHANGELOG.md`, despite the issue not mentioning this requirement. This is because the [repo's  instructions](https://github.com/lostintangent/codeswing/blob/main/.github/copilot-workspace/CONTRIBUTING.md) define that all new features should include an entry in the changelog.
+* **リポジトリ全体の指示** - Copilot Workspaceの指示を定義し、それに対して実行されるすべての問題やタスクに自動的に適用されるようになりました。これにより、コードベースから明らかでないが、常に考慮されるべきポリシー、提案、およびその他の重要なガイドラインを文書化できます。
+
+   たとえば、次のスクリーンショットは、問題にこの要件が言及されていないにもかかわらず、`CHANGELOG.md`を更新する必要があることを示す`提案された`仕様を示しています。これは、[リポジトリの指示](https://github.com/lostintangent/codeswing/blob/main/.github/copilot-workspace/CONTRIBUTING.md)がすべての新機能に変更ログのエントリを含める必要があると定義しているためです。
 
    <img src="https://github.com/user-attachments/assets/83770b9e-3a3c-4ca3-88a2-04677ad5ed5f" width="600px" />
    
-   To start using this feature, simply create the following file in your repository: `.github/copilot-workspace/CONTRIBUTING.md`. As the name suggests, this file acts as contribution guidance for Copilot, and allows you to include any context you think will be helpful 🧠
+   この機能を使用するには、リポジトリに次のファイルを作成するだけです：`.github/copilot-workspace/CONTRIBUTING.md`。名前が示すように、このファイルはCopilotの貢献ガイダンスとして機能し、役立つと思われるコンテキストを含めることができます 🧠
 
-   By enabling teams to codify common or required guidelines, we hope to reduce mistakes, repetition, and learning barriers for all developers working across a project 🙌
+   一般的なまたは必要なガイドラインをコード化することで、プロジェクト全体で作業するすべての開発者にとって、ミス、繰り返し、および学習の障壁を減らすことを目指しています 🙌
 
-* **Terminal assist enhancements** - When you encounter an error in the terminal, and Copilot suggestions a change to the spec or plan, that suggestion will now be displayed as an editable diff of the spec/plan. This allows you to quickly understand what the suggestion is, and to easily tweak it as needed, before commiting the change.
+* **ターミナルアシストの強化** - ターミナルでエラーが発生し、Copilotが仕様またはプランの変更を提案する場合、その提案は仕様/プランの編集可能な差分として表示されるようになりました。これにより、提案の内容をすばやく理解し、必要に応じて調整し、変更をコミットする前に簡単に調整できます。
 
-  Additionally, if you encounter an error in the terminal that is trivial in nature, and therefore, doesn't justify an update to the spec/plan (e.g. lint errors, typos), then the terminal assistance will now suggest making direct edits to the neccessary files. For example, the following shows the suggestion after running a build, which failed due to a typo. Note that Copilot accurately recommends simply fixing the typo directly (as opposed to updating the plan):
+  さらに、ターミナルでエラーが発生し、それが些細なものであり、仕様/プランの更新を正当化しない場合（例：リンティングエラー、タイプミス）、ターミナルアシストは必要なファイルに直接編集を提案するようになりました。たとえば、次のスクリーンショットは、ビルドがタイプミスのために失敗した後の提案を示しています。Copilotは正確にタイプミスを修正することを提案しています（プランの更新ではなく）。
 
   <img src="https://github.com/user-attachments/assets/92c89572-987a-44c8-a8e9-10a2ee79ffd3" width="600px" />
 
-* **File explorer navigation** - The file explorer now supports filtering the tree view by a seach query. As you type, the file tree will be automatically filtered to the matching files, as well as the directories they're contained within. Additionally, directories are now annotated with a green or orange diff icon, to indicate when they contain an added or changed file (respectively). Collectively, these two enhancements should make it a lot easier to navigate codebases within CW (along with the existing support for go-to-definition in the editor).
+* **ファイルエクスプローラーのナビゲーション** - ファイルエクスプローラーは、検索クエリによってツリービューをフィルタリングすることをサポートするようになりました。入力すると、ファイルツリーが一致するファイルとそれらが含まれるディレクトリに自動的にフィルタリングされます。さらに、ディレクトリには追加または変更されたファイルを含む場合に緑色またはオレンジ色の差分アイコンが注釈されます。これらの2つの強化により、CW内でコードベースをナビゲートするのがはるかに簡単になります（既存のエディタ内の定義に移動のサポートとともに）。
 
   <img src="https://github.com/user-attachments/assets/b288601c-d244-4720-a0cf-247a7fcb4257" width="400px" />
 
-* **File search on mobile** - You can now easily search the contents of a file on mobile, by tapping the magnifying glass icon in the file's header bar. This has always been possible on desktop, by pressing `CMD+F` within the editor. But this new button provides the same navigation ability, regardless what device you're currently working from 📱
+* **モバイルでのファイル検索** - モバイルからファイルの内容を簡単に検索できるようになりました。ファイルのヘッダーバーにある虫眼鏡アイコンをタップするだけです。デスクトップでは、エディタ内で`CMD+F`を押すことで常に可能でしたが、この新しいボタンは現在作業しているデバイスに関係なく同じナビゲーション機能を提供します 📱
 
   <img src="https://github.com/user-attachments/assets/127da4c4-68ba-4301-b440-9f15ef061110" width="300px" />
 
-* **Sticky toolbar** - The `Files changed` toolbar is now "sticky", which means that it stays visible as you scroll through the implemented files. This ensures that you can expand/collapse the timeline, discard the implementation, or toggle between split/unified diff view, without needing to scroll to the top of the files list to do it (which was obviously pretty annoying!).
+* **スティッキーツールバー** - `変更されたファイル`ツールバーは「スティッキー」になり、実装されたファイルをスクロールしても表示されたままになります。これにより、タイムラインを展開/折りたたんだり、実装を破棄したり、分割/統一差分ビューを切り替えたりすることができ、ファイルリストの上部にスクロールする必要がなくなります（これは明らかに非常に煩わしいものでした！）。
 
    <img src="https://github.com/user-attachments/assets/2b753dff-ee56-43c1-a165-89a5fb5e81ca" width="700px" />
 
-## 📅 16 August 2024
+## 📅 2024年8月16日
 
-### Features / Enhancements
+### 機能 / 強化
 
-* **File regeneration** - The file toolbar now includes a regenerate button, which allows you to ask CW to "try again" with implementing it. This can be useful if you've revised the plan through NL, and noticed that CW may have missed a detail. Or, if you'd like to ask it to get a bit more "creative" with its interpretation of your intent 🎨
+* **ファイルの再生成** - ファイルツールバーには再生成ボタンが追加され、実装を「再試行」するようにCWに依頼できます。これにより、プランをNLで修正し、CWが詳細を見逃した可能性があることに気付いた場合に役立ちます。また、意図の解釈に対してもう少し「創造的」になるように依頼することもできます 🎨
 
-  The `Specification` and `Plan` panels already had a regenerate button, and so this change ensures that in addition to editing/revising/undoing, you can regenerate every piece of content within the workspace.
+  `仕様`および`プラン`パネルにはすでに再生成ボタンがありました。そのため、この変更により、編集/修正/元に戻すに加えて、ワークスペース内のすべてのコンテンツを再生成できるようになります。
 
   <img src="https://github.com/user-attachments/assets/c3470d4c-cfe5-4176-b116-12f8a83fdb18" width="500px" />
 
-* **Desktop notification** - You can now opt-into getting a system notification whenever a CW session is finished implementing (and the page isn't currently visible). This is useful if you're implementing a large plan, and want to switch to another task while it's running. But then know as soon as it's ready for your review 🏃
+* **デスクトップ通知** - 実装が完了したときにシステム通知を受け取るオプションが追加されました（ページが現在表示されていない場合）。これは、大規模なプランを実装している場合に役立ち、実行中に別のタスクに切り替えたい場合に便利です。しかし、準備が整ったらすぐに通知を受け取ることができます 🏃
 
    <img src="https://github.com/user-attachments/assets/7d285c40-16b0-40fd-a009-dbd72012ee76" width="300px" />
    
-   To turn this on, simply click your avatar in the upper-right, select `Settings`, and then check the `Show notification after implementing` option. Your browser will ask for permission for CW to show notifications, and so make sure to approve that 👍
+   これを有効にするには、右上のアバターをクリックし、`設定`を選択し、`実装後に通知を表示`オプションをチェックします。ブラウザはCWが通知を表示する許可を求めるため、承認してください 👍
 
    <img src="https://github.com/user-attachments/assets/898162a8-5f32-426e-8080-8444d558e80f" width="300px" />
 
-* **Improved code search** - As a follow-up to supporting web URLs in the task definition, we've introduced an improvement to the way we perform code search, when analyzing the details of your issues/tasks. Depending on the codebase/scenario, this allows us to better identify the right set of files to edit (across the entire repo). And ultimately, can improve the quality/success-rate of CW.
+* **コード検索の改善** - タスク定義でWeb URLのサポートを導入した後、問題/タスクの詳細を分析する際のコード検索の方法を改善しました。コードベース/シナリオに応じて、編集するファイルのセットをより適切に特定できるようになります。最終的には、CWの品質/成功率を向上させることができます。
 
-   We're still refining this enhancement. And so for now, you need to opt-into it by clicking the beaker icon in the header bar, and checking the `Use code search during task analysis` setting. If you get a chance to turn this on, and use CW for a while, then we'd [love to hear](https://gh.io/next-discord) if you notice any improvements 💙
+   この強化をまだ調整中です。そのため、現在は`実験`ダイアログ（アバターメニューの下）で`タスク分析中にコード検索を使用する`設定をチェックすることでオプトインする必要があります。これをオンにしてしばらくCWを使用する機会があれば、改善が見られるかどうかを[お知らせ](https://gh.io/next-discord)いただければ幸いです 💙
   
    <img src="https://github.com/user-attachments/assets/ee6ddcb8-4f4c-4892-b76b-ae8ccfa783d8" width="400px" />
 
-* **Task authoring** - The `Task`/`Issue` panels now match the authoring experience for other markdown editors across GitHub (e.g. issue descriptions, PR comments, etc.). In particular, instead of requiring you to explicitly put the task into "edit mode", or requiring you to explicitly save it in order to preview the content, the panels now provide two tabs that you can seamlessly switch between: `Write` and `Preview`.
-  
+* **タスクの作成** - `タスク`/`問題`パネルは、GitHubの他のマークダウンエディタ（例：問題の説明、PRコメントなど）と同じ作成エクスペリエンスに一致するようになりました。特に、タスクを明示的に「編集モード」にする必要がある、またはコンテンツをプレビューするために明示的に保存する必要があるのではなく、パネルにはシームレスに切り替えられる2つのタブが提供されます：`書く`と`プレビュー`。
+
    <img src="https://github.com/user-attachments/assets/03ad1ede-22d7-4358-addf-9198101b8909" width="500px" />
 
-* **Issue/PR status** - The workspace header now indicates the status of the issue and/or PR associated with a session, by coloring the issue and PR icons based on whether they're open (green) or closed/merged (purple). This can make it easier to spot if you accidentally opened an issue/PR that has already been completed. At which point, you can work on something else! 🙌
+* **問題/PRのステータス** - ワークスペースヘッダーには、セッションに関連する問題および/またはPRのステータスが表示され、アイコンの色がそれぞれの状態に基づいて変わります：オープン（緑）、完了/マージ（紫）、クローズ（赤）、計画されていないとしてクローズ（灰色）。これにより、すでに完了した問題/PRを誤って開いた場合にすぐに気付くことができます。その場合、他の作業に取り組むことができます！ 🙌
 
    <img src="https://github.com/user-attachments/assets/5cbc5939-7ac3-48f8-bd50-ba0fc2d169fc" width="600px" />
 
 ## 📅 9 August 2024
 
-### External context
+### 外部コンテキスト
 
-When defining a task/issue, you can now include links to external references, and Copilot Workspace will use them as additional context when generating the spec, plan, and code. This makes it a _lot_ easier to express your intent, without having to copy & paste and/or summarize existing content (which can be non-trivial!). In particular, CW supports referencing the following types of assets:
+タスク/問題を定義する際に、外部参照へのリンクを含めることができるようになりました。Copilot Workspace はそれらを追加のコンテキストとして使用し、仕様、プラン、およびコードを生成します。これにより、既存のコンテンツをコピー＆ペーストしたり、要約したりする必要がなく、意図を表現するのが _非常に_ 簡単になります。特に、CW は次の種類のアセットを参照することをサポートしています：
 
-   1. *Issues / Pull Requests* - If you reference an issue/PR by number (e.g. `#43`) or URL, then CW will take into account it's description and comments. Additionally, if you link to a specific issue/PR comment, then CW will focus it's attention on just that one. This allows you to use an existing discussion/feedback as context, or work on "umbrella issues" that aggregate a set of sub-tasks together. 
- 
-   1. *Repository files* - If you reference the URL of a file in a GitHub repository (that you have access to), then CW will include that in its set of prioritized references. Additionally, you can include a link to a specific line ([example](https://github.com/lostintangent/codeswing/blob/b40dbeb3dbf5f133121605c751e1fa7c7a6f67ec/src/extension.ts#L16)) or range of lines in a file ([example](https://github.com/lostintangent/codeswing/blob/b40dbeb3dbf5f133121605c751e1fa7c7a6f67ec/src/preview/layoutManager.ts#L53-L62)), in order to focus CW on that exact code. This allows you to use existing code as a source of inspiration (e.g. "Implement an auth provider just like the one in <URL>"), and help steer Copilot in a more precise direction.
- 
-   1. *Arbitrary web URLs* - If you reference a public web URL, then CW will fetch and use a summary of its content. Additionally, if you link to a specific fragment of a page (e.g. `#link-to-a-specific-heading`), then CW will extract and focus on just that section. This allows you to reference documentation/blog posts/tweets/etc. that can provide more recent and/or specific instructions of what you're trying to accomplish 💪
+1. **Issues / Pull Requests** - 番号（例：`#43`）または URL で issue/PR を参照すると、CW はその説明とコメントを考慮します。さらに、特定の issue/PR コメントへのリンクを含めると、CW はそのコメントに焦点を当てます。これにより、既存のディスカッション/フィードバックをコンテキストとして使用したり、一連のサブタスクをまとめた「アンブレラ問題」に取り組むことができます。
 
-### NL revision
+1. **リポジトリファイル** - アクセス可能な GitHub リポジトリ内のファイルの URL を参照すると、CW はそれを優先参照セットに含めます。さらに、特定の行（[例](https://github.com/lostintangent/codeswing/blob/b40dbeb3dbf5f133121605c751e1fa7c7a6f67ec/src/extension.ts#L16)）またはファイル内の行範囲（[例](https://github.com/lostintangent/codeswing/blob/b40dbeb3dbf5f133121605c751e1fa7c7a6f67ec/src/preview/layoutManager.ts#L53-L62)）へのリンクを含めることで、CW をその正確なコードに集中させることができます。これにより、既存のコードをインスピレーションの源として使用し（例：「<URL> のような認証プロバイダーを実装する」）、Copilot をより正確な方向に導くことができます。
 
-After you implement a plan, Copilot Workspace now displays a natural language revision bar at the bottom of the `Files changed` section. This allows you to update the plan in complex and arbitrary ways, while remaining focused on reviewing the changes.
+1. **任意の Web URL** - 公開された Web URL を参照すると、CW はその内容の要約を取得して使用します。さらに、ページの特定のフラグメント（例：`#link-to-a-specific-heading`）へのリンクを含めると、CW はそのセクションに焦点を当てます。これにより、ドキュメント/ブログ投稿/ツイートなどを参照し、達成しようとしていることの最新かつ具体的な指示を提供できます 💪
+
+### NL リビジョン
+
+プランを実装した後、Copilot Workspace は `変更されたファイル` セクションの下部に自然言語リビジョンバーを表示するようになりました。これにより、変更をレビューしながら、複雑で任意の方法でプランを更新できます。
 
 <img src="https://github.com/user-attachments/assets/1f20f837-548f-4a33-9ec5-e07002c67f65" width="400px" />
 
-Additionally, if you'd like to revise a specific file, you can click the bullseye icon in the file's header, which will put the NL revision bar into "scoped file" mode.
+さらに、特定のファイルを修正したい場合は、ファイルのヘッダーにあるブルズアイアイコンをクリックすると、NL リビジョンバーが「スコープファイル」モードに切り替わります。
 
 <img src="https://github.com/user-attachments/assets/74e393da-8dcf-4c17-809e-4306a3676178" width="400px" />
 
-Both of these changes are part of a larger theme to elevate/simplify the ability to iterate through natural language. And you can expect to see more improvements in this space in the coming weeks 👍 
+これらの変更は、自然言語を通じて反復する能力を高め、簡素化するという大きなテーマの一部です。そして、今後数週間でこの分野でさらに多くの改善が期待できます 👍
   
-### Terminal repair improvements
+### ターミナル修復の改善
 
-CW's terminal assistance can now perform updates to the plan, when you encounter an error that requires a code change. This can be helpful when a build/test/lint action fails, and you want Copilot to suggest a fix. While this capability is still early (and evolving!), we're excited to make steady progress towards a better workflow for automatically addressing errors.
+CW のターミナルアシスタンスは、コード変更が必要なエラーに遭遇した場合に、プランの更新を実行できるようになりました。これは、ビルド / テスト / リントアクションが失敗し、Copilot に修正を提案してもらいたい場合に役立ちます。この機能はまだ初期段階（そして進化中！）ですが、エラーを自動的に解決するためのより良いワークフローに向けて着実に進歩していることを嬉しく思います。
 
-### Exit path improvements
+### 終了パスの改善
 
-When you create a PR/branch/repo, CW no longer generates a commit description by default. That way you can decide if you'd like Copilot to write a message for you, or if you'd prefer to craft your own 💙
+PR / ブランチ / リポジトリを作成する際、CW はデフォルトでコミットの説明を生成しなくなりました。これにより、Copilot にメッセージを書いてもらうか、自分でメッセージを作成するかを選択できます 💙
 
-Additionally, when you create a PR for a session that's associated with an issue, the PR dialog now includes a checkbox that allows you to indicate whether the code changes fix the issue or not. When checked, CW will insert a `Fixes #<number` into the issue description. Otherwise, it will insert a `Related to #<number>` (which is what it did previously).
+さらに、問題に関連付けられたセッションの PR を作成する際、PR ダイアログにはコード変更が問題を修正するかどうかを示すチェックボックスが追加されました。チェックされると、CW は問題の説明に `Fixes #<number>` を挿入します。そうでない場合、以前と同様に `Related to #<number>` を挿入します。
 
 <img src="https://github.com/user-attachments/assets/a5b9c1e6-6f32-4b87-8de0-16336030f68f" width="400px" />
 
-### SVG preview
+### SVG プレビュー
 
-When you implement or open a `*.svg` file, you can now preview a rendered version of its contents, by clicking the eyeball icon in its header. We previously introduced preview support for Markdown, and plan to continue adding support for other file formats in the coming weeks (HTML? 🤔)
+`*.svg` ファイルを実装または開くと、その内容のレンダリングされたバージョンをプレビューできるようになりました。ヘッダーの目のアイコンをクリックするだけです。以前に Markdown のプレビューサポートを導入しましたが、今後数週間で他のファイル形式（HTML？🤔）のサポートも追加する予定です。
 
 <img src="https://github.com/user-attachments/assets/d8229ba0-c373-4ff6-875a-677b0b5414d1" width="500px" />
 
-### Sessions + Settings
+### セッション + 設定
 
-The user menu (that you get to by clicking your avatar in the upper-right) now includes two new items:
+ユーザーメニュー（右上のアバターをクリックしてアクセス）に 2 つの新しい項目が追加されました：
 
-   * `Your sessions` - This navigates you to the [CW dashboard](https://copilot-workspace.githubnext.com), so you can see your recent/bookmarked/completed sessions. We got feedback that folks weren't discovering the dashboard, and so we wanted to make this a bit more discoverable (since it's super useful!)
+   * `Your sessions` - これをクリックすると [CW ダッシュボード](https://copilot-workspace.githubnext.com) に移動し、最近のセッションやブックマークしたセッション、完了したセッションを確認できます。ダッシュボードが発見されにくいというフィードバックを受けたため、これを少し発見しやすくしました（とても便利なので！）
 
       <img src="https://github.com/user-attachments/assets/28992503-8f08-4fde-bb7c-f840fe0471f7" width="200px" />
 
-   * `Settings` - This opens a dialog with some optional user settings that can be enabled/disabled. To start, this dialog includes the existing options to automatically start a Codespace on session start/implement. But we also introduced a new setting called `Collapse timeline on implement`, which as the name implies, allows you to automatically collapse the left-side panel after implementing.
+   * `Settings` - これをクリックすると、いくつかのオプションのユーザー設定を有効/無効にできるダイアログが開きます。まず、このダイアログには、セッション開始/実装時に自動的に Codespace を開始する既存のオプションが含まれています。しかし、新しい設定 `Collapse timeline on implement` も導入しました。この設定は名前が示す通り、実装後に左側のパネルを自動的に折りたたむことができます。
    
-     When paired with the new NL revision bar, this setting allows you to enter a sort of "zen mode" for Copilot Workspace, where once you're happy with the plan, you can focus your entire screen on reviewing and revising the code 🚀
+     新しい NL リビジョンバーと組み合わせることで、この設定を使用すると、Copilot Workspace の「禅モード」に入ることができます。プランに満足したら、画面全体をコードのレビューと修正に集中させることができます 🚀
  
      <img src="https://github.com/user-attachments/assets/2a22900a-2950-4311-a072-7c07ce4fbfbc" width="400px" />
 
-### Renamed files
+### ファイル名の変更
 
-Renamed files are now collapsed by default in the `Files changed` section. This makes it easier to focus your attention on new and changed code, while simply seeing the presence of renamed or deleted files. If a file is both renamed + changed, then it won't be collapsed post-implement, so you can properly review its changes.
+`変更されたファイル` セクションでは、名前が変更されたファイルがデフォルトで折りたたまれるようになりました。これにより、新しく変更されたコードに集中しやすくなり、名前が変更されたファイルや削除されたファイルの存在を簡単に確認できます。ファイルが名前変更され、かつ変更された場合は、実装後に折りたたまれないため、変更内容を適切にレビューできます。
 
 <img src="https://github.com/user-attachments/assets/fd3cd39d-6466-4185-8693-aad8a4b9c1d1" width="400px" />
 
-### Dark mode editor
+### ダークモードエディタ
 
-The code editor is now properly themed for users with a dark mode system setting. The editor's background was previously a medium greyish color, and now it's black 🖤  
+コードエディタは、ダークモードのシステム設定を持つユーザー向けに適切にテーマ設定されるようになりました。エディタの背景は以前は中間の灰色でしたが、現在は黒になっています 🖤
 
-### Usage quota increase
+### 使用量のクォータ増加
 
-Due to popular demand, we've increased the daily usage quota again. That way, the folks that are using CW for many tasks every day, can keep sending us amazing feedback 🙏
+多くのリクエストに応じて、1日の使用量のクォータを再度増加させました。これにより、毎日多くのタスクで CW を使用している方々が、引き続き素晴らしいフィードバックを送っていただけるようになります 🙏
 
-## 📅 2 August 2024
+## 📅 2024年8月2日
 
-### Features / Enhancements
+### 機能 / 強化
 
-* **Terminal error assistance** - When you run a command in the terminal, and it fails (!), the lightbulb button will now turn red. This indicates that Copilot Workspace is aware of the error, and is ready to help you fix it 💪
+* **ターミナルエラーアシスト** - ターミナルでコマンドを実行し、失敗した場合（！）、電球ボタンが赤くなります。これは、Copilot Workspaceがエラーを認識しており、それを修正するのを手伝う準備ができていることを示しています 💪
 
    <img src="https://github.com/user-attachments/assets/e7f6b848-689c-42aa-aefa-e22b5c189ddf" width="600px" /><br />
   
-   If you click on the lightbulb in this state, the terminal assistance UI will pop-up, and automatically generate a suggestion for how to address the issue. If the suggestion looks right, you can one-click accept it. Otherwise, you can refine the help instructions, or tweak the generated terminal command, to steer Copilot in the right direction.
+   この状態で電球をクリックすると、ターミナルアシストUIがポップアップし、問題を解決するための提案が自動的に生成されます。提案が正しいと思われる場合は、ワンクリックで受け入れることができます。それ以外の場合は、ヘルプ指示を修正したり、生成されたターミナルコマンドを調整して、Copilotを正しい方向に導くことができます。
 
    <img src="https://github.com/user-attachments/assets/cd439128-b1d7-4288-aa85-d57baedcc341" width="600px" />
 
-   This experience can help you perform project and environment setup, correct your usage of CLI tools (seriously, who can remember all these args?), and even suggest modifications to the spec/plan. Over the coming weeks, we'll continue refining this capability even further, to ensure that debugging and repairing build/test/etc. errors is as simple and delightful as possible 🙌
+   このエクスペリエンスは、プロジェクトと環境のセットアップを実行し、CLIツールの使用を修正するのに役立ちます（本当に、これらの引数をすべて覚えている人はいますか？）、および仕様/プランの変更を提案することもできます。今後数週間で、この機能をさらに洗練し、ビルド/テスト/その他のエラーのデバッグと修正ができるだけシンプルで楽しいものになるようにします 🙌
   
-* **Recent repositories** - When you visit the [Copilot Workspace dashboard](https://copilot.workspace.github.com), the `Recent` tab now displays a section at the top called `Recent repositories`. This provides a list of your five most recently-active repos, and allows you to start a new task for them in a single click. When paired with the CW PWA, this makes it simple to begin/resume work using Copilot Workspace, without needing to create an issue, or search for the desired repo 🚀
+* **最近のリポジトリ** - [Copilot Workspaceダッシュボード](https://copilot.workspace.github.com)にアクセスすると、`最近`タブの上部に`最近のリポジトリ`セクションが表示されるようになりました。これにより、最近アクティブなリポジトリのリストが表示され、ワンクリックで新しいタスクを開始できます。CW PWAと組み合わせることで、問題を作成せずに、または目的のリポジトリを検索せずに、Copilot Workspaceを使用して作業を開始/再開するのが簡単になります 🚀
 
   <img src="https://github.com/user-attachments/assets/2d633362-b6d5-45ab-96d8-a816ec4a6e19" width="700px" />
 
-* **Implementation panel re-design** - The `Implementation` panel has been removed from the timeline, in favor of three UX enhancements, which _dramatically_ improve the usability of CW on mobile and in fullscreen-mode:
+* **実装パネルの再設計** - `実装`パネルをタイムラインから削除し、モバイルおよびフルスクリーンモードでのCWの使いやすさを**劇的に**向上させる3つのUX強化を導入しました：
 
-   1. The "exith path" button has been moved to the upper-right corner of the workspace toolbar. This ensures that it's clear how to complete a task, regardless what state your workspace is in 👍
+   1. 「終了パス」ボタンがワークスペースツールバーの右上隅に移動しました。これにより、ワークスペースの状態に関係なく、タスクを完了する方法が明確になります 👍
 
       <img src="https://github.com/user-attachments/assets/efe72ff9-b18d-4e5a-a94d-3020e61e395e" width="400px" />
 
-   2. While an implementation is in-progress, the status indicator and stop button are now displayed at the bottom of the `Files changed` section. This ensures you can see/control the implementation at any-time, as opposed to just when you have the timeline opened + scrolled to the bottom.
+   2. 実装が進行中の場合、ステータスインジケーターと停止ボタンが`変更されたファイル`セクションの下部に表示されるようになりました。これにより、タイムラインを開いてスクロールする必要がなく、いつでも実装を確認/制御できます。
  
       <img src="https://github.com/user-attachments/assets/417e1f91-7bb7-43d3-bbdf-f57122d3d5bb" width="400px" />
 
-   3. The "discard all files" button has been moved to the left of the `Split | Unified` toggle in the `Files changed` section. That way, if you're reviewing code, and decide you want to try another approach, you can clear the session directly from there.
+   3. 「すべてのファイルを破棄」ボタンが`分割 | 統一`トグルの左側に移動しました。これにより、コードをレビューしているときに、別のアプローチを試したい場合、セッションを直接クリアできます。
 
       <img src="https://github.com/user-attachments/assets/2e69bf1d-dff3-4475-b0d1-d256010e8fe0" width="600px" />
 
-* **List organization** - The spec and plan can now be fully re-organized, by clicking on the `...` menu for any sub-step, and choosing `Move item up` or `Move item down`. This won't impact the code generation in any way, and so you can feel free to order things however feels best/most intuitive to you. In particular, this can be useful when sharing a session with others, and you want to curate the spec/plan a bit for improved readability.
+* **リストの整理** - 仕様とプランは完全に再編成できるようになり、サブステップの`...`メニューをクリックして`アイテムを上に移動`または`アイテムを下に移動`を選択できます。これにより、コード生成には影響しないため、最も直感的な方法で自由に順序を変更できます。特に、他の人とセッションを共有する場合に、仕様/プランをより読みやすくするために整理するのに役立ちます。
 
     <img src="https://github.com/user-attachments/assets/71ad72b2-5c1a-482c-800e-d6e4420c2c16" width="400px" />
 
-* **Switching branches** - If you're working on a CW session, and realize you'd like to build upon a different branch, you can now click the `New Session` button, and select `Select a branch`. This will display a dialog with a list of the current repo's branches, and let you start a new ad-hoc task for the specified branch.
+* **ブランチの切り替え** - CWセッションで作業していて、別のブランチに基づいて作業したい場合、`新しいセッション`ボタンをクリックし、`ブランチを選択`を選択できます。これにより、現在のリポジトリのブランチのリストが表示され、指定されたブランチの新しいアドホックタスクを開始できます。
 
    <img src="https://github.com/user-attachments/assets/ec01d52b-526a-400c-a200-1ef4946fff00" width="400px" />
 
-* **Terminal status** - The terminal icon (in the workspace toolbar) now displays a green dot whenever the terminal is connected. Now that CW auto-start's the terminal (for repos that don't include a `devcontainer.json`), this allows you to quickly see when the terminal is ready, so you can jump into it and start building/running code.
+* **ターミナルステータス** - ターミナルアイコン（ワークスペースツールバー内）は、ターミナルが接続されているときに緑色のドットを表示するようになりました。CWがターミナルを自動起動するようになったため（`devcontainer.json`ファイルを含まないリポジトリの場合）、ターミナルが準備が整ったときにすぐに確認でき、コードのビルド/実行を開始できます。
 
    <img src="https://github.com/user-attachments/assets/ccffd7a9-ba10-4da7-a025-1df765c334fb" width="400px" />
   
-* **Experiments** - We periodically ship new features that are off by-default, since they're not quite ready for prime-time usage. And to make it easier to discover these features, and know when you have them on, the workspace toolbar now displays a beaker icon, that indicates how many experiments you have enabled.
+* **実験** - 定期的に新しい機能をリリースしますが、それらはまだ本格的な使用には準備が整っていないため、デフォルトではオフになっています。そして、これらの機能を発見しやすくし、オンにしていることを確認するために、ワークスペースツールバーにビーカーアイコンが表示され、いくつの実験が有効になっているかを示します。
 
    <img src="https://github.com/user-attachments/assets/d9fc7b50-d736-4d01-b3e1-5df5ce70b964" width="200px" />
 
-   When clicked, this button brings up the `Experiments` dialog, which let's you try out our cutting-edge features (and then hopefully send us feedback!) 🔥
+   これをクリックすると、`実験`ダイアログが表示され、最先端の機能を試すことができます（そして、フィードバックを送ってください！） 🔥
 
    <img src="https://github.com/user-attachments/assets/00af1eb1-dddf-4f9a-b82f-2a2097b2e649" width="400px" />
 
-* **Docs/changelog** - To make it easier to access the CW docs and changelog (the thing you're currently reading!), the user menu (in the workspace toolbar) now includes links for the `User manual` and `What's new?`. That way you can keep up with the fun, and see how we're addressing your feedback. But without needing to remember/search for random URLs in our [GitHub Next Discord](https://gh.io/next-discord) 🤗
+* **ドキュメント/変更ログ** - CWドキュメントと変更ログ（現在読んでいるもの！）にアクセスしやすくするために、ユーザーメニュー（ワークスペースツールバー内）に`ユーザーマニュアル`と`新着情報？`のリンクが追加されました。これにより、楽しみを追跡し、フィードバックにどのように対応しているかを確認できます。しかし、[GitHub Next Discord](https://gh.io/next-discord)のランダムなURLを覚えたり検索したりする必要はありません 🤗
 
    <img src="https://github.com/user-attachments/assets/20de5b4e-346e-43a1-b5aa-fc43e7c5ee52" width="200px" />
 
-## 📅 26 July 2024
+## 📅 2024年7月26日
 
-### Features / Enhancements
+### 機能 / 強化
 
-* [Session continuation](#session-continuation)
-* [Proceed to plan (task->plan)](#proceed-to-plan-task-plan)
-* [Optimized file viewers](#optimized-file-viewers)
-* [Spec/plan/code improvements](#specplancode-improvements)
+* [セッションの継続](#session-continuation)
+* [プランに進む（タスク->プラン）](#proceed-to-plan-task-plan)
+* [最適化されたファイルビューア](#optimized-file-viewers)
+* [仕様/プラン/コードの改善](#specplancode-improvements)
   
-### Session continuation
+### セッションの継続
 
-When you create a repository/PR/branch from Copilot Workspace, we now provide two options for your next step:
+Copilot Workspaceからリポジトリ/PR/ブランチを作成すると、次のステップのオプションが2つ提供されます：
 
-   * Starting an entirely new session (for the current repo/PR/branch)
-   * Continuing to iterate on the current session (<ins>this is the new part!</ins> 🙌)   
+   * 新しいセッションを開始する（現在のリポジトリ/PR/ブランチ用）
+   * 現在のセッションを続行する（<ins>これが新しい部分です！</ins> 🙌）   
 
    <img width="500px" src="https://github.com/user-attachments/assets/0d12972a-0b1d-4193-a930-535f88191d66"/><br />
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Just created a PR? Let's stay in the flow!_
