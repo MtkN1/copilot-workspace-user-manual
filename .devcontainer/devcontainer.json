@@ -1,5 +1,6 @@
 {
     "tasks": {
-        "test": "npx textlint --fix ."
+        "build": "npm install",
+        "test": "npm exec textlint --fix ."
     }
 }
