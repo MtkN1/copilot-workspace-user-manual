@@ -1,52 +1,50 @@
-## Troubleshooting
+## トラブルシューティング
 
-### Introduction
+### はじめに
 
-Welcome to the troubleshooting guide for Copilot Workspace! In this section, we will provide you with helpful tips and solutions to common issues you may encounter while working with organizations and private repositories in Copilot Workspace. Our goal is to ensure that you have a smooth and productive experience. Let's dive in!
+Copilot Workspace のトラブルシューティングガイドへようこそ！このセクションでは、Copilot Workspace で組織やプライベートリポジトリを使用する際に遭遇する可能性のある一般的な問題に対する役立つヒントと解決策を提供します。私たちの目標は、スムーズで生産的な体験を提供することです。それでは始めましょう！
 
-### Troubleshooting access
+### アクセスのトラブルシューティング
 
-If you are seeing an "Access Denied" error when trying Copilot Workspace for the first time, here are a few steps that may help:
+初めて Copilot Workspace を試す際に「アクセス拒否」エラーが表示される場合、以下の手順が役立つかもしれません：
 
-- Make sure you have an active, paid copilot license. Trial licenses only allow access once the subscription is upgraded to a paid plan.
-- At this time, [enterprise-managed users (EMUs)](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users) aren’t supported, but support for EMUs is on the way.
-- Ensure there are no [trade restrictions](https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls) on your account.
-- Verify that any organization with Copilot enabled has both the **Copilot Preview Features** setting and the **Copilot Extensions setting** turned ON. If necessary, reach out to your organization’s administrator for assistance. For more details on configuring organization settings for Copilot, please refer to the [documentation](https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-policies-for-copilot-in-your-organization).
+- 有効な有料の Copilot ライセンスを持っていることを確認してください。トライアルライセンスは、サブスクリプションが有料プランにアップグレードされるまでアクセスを許可しません。
+- 現時点では、[エンタープライズ管理ユーザー（EMUs）](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users)はサポートされていませんが、EMUs のサポートは進行中です。
+- アカウントに[貿易制限](https://docs.github.com/en/site-policy/other-site-policies/github-and-trade-controls)がないことを確認してください。
+- Copilot が有効になっている組織が、**Copilot プレビュー機能**設定と**Copilot 拡張機能設定**の両方をオンにしていることを確認してください。必要に応じて、組織の管理者に連絡して支援を求めてください。Copilot の組織設定の詳細については、[ドキュメント](https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-policies-for-copilot-in-your-organization)を参照してください。
 
-### Troubleshooting Organizations
+### 組織のトラブルシューティング
 
-When working with organizations in Copilot Workspace, you may encounter some common issues. Here are some troubleshooting tips to help you resolve them:
+Copilot Workspace で組織を使用する際に、いくつかの一般的な問題に遭遇することがあります。以下のトラブルシューティングのヒントを参考にして解決してください：
 
-- **You are accessing an org that must approve OAuth apps**. As part of the login you authorize the OAuth app into various orgs, depending on the org policies with regard to OAuth apps. You can request access and the organization can approve the OAuth app. If you need to re-request access or revoke any access at all you can [control the status of your connection with the OAuth app](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f).
+- **OAuth アプリの承認が必要な組織にアクセスしています**。ログインの一環として、さまざまな組織に OAuth アプリを承認します。組織のポリシーに応じて、OAuth アプリへのアクセスをリクエストし、組織が承認することができます。再度アクセスをリクエストする必要がある場合や、すべてのアクセスを取り消す必要がある場合は、[OAuth アプリとの接続の状態を制御](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f)できます。
 
-- **Although you appear to have the correct authorization credentials, the `github` organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited.** This is because an org restricts OAuth apps. Some of authorization attempts for orgs may fail if the org doesn't allow OAuth apps at all. This can affect even access to public repositories in organizations that deny access to OAuth apps.
+- **正しい認証資格情報を持っているように見えますが、`github`組織は OAuth アプリのアクセス制限を有効にしており、サードパーティへのデータアクセスが制限されています**。これは、組織が OAuth アプリを制限しているためです。組織が OAuth アプリをまったく許可しない場合、一部の認証試行が失敗することがあります。これは、OAuth アプリへのアクセスを拒否する組織のパブリックリポジトリへのアクセスにも影響を与える可能性があります。
 
-- **Resource protected by organization SAML enforcement. You must grant your OAuth token access to this organization**.You may be logging in to an organization with SAML control, e.g. Microsoft. They should
-  1. Log out of Copilot Workspace.
-  2. Go through SAML auth in the browser by looking at, say, a repository of the organization
-  3. Then log back into Copilot Workspace.
-- **Other known limitations to working within organizations:**
-  1. The enterprise (or org) must opt-in to Copilot feature previews. [Learn how to enable feature previews in GitHub.com](https://docs.github.com/en/get-started/using-github/exploring-early-access-releases-with-feature-preview).
-  2. The enterprise (or org) has set the Copilot Extension policy to Enabled. This can be done under your org / enterprise settings under Copilot > Copilot Policies.
-  3. The enterprise must not be using EMUs.
-  4. Developers within the enterprise (or org) must have paid Copilot licenses.
+- **組織の SAML 強制によって保護されたリソースです。OAuth トークンにこの組織へのアクセスを許可する必要があります**。SAML 制御を持つ組織にログインしている可能性があります。例：Microsoft。次の手順を実行してください：
+  1. Copilot Workspace からログアウトします。
+  2. 組織のリポジトリなどを表示してブラウザで SAML 認証を行います。
+  3. その後、Copilot Workspace に再度ログインします。
+- **組織内での作業に関するその他の既知の制限事項：**
+  1. エンタープライズ（または組織）は、Copilot 機能プレビューにオプトインする必要があります。[GitHub.com で機能プレビューを有効にする方法を学ぶ](https://docs.github.com/en/get-started/using-github/exploring-early-access-releases-with-feature-preview)。
+  2. エンタープライズ（または組織）は、Copilot 拡張機能ポリシーを有効に設定する必要があります。これは、組織/エンタープライズの設定で Copilot > Copilot ポリシーの下にあります。
+  3. エンタープライズは EMUs を使用していない必要があります。
+  4. エンタープライズ（または組織）内の開発者は、有料の Copilot ライセンスを持っている必要があります。
 
+### プライベートリポジトリのトラブルシューティング
 
-### Troubleshooting Private Repositories
+- **自分のアカウントのプライベートリポジトリにアクセスできません**。ログイン後、OAuth アプリのアクセスを削除していない限り、個人のプライベートリポジトリにアクセスできるはずです。問題が発生した場合、共有リンクを介して Copilot Workspace にアクセスしたためにパブリックリポジトリの権限しか付与されていない可能性があります。ログアウトして再度ログインすると、アクセスが復元されるはずです。それでも問題が解決しない場合は、[OAuth アプリとの接続の状態を確認](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f)してください。
 
-- **You can't access a private repository in your own account**. After login you should be able to access your personal private repositories unless you have removed access for the OAuth app. If you have trouble, it is possible it is because you landed in Copilot Workspace via a sharing link and have only given public repo privileges. You should log out and log back in again and this should restore access. Failing that you should [check the status of their connection with the OAuth app](https://github.com/settings/connections/applications/903eccd8a9d2ff50288f).
+## 曖昧さの警告
 
-## Ambiguity Warnings
+Copilot Workspace がタスクが過度に曖昧/不明確であると検出した場合（例：リポジトリの目標/焦点と一致していないように見える場合）、そのタスクをさらに明確にするように警告し、続行する前にタスクを明確にするように求めることがあります。これは、仕様の幻覚を防ぎ、ワークフローの後続のステージが十分な詳細で最適に機能するようにするためです。
 
-If Copilot Workspace detects that your task is overly ambiguous/unclear (e.g. it doesn’t seem aligned with the goals/focus of the repo), then it may warn you about that and ask you to clarify the task further, before you can carry on. This is done to prevent hallucination in the specification and help guide you towards the “pit of success”, since subsequent stages of the workflow work best with sufficient detail.
+<img src="images/further-techniques/ambiguous-spec.png" width=600 alt="曖昧な仕様">
 
-<img src="images/further-techniques/ambiguous-spec.png" width=600 alt="Ambiguous specification">
+*タスクが曖昧すぎるため、意図を明確にする必要があるという警告*
 
-*A warning that a task is too ambiguous and that their intent needs to be clarified*
+### Codespaces のトラブルシューティング
 
+- **新しい Codespace の請求可能な所有者を特定できませんでした。リポジトリは Codespace に使用できません**。CW OAuth アプリが請求可能な所有者の組織にインストールされていません。
 
-### Troubleshooting Codespaces
-
-- **Billable owner could not be determined for a new codespace, Repository may not be used for a codespace.** The CW OAuth app is not installed in the billable owner's organization.
-
-Please view the [Codespaces Guide](codespaces-guide.md) for more information on Codespaces and troubleshooting common errors.
+Codespaces に関する詳細情報や一般的なエラーのトラブルシューティングについては、[Codespaces ガイド](codespaces-guide.md)を参照してください。

@@ -1,282 +1,276 @@
-# GitHub Copilot Workspace VS Code extension
+# GitHub Copilot Workspace VS Code 拡張機能
 
-This Copilot Workspace VS Code extension allows you to use GitHub Copilot Workspace from the comfort of VS Code. Continue an existing session and edit and debug the proposed changes before creating a PR. Whether you use natural language to revise the plan or implementation, or edit files directly, you can use the full power of VS Code and its extension ecosystem all while syncing your local edits to GitHub Copilot Workspace on the web automatically (any saved file change will be visible online within few seconds).
+この Copilot Workspace VS Code 拡張機能を使用すると、VS Code の快適さから GitHub Copilot Workspace を使用できます。既存のセッションを続行し、PR を作成する前に提案された変更を編集およびデバッグします。プランや実装を自然言語で修正するか、ファイルを直接編集するかに関係なく、VS Code とその拡張機能エコシステムのすべての機能を使用しながら、ローカルの編集内容を Web 上の GitHub Copilot Workspace に自動的に同期できます（保存されたファイルの変更は数秒以内にオンラインで表示されます）。
 
-This is currently an alpha extension and we will be rolling out enhancements to the extension in multiple phases.
+これは現在アルファ版の拡張機能であり、複数のフェーズで拡張機能の強化を展開していきます。
 
-1. **Continue on:** Browse your Copilot Workspace sessions and sync changes so you can edit and debug your application in VS Code locally, using one of the other [VS Code Remote extensions](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), or in your own [Codespace](https://github.com/features/codespaces).
+1. **続行:** Copilot Workspace セッションを参照し、変更を同期して、VS Code ローカルでアプリケーションを編集およびデバッグします。他の[VS Code リモート拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)の 1 つを使用するか、独自の[Codespace](https://github.com/features/codespaces)で作業します。
 
-2. **[IN-PROGRESS] Update your workspace using AI**:
+2. **[進行中] AI を使用してワークスペースを更新する**:
 
-    - **Available:** Brainstorming, natural language revisions to the plan and files in the plan, adding/editing/deleting plan files or steps.
-    - **Planned**: Support for editing the task and answer text.
+    - **利用可能:** ブレインストーミング、プランおよびプラン内のファイルに対する自然言語の修正、プランファイルまたはステップの追加/編集/削除。
+    - **計画中**: タスクおよび回答テキストの編集のサポート。
 
-3. **[FUTURE] Create new:** While not available now, you'll be able to create a new Copilot Workspace session in VS Code.
+3. **[将来] 新規作成:** 現在は利用できませんが、将来的には VS Code で新しい Copilot Workspace セッションを作成できるようになります。
 
-## Getting started
+## はじめに
 
-* [Quick Start](#quick-start)
-* [Browsing Sessions](#browsing-sessions)
-* [Managing Sessions](#managing-sessions)
-* [Planing and Implementing](#plan-and-implement)
-* [Natural Language Revisions](#natural-language-revisions)
-* [Brainstorming](#brainstorming)
-* [Known Limitations](#known-limitations)
+* [クイックスタート](#quick-start)
+* [セッションの参照](#browsing-sessions)
+* [セッションの管理](#managing-sessions)
+* [プランニングと実装](#plan-and-implement)
+* [自然言語の修正](#natural-language-revisions)
+* [ブレインストーミング](#brainstorming)
+* [既知の制限事項](#known-limitations)
 
-### Quick Start
+### クイックスタート
 
-1. If you haven't already, install [Visual Studio Code](https://code.visualstudio.com/).
+1. まだインストールしていない場合は、[Visual Studio Code](https://code.visualstudio.com/)をインストールします。
 
-1. Next, open a session [on the web](https://copilot-workspace.githubnext.com) that you'd like to continue working on in VS Code.
+1. 次に、VS Code で作業を続けたいセッションを[Web 上で](https://copilot-workspace.githubnext.com)開きます。
 
-1. Click on the `VS Code` button in the session screen.
+1. セッション画面で`VS Code`ボタンをクリックします。
 
-    ![VS Code icon in web UX](./images/vscode/upper-right.png)
+    ![Web UXのVS Codeアイコン](./images/vscode/upper-right.png)
 
-1. Allow your browser to open the link in VS Code when prompted.
+1. プロンプトが表示されたら、ブラウザでリンクを VS Code で開くことを許可します。
 
-Follow the directions that appear in VS Code and make any selections when prompted, and you'll be guided towards syncing the session to your local machine. That's it! 😎
+VS Code に表示される指示に従い、プロンプトが表示されたら選択を行い、セッションをローカルマシンに同期する手順に進みます。これで完了です！　😎
 
-Here is generally what you can expect to see:
+一般的に次のようなことが期待されます：
 
-1. VS Code will open (if it isn't already running), and you'll be prompted to install the Copilot Workspace extension and then open the URI. If the extension is already installed, you'll just be asked about the URI. Either way, open the URI.
+1. VS Code が開き（まだ実行されていない場合）、Copilot Workspace 拡張機能をインストールし、URI を開くように求められます。拡張機能がすでにインストールされている場合は、URI についてのみ尋ねられます。いずれにせよ、URI を開きます。
 
+    <img src="./images/vscode/ghcw-extn-install.png" title="VS Code拡張機能のインストールとURIの開く通知の画像" width="200px">
 
-    <img src="./images/vscode/ghcw-extn-install.png" title="Image of install VS Code extension and open URI notification" width="200px">
+1. **[一度だけ]** まだサインインしていない場合は、サインインするように求められます。`サインイン`をクリックし、開いたブラウザでサインインプロセスを完了します。
 
-1. **[One time]** If you haven't signed in already, you'll be prompted to do so. Click the `Sign in` and complete the sign in process in the browser that opens.
+    <img src="./images/vscode/ghcw-sign-in-notification.png" title="サインイン通知の画像" width="400px">
 
-    <img src="./images/vscode/ghcw-sign-in-notification.png" title="Image of sign-in notification" width="400px">
+1. VS Code インスタンスに関連するリポジトリがすでに開かれている場合、拡張機能はすぐにセッションをローカルに同期し始めます。それ以外の場合は、リポジトリをクローンするか、既存のフォルダを選択するように求められることがあります。
 
+    <img src="./images/vscode/ghcw-clone-or-open-folder.png" title="クローンまたはフォルダを開く通知の画像" width="200px">
 
-1. If the VS Code instance already has a folder with the related repository in it open, the extension will immediately start syncing the session locally. Otherwise you may be prompted to clone the repository or pick an existing folder with it in it.
+同期が開始されると、ローカルリポジトリは`ghcw-session`プレフィックスの付いた GitHub Copilot Workspace トラッキングブランチに切り替わります。これはこのセッションの一時的なブランチであるため、ローカルの変更をプッシュするべきではありません。
 
-    <img src="./images/vscode/ghcw-clone-or-open-folder.png" title="Image of clone or open folder notification" width="200px">
+<img src="./images/vscode/ghcw-branch-example.png" title="ステータスバーのブランチの画像" width="250px">
 
-Once syncing has begun, your local repository will switch to GitHub Copilot Workspace tracking branch with a `ghcw-session` prefix as you can see in the status bar. This is a temporary branch for this session, so you should **not** push your local changes.
+ローカルファイルに加えた編集はすべて Web セッションに自動的に同期されます。ローカルファイルを保存するだけで、数秒以内にオンラインで変更が表示されます（何もプッシュする必要はありません）。これにより、VS Code のすべての機能を GitHub Copilot Workspace と一緒に使用できます。
 
-<img src="./images/vscode/ghcw-branch-example.png" title="Image of branch in status bar" width="250px">
+ただし、選択したセッションにまだ実装がなく、更新されたファイルを同期する準備ができていない場合は、[実装が完了したら](#planning-and-implementing)同期を開始できることが通知されます。
 
-Any edits make to the local files will be automatically synced back to the web session. You only have to save a local file and your change will be visible within a few seconds online (no need to push anything). This allows you to use the full power of VS Code with GitHub Copilot Workspace.
+<img src="./images/vscode/ghcw-uri-sync-not-enabled.png" title="同期が有効になっていない通知の画像" width="400px">
 
-However, if you picked a session that doesn't yet have an implementation with updated files to start syncing, you'll be notified that you can start syncing once you [have an implementation](#planning-and-implementing).
+編集やデバッグに加えて、[自然言語の修正](https://github.com/githubnext/copilot-workspace-user-manual/blob/main/vscode.md#natural-language-revisions)を行ったり、[プランと実装](https://github.com/githubnext/copilot-workspace-user-manual/blob/main/vscode.md#planning-and-implementing)を調整したりすることもできます。作業が完了したら、次のいずれかを行います：
 
-<img src="./images/vscode/ghcw-uri-sync-not-enabled.png" title="Image of notification that sync was not enabled" width="400px">
+-   `Plan`ビューの**Push Changes into Branch...**アイコンをクリックして、ブランチを作成/更新し、オプションで PR を作成します。
+-   または、Web に戻って、セッションから元のブランチに更新をプッシュするか、PR を作成します。`Plan`および`Task`ビューの上部にある`...`メニューにクイックアクセスリンクがあります。
 
-In addition to editing and debugging, you can also make [revisions using natural language](https://github.com/githubnext/copilot-workspace-user-manual/blob/main/vscode.md#natural-language-revisions) or adjust the [plan and implementation](https://github.com/githubnext/copilot-workspace-user-manual/blob/main/vscode.md#planning-and-implementing). When you're done, you can either:
+## セッションの参照
 
--   Create / update a branch and optionally create a PR by clicking on the **Push Changes into Branch...** icon in the `Plan` view using the command palette (F1 or Cmd/Ctrl+Shift+P).
--   Or hop back on the web to push updates to the original branch or create a PR from your session. There's a quick access link in the `...` menu on top of the `Plan` and `Task` views.
+セッションをローカルに同期していなくても、セッションを参照して詳細を表示できます。セッションを参照および管理するには、まず VS Code ウィンドウの左側にあるアクティビティバーの`GitHub Copilot Workspace`アイコンをクリックします。
 
-## Browsing Sessions
+<img src="./images/vscode/ghcw-activity-bar-icon.png" title="GitHub Copilot Workspaceアイコンのステータスバーの画像" width="50px">
 
-Even if you are not syncing a session locally, you can still browse through your sessions and view their details. To browse and manage your sessions, first click on the `GitHub Copilot Workspace` icon in the activity bar on the left side of the VS Code window.
+アクティビティバーアイコンをクリックすると、セッションのリストまたはすでに選択した特定のセッションの詳細が表示されます。
 
-<img src="./images/vscode/ghcw-activity-bar-icon.png" title="Image of status bar with GitHub Copilot Workspace icon" width="50px">
+セッションリストはリポジトリごとにソートされます。現在開いている VS Code フォルダに適用されるリポジトリは上部に表示されます。セッションの詳細を表示している場合は、`Task`ビューの`Back to Session List`矢印をクリックするか、コマンドパレット（F1 または Ctrl/Cmd+Shift+P）から**GitHub Copilot Workspace: Back to Session List**コマンドを使用して、セッションリストに戻ることができます。
 
+セッションリストでセッションを選択すると、リストが非表示になり、関連するセッションの詳細が表示されます。`Task`（または Issue または Pull Request）ビューと`Plan`ビューが表示されます。各ビューは、フルスクリーンアイコンをクリックして大きなパネルに拡張できます。
 
-After you've clicked the activity bar icon, you'll either see list of your sessions, or details about a specific session you've already selected.
+`Task`ビューには、タスクの説明と追加情報へのリンクが含まれています。`Plan`ビューには、セッションの関連プランの詳細（存在する場合）と現在プランに含まれているファイルが表示されます。
 
-The session list is sorted by repository. Any repository that applies to currently opened VS Code folders will be on top. You can always get back to the session list when viewing session details by clicking on the `Back to Session List` arrow in the `Task` view or using the **GitHub Copilot Workspace: Back to Session List** command from the Command Pallette (F1 or Ctrl/Cmd+Shift+P).
-
-Selecting a session in the session list will hide the list and show the related session details instead. A `Task` (or Issue or Pull Request) view and `Plan` view will be visible.  Each view can be expanded into a larger panel by clicking on the "full screen" icon.
-
-The `Task` view includes a description of the task along with links to additional information. The `Plan` view will include details about the related plan for your session (if one exists yet) any files currently in the plan.
-
-If the [plan has already been implemented](#planning-and-implementing), you'll be able to view any changed files by clicking on file in the plan.
+[プランがすでに実装されている場合](#planning-and-implementing)、プラン内のファイルをクリックして変更されたファイルを表示できます。
 
 <img src="./images/vscode/ghcw-overview.png" width="700px" />
 
-When syncing is active, clicking on the file will open a local changes view of the synced contents. This view is editable and the changes will be synced back to the web session. If the session is not syncing, you will see the changes currently stored in the web session in a read-only mode.
+同期がアクティブな場合、ファイルをクリックすると、同期された内容のローカル変更ビューが開きます。このビューは編集可能で、変更は Web セッションに同期されます。セッションが同期されていない場合、Web セッションに保存されている変更が読み取り専用モードで表示されます。
 
-You can also click on the `Open File` icon when hovering on an file in the plan to open the file (instead of the changes view) in a new tab in VS Code. You may be prompted to start syncing the session if you are not already.
+プラン内のファイルにホバーして`Open File`アイコンをクリックすると、ファイルの変更ビューではなく、新しいタブでファイルを開くことができます。まだ同期していない場合は、セッションの同期を開始するように求められることがあります。
 
-## Managing Sessions
+## セッションの管理
 
-You can sync session file changes locally for any session that has a plan and an initial implementation.
+プランと初期実装があるセッションのファイル変更をローカルに同期できます。
 
-If the session you opened does not yet have an implementation, see [Planning and Implementing](#planning-and-implementing) for information on creating one from VS Code. You can then sync its contents locally once done.
+開いたセッションにまだ実装がない場合は、VS Code から作成する方法については[プランニングと実装](#planning-and-implementing)を参照してください。完了したら、その内容をローカルに同期できます。
 
-### Stopping Syncing Changes
+### 変更の同期を停止する
 
-The quick start highlighted a fast way to start syncing your session's changes locally, so let's cover how to stop syncing changes next.
+クイックスタートでセッションの変更をローカルに同期する方法を強調しましたので、次に変更の同期を停止する方法を説明します。
 
-If the session list is visible, you will see a green checkbox next to any session that is currently being synced. When hovering over this session, you will see a `Stop Syncing Changes` button. Otherwise, if the session details are visible for a session that is currently syncing, you will find this same button in the `Plan` view. Simply click this button in either location to stop syncing.
+セッションリストが表示されている場合、現在同期されているセッションの横に緑色のチェックボックスが表示されます。このセッションにホバーすると、`Stop Syncing Changes`ボタンが表示されます。セッションの詳細が表示されている場合は、同じボタンが`Plan`ビューに表示されます。いずれかの場所でこのボタンをクリックして同期を停止します。
 
-| Session List | Session Details |
+| セッションリスト | セッションの詳細 |
 | :--- | :--- |
-| <img src="./images/vscode/ghcw-session-list-button.png" title="Image of session list" width="300px"> | <img src="./images/vscode/ghcw-session-details-button.png" title="Image of session detail" width="300px"> |
+| <img src="./images/vscode/ghcw-session-list-button.png" title="セッションリストの画像" width="300px"> | <img src="./images/vscode/ghcw-session-details-button.png" title="セッション詳細の画像" width="300px"> |
 
-Alternatively, you can use the Command Palette (F1 or Ctrl/Cmd+Shift+P) and select the **GitHub Copilot Workspace: Stop Syncing Changes** command when you have the session details open.
+または、コマンドパレット（F1 または Ctrl/Cmd+Shift+P）を使用して、セッションの詳細を表示しているときに**GitHub Copilot Workspace: Stop Syncing Changes**コマンドを選択できます。
 
-You'll be switched back to the branch you where on when you started syncing changes, or **main** (or master) if nothing else. Since the changes you made locally are kept in sync automatically when syncing is active, the working tree is also cleaned out so you can easily jump in and out of sessions.
+同期の開始時にいたブランチに戻るか、他に何もない場合は**main**（または master）に戻ります。同期がアクティブな場合、ローカルで行った変更は自動的に同期されるため、作業ツリーもクリーンアップされ、セッションの出入りが簡単になります。
 
-The next time you sync this same session, the session will go back to this tracking branch and the latest changes in GitHub Copilot Workspace - including your edits - will appear again.
+次回同じセッションを同期すると、セッションはこのトラッキングブランチに戻り、GitHub Copilot Workspace の最新の変更が再び表示されます。
 
-Note that if you manually change the branch away from the one set when syncing began, syncing will also automatically stop. However, in this case, any changes you made will be kept in the working tree to make sure you don't lose something you intended to keep. Stopping syncing as described above will ensure you've got a clean working tree to continue making other changes.
+手動でブランチを同期開始時に設定されたものから変更した場合、同期も自動的に停止します。ただし、この場合、行った変更は作業ツリーに保持され、意図したものを失わないようにします。上記の手順で同期を停止すると、他の変更を続けるためのクリーンな作業ツリーが確保されます。
 
-### Syncing Changes Locally
+### 変更のローカル同期
 
-As outlined in the quick start, you can always click on the VS Code icon in the GitHub Copilot Workspace web UI to start syncing changes locally. But you can also start syncing a session directly from within VS Code. 
+クイックスタートで説明したように、GitHub Copilot Workspace Web UI の VS Code アイコンをクリックして変更のローカル同期を開始できます。ただし、VS Code 内から直接セッションの同期を開始することもできます。
 
-However, as described in these previous sections, note that only sessions with a [plan and an initial implementation](#planning-and-implementing) can be synced locally.
+ただし、前述のセクションで説明したように、[プランと初期実装](#planning-and-implementing)があるセッションのみがローカルに同期できます。
 
-If session list is visible, hovering over a session that is not currently being synced (no green checkbox), will show a `Stop Syncing Changes` button. Otherwise, if the session details are visible instead, you will see this same button the `Plan` view (assuming syncing is inactive for this session). Click this button to start syncing changes for the session locally. 
+セッションリストが表示されている場合、現在同期されていないセッション（緑色のチェックボックスがない）にホバーすると、`Stop Syncing Changes`ボタンが表示されます。セッションの詳細が表示されている場合は、同期が無効な場合に同じボタンが`Plan`ビューに表示されます。このボタンをクリックして、セッションの変更をローカルに同期します。
 
-Note that any other existing session that is already syncing for the same repository will automatically stop syncing first, so you don't have to worry about conflicts.
+同じリポジトリの既存のセッションがすでに同期されている場合は、自動的に同期が停止されるため、競合を心配する必要はありません。
 
-| Session List | Session Details |
+| セッションリスト | セッションの詳細 |
 | :--- | :--- |
-| <img src="./images/vscode/ghcw-session-list-no-sync.png" title="Image of session list" width="300px"> | <img src="./images/vscode/ghcw-session-details-no-sync.png" title="Image of session detail" width="300px"> |
+| <img src="./images/vscode/ghcw-session-list-no-sync.png" title="セッションリストの画像" width="300px"> | <img src="./images/vscode/ghcw-session-details-no-sync.png" title="セッション詳細の画像" width="300px"> |
 
-Similarly, you can use the Command Palette (F1 or Ctrl/Cmd+Shift+P) and select the **GitHub Copilot Workspace: Sync Changes Locally** command when you are in the detail view for a session to start syncing.
+同様に、コマンドパレット（F1 または Ctrl/Cmd+Shift+P）を使用して、セッションの詳細ビューにいるときに**GitHub Copilot Workspace: Sync Changes Locally**コマンドを選択して同期を開始できます。
 
-Next you may be prompted as follows:
-1. If you do not currently have the repository for the session open in VS Code, you will be prompted to open a folder with the repository or to clone the repository in a fresh location.
-1. If you do have the correct repository open, but the current working tree has uncommitted changes, you'll be asked what you want to do with them.
+次に、次のようにプロンプトが表示される場合があります：
+1. 現在、VS Code でセッションのリポジトリが開かれていない場合は、リポジトリを含むフォルダを開くか、新しい場所にリポジトリをクローンするように求められます。
+1. 正しいリポジトリが開かれているが、現在の作業ツリーにコミットされていない変更がある場合は、それらをどうするかを尋ねられます。
 
-Either way, once this is done, your local repository will be on a GitHub Copilot Workspace tracking branch with a `ghcw-session` prefix as you can see in the status bar.
+いずれの場合も、これが完了すると、ローカルリポジトリはステータスバーに表示される`ghcw-session`プレフィックスの付いた GitHub Copilot Workspace トラッキングブランチに切り替わります。
 
-<img src="./images/vscode/ghcw-branch-example.png" title="Image of branch in status bar" width="250px">
+<img src="./images/vscode/ghcw-branch-example.png" title="ステータスバーのブランチの画像" width="250px">
 
-Regardless, any edits make to the local files will be synced back to the web session, so you do not need to worry about committing or loosing your changes.
+いずれにせよ、ローカルファイルに加えた編集は Web セッションに同期されるため、コミットや変更の喪失を心配する必要はありません。
 
-### Visibility to Sync Status and Processing State
+### 同期ステータスと処理状態の可視性
 
-Since you won't always have the `Plan` view visible while you work, GitHub Copilot Workspace has a status bar item that can help you understand what the extension is doing at that moment. Here are some examples of what you will see:
+作業中に常に`Plan`ビューが表示されているわけではないため、GitHub Copilot Workspace にはその時点で拡張機能が何をしているかを理解するのに役立つステータスバーアイテムがあります。以下は、表示される内容の例です：
 
-| Example | Description |
+| 例 | 説明 |
 | :--- | :--- |
-| <img src="./images/vscode/status-bar-not-syncing.png" title="Image of GitHub Copilot Workspace in status bar when the extension is idle"> | The extension is signed in, but but idle. |
-| <img src="./images/vscode/status-bar-syncing.png" title="Image of GitHub Copilot Workspace in status bar when the extension is idle but syncing is enabled"> | Syncing is enabled for a session, but the extension is currently idle. |
-| <img src="./images/vscode/status-bar-working.png" title="Image of GitHub Copilot Workspace in status bar when the extension is actively doing work"> | The extension is performing an operation indicated by the text (`Starting implementation...`) and spinning loading or sync icon (when files are transferring). |
-| <img src="./images/vscode/status-bar-error.png" title="Image of GitHub Copilot Workspace in status bar when a sync error has occurred"> | Here, an error occurred while syncing. Clicking on the status bar item will show more information. |
+| <img src="./images/vscode/status-bar-not-syncing.png" title="拡張機能がアイドル状態のときのGitHub Copilot Workspaceのステータスバーの画像"> | 拡張機能はサインインしていますが、アイドル状態です。 |
+| <img src="./images/vscode/status-bar-syncing.png" title="同期が有効だが拡張機能がアイドル状態のときのGitHub Copilot Workspaceのステータスバーの画像"> | セッションの同期が有効ですが、拡張機能は現在アイドル状態です。 |
+| <img src="./images/vscode/status-bar-working.png" title="拡張機能がアクティブに作業しているときのGitHub Copilot Workspaceのステータスバーの画像"> | 拡張機能が操作を実行していることを示すテキスト（`Starting implementation...`）とスピニングローディングまたは同期アイコン（ファイルが転送されているとき）があります。 |
+| <img src="./images/vscode/status-bar-error.png" title="同期エラーが発生したときのGitHub Copilot Workspaceのステータスバーの画像"> | ここでは、同期中にエラーが発生しました。ステータスバーアイテムをクリックすると、詳細情報が表示されます。 |
 
-Clicking on this status bar item will take you to the session details for the session you are syncing (or the session list if you are syncing multiple sessions in a multi-root workspace with multiple repos). The status bar will also turn red if a sync error has occurred, and clicking on it should provide you options to remediate the issue.
+このステータスバーアイテムをクリックすると、同期しているセッションの詳細（または複数のリポジトリを持つマルチルートワークスペースで複数のセッションを同期している場合はセッションリスト）に移動します。同期エラーが発生した場合、ステータスバーは赤くなり、クリックすると問題を解決するためのオプションが表示されます。
 
-#### Plan View Banner
+#### プランビューのバナー
 
-However, if you do have the `Plan` view up, you can look at the status banner to see what is happening and in some cases take quick actions based on the current state.
+ただし、`Plan`ビューが表示されている場合は、ステータスバナーを見て、何が起こっているかを確認し、現在の状態に基づいて迅速なアクションを実行できます。
 
-<img src="./images/vscode/ghcw-plan-view-banner.png" title="Image of GitHub Copilot Workspace in status bar" width="300px">
+<img src="./images/vscode/ghcw-plan-view-banner.png" title="ステータスバーのGitHub Copilot Workspaceの画像" width="300px">
 
+### セッションの変更をブランチまたは PR にプッシュする
 
-### Pushing Session Changes to a Branch or PR
+拡張機能は変更を自動的に Web に同期しますが、セッションからブランチに変更をプッシュしたり、PR を作成したりすることもできます。これは、セッションが完了したときや、.gitignore ファイルや通知を受け取った大きなファイルなど、自動的に同期されないものを保持したい場合に便利です。
 
-While the extension automatically syncs changes to the web, you may want to push your changes to a branch or create a PR from the session. This is useful when you are either done with the session, or you want to keep changes to something that is not automatically synced - like something in the .gitignore file or large files that you received a notification where ignored.
+幸いなことに、セッションを同期している場合、`Plan`ビューの次のボタンを使用してこれらのアクションを実行できます。この表のコマンド名は、適切なセッションがサイドバーに表示されているときに**コマンドパレット**（F1 または Ctrl/Cmd+Shift+P）に表示されるコマンド名でもあります。
 
-Thankfully, the you can use following buttons in the `Plan` view when you are syncing a session to perform these actions. Note that the command name in this table is also the name of the command in the **Command Palette** (F1 or Ctrl/Cmd+Shift+P) when the appropriate session is visible in the side bar.
-
-| Button | Command | Description | Location(s) |
+| ボタン | コマンド | 説明 | 場所 |
 | :--- | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/repo-push.svg" width="24px" style="background-color:white;">               | Push Changes into Branch... | Pushes changes to a new or existing local branch, optionally pushes them remotely too. | Plan view when file syncing is enabled, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/git-pull-request-create.svg" width="24px" style="background-color:white;"> | Create PR from Changes...   | Pushes changes to a specified remote branch, then makes opens the PR UX in VS Code to let you enter details on the request. | Plan view when file syncing is enabled, `...` context menu. |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/repo-push.svg" width="24px" style="background-color:white;">               | Push Changes into Branch... | 変更を新しいまたは既存のローカルブランチにプッシュし、オプションでリモートにもプッシュします。 | ファイル同期が有効な場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/git-pull-request-create.svg" width="24px" style="background-color:white;"> | Create PR from Changes...   | 変更を指定されたリモートブランチにプッシュし、VS Code で PR UX を開いてリクエストの詳細を入力します。 | ファイル同期が有効な場合のプランビュー、`...`コンテキストメニュー。 |
 
+### セッションの削除
 
-### Deleting a Session
+セッションを削除するには、セッションリストの項目の横にあるゴミ箱アイコンをクリックします。現在セッションの詳細を表示している場合は、`Task`または`Plan`ビューの`...`ボタンをクリックして表示されるコンテキストメニューから**Delete Session**を選択します。
 
-To delete a session, you click on the trash can icon next to the item in the session list. If you are currently viewing a session's details, select **Delete Session** from the context menu that appears when clicking on the `...` button on the `Task` or `Plan` views.
+または、コマンドパレット（F1 または Ctrl/Cmd+Shift+P）を使用して、セッションの詳細を表示しているときに**GitHub Copilot Workspace: Delete Session**コマンドを選択できます。
 
-Alternatively, you can use thee Command Palette (F1 or Ctrl/Cmd+Shift+P) and select the **GitHub Copilot Workspace: Delete Session** command when you are viewing a session's details.
+## プランニングと実装
 
-## Planning and implementing
-When the session details are visible (and you see the `Task` and `Plan` views), you can make changes to the plan and its related implementation for the session right from VS Code.
+セッションの詳細が表示されている場合（`Task`および`Plan`ビューが表示されている場合）、VS Code からセッションのプランと関連する実装を変更できます。
 
-In fact, can also generate and implement an initial plan if your session doesn't have one yet. 
+実際、セッションにまだプランがない場合は、初期プランを生成して実装することもできます。
 
-You will find a number of different options for interacting with the plan by clicking on the `...` button in the `Plan` view. However, the most common actions will appear as icons. The table below outlines what each of these does. Note that the command name in this table is also the name of the command in the **Command Palette** (F1 or Ctrl/Cmd+Shift+P) when the appropriate session is visible in the side bar.
+`Plan`ビューの`...`ボタンをクリックすると、プランと対話するためのさまざまなオプションが表示されます。ただし、最も一般的なアクションはアイコンとして表示されます。以下の表は、それぞれの機能を説明しています。この表のコマンド名は、適切なセッションがサイドバーに表示されているときに**コマンドパレット**（F1 または Ctrl/Cmd+Shift+P）に表示されるコマンド名でもあります。
 
-| Button | Command | Description | Location(s) |
+| ボタン | コマンド | 説明 | 場所 |
 | :--- | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/project.svg"  width="24px" style="background-color:white;"> | Generate Plan | Generates a plan for the session and creates an inital implementation. | Plan view when no plan exists. Regenerate plan is available in the  `...` context menu afterwards. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sparkle.svg"  width="24px" style="background-color:white;"> | Implement Plan | Implement (or re-implement) the selected items in the plan view. | Plan view when plan exists, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/comment.svg" width="24px" style="background-color:white;"> | Revise Plan | Make revisions to the entire plan using natural language. Will automatically implement the requested changes. | Plan view when plan exists, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sync.svg"  width="24px" style="background-color:white;"> | Sync Changes Locally | See Managing Sessions. Start syncing session changes locally. | Plan view if there is an implementation, and the session is not already syncing, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sync-ignored.svg"  width="24px" style="background-color:white;"> | Stop Syncing Changes | See Managing Sessions.  Stops syncing session changes locally. | Plan view if the visible session is already syncing, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/repo-push.svg" width="24px" style="background-color:white;">               | Push Changes into Branch... | Pushes changes to a new or existing local branch, optionally pushes them remotely too. | Plan view when file syncing is enabled, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/git-pull-request-create.svg" width="24px" style="background-color:white;"> | Create PR from Changes...   | Pushes changes to a specified remote branch, then makes opens the PR UX in VS Code to let you enter details on the request. | Plan view when file syncing is enabled, `...` context menu. |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/project.svg"  width="24px" style="background-color:white;"> | Generate Plan | セッションのプランを生成し、初期実装を作成します。 | プランが存在しない場合のプランビュー。再生成プランはその後`...`コンテキストメニューに表示されます。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sparkle.svg"  width="24px" style="background-color:white;"> | Implement Plan | プランビューで選択された項目を実装（または再実装）します。 | プランが存在する場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/comment.svg" width="24px" style="background-color:white;"> | Revise Plan | 自然言語を使用してプラン全体を修正します。要求された変更を自動的に実装します。 | プランが存在する場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sync.svg"  width="24px" style="background-color:white;"> | Sync Changes Locally | セッションの変更をローカルに同期します。 | 実装があり、セッションがまだ同期されていない場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/sync-ignored.svg"  width="24px" style="background-color:white;"> | Stop Syncing Changes | セッションの変更のローカル同期を停止します。 | すでに同期されているセッションのプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/repo-push.svg" width="24px" style="background-color:white;">               | Push Changes into Branch... | 変更を新しいまたは既存のローカルブランチにプッシュし、オプションでリモートにもプッシュします。 | ファイル同期が有効な場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/git-pull-request-create.svg" width="24px" style="background-color:white;"> | Create PR from Changes...   | 変更を指定されたリモートブランチにプッシュし、VS Code で PR UX を開いてリクエストの詳細を入力します。 | ファイル同期が有効な場合のプランビュー、`...`コンテキストメニュー。 |
 
-The `...` context menu is also available for files and items in the plan when you hover over them. This context menu will allow you to view the files, their changes, or edit, move, delete, or the list items as needed.
+プラン内のファイルや項目にホバーすると、`...`コンテキストメニューも表示されます。このコンテキストメニューを使用して、ファイルの表示、変更の表示、リスト項目の編集、移動、削除などを行うことができます。
 
-### Natural Language Revisions
+### 自然言語の修正
 
-You can also make revisions to the plan and implementation using natural language. This can be done for the entire plan as highlighted previously, or you can make targeted revisions to a file in the plan. You can even add another file to the plan and revise it in one shot.
+プランと実装を自然言語で修正することもできます。これは、前述のようにプラン全体に対して行うこともできますし、プラン内のファイルに対してターゲットを絞った修正を行うこともできます。プランに別のファイルを追加し、一度に修正することもできます。
 
-To make file-level revisions easy, there are buttons in the upper-right of any open editor window for a file that can be part of the plan.
+ファイルレベルの修正を簡単に行うために、プランの一部となるファイルの任意の開いているエディタウィンドウの右上にボタンがあります。
 
-<img src="./images/vscode/ghcw-editor-actions.png" title="Image of editor actions" width="700px">
+<img src="./images/vscode/ghcw-editor-actions.png" title="エディタアクションの画像" width="700px">
 
-Here's a summary of where you can trigger these kinds of revisions:
+これらの修正をトリガーする場所の概要は次のとおりです：
 
-
-| Button | Command | Description | Location(s) |
+| ボタン | コマンド | 説明 | 場所 |
 | :--- | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/comment.svg" width="24px" style="background-color:white;"> | Revise Plan | Make revisions to the entire plan using natural language. Will automatically implement the requested changes. | Plan view when plan exists, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/target.svg"  width="24px" style="background-color:white;"> | Revise File | Make targeted revisions to a file using natural language. Will automatically either add the file to the plan or add a step to an existing entry, and then implement the requested changes. | Plan file items (hover), Editor actions (upper-right), `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/add.svg"  width="24px" style="background-color:white;"> | Add File to Plan | Adds the file to the plan, but makes no revisions to it. | Editor actions (upper-right), `...` context menu. |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/comment.svg" width="24px" style="background-color:white;"> | Revise Plan | 自然言語を使用してプラン全体を修正します。要求された変更を自動的に実装します。 | プランが存在する場合のプランビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/target.svg"  width="24px" style="background-color:white;"> | Revise File | 自然言語を使用してファイルをターゲットにした修正を行います。ファイルをプランに追加するか、既存のエントリにステップを追加し、要求された変更を実装します。 | プランファイル項目（ホバー）、エディタアクション（右上）、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/add.svg"  width="24px" style="background-color:white;"> | Add File to Plan | ファイルをプランに追加しますが、修正は行いません。 | エディタアクション（右上）、`...`コンテキストメニュー。 |
 
-## Brainstorming
+## ブレインストーミング
 
-> Note that this feature is new to Copilot Workspace, so you may encounter more rough edges that other parts of the experience. Please let us know if you have any feedback!
+> この機能は Copilot Workspace に新しく追加されたものであるため、他の部分よりも粗削りな部分があるかもしれません。フィードバックがあればお知らせください！
 
-Brainstorming provides a way for you to interact with Copilot Workspace to refine the task you want to perform. You can ask or select suggested questions to learn more about potential options for your task and then add the answers you like as additional context to use when planning and implementing. This feature is now available in VS Code so that you can refine your initial task and plan directly from your editor.
+ブレインストーミングは、実行したいタスクを洗練させるために Copilot Workspace と対話する方法を提供します。提案された質問を選択してタスクの潜在的なオプションについて学び、計画および実装時に使用する追加のコンテキストとして回答を追加できます。この機能は現在 VS Code で利用可能であり、エディタから直接初期タスクとプランを洗練することができます。
 
-### Accessing the Brainstorming panel
+### ブレインストーミングパネルへのアクセス
 
-You can access brainstorming in a few ways. First, you can click on one of the following buttons to get started. As in other cases in this document, the Command column contains the name of the command in the **Command Palette** (F1 or Ctrl/Cmd+Shift+P) when the appropriate session is visible in the side bar.
+ブレインストーミングにアクセスする方法はいくつかあります。まず、次のボタンのいずれかをクリックして開始できます。このドキュメントの他のケースと同様に、コマンド列には、適切なセッションがサイドバーに表示されているときに**コマンドパレット**（F1 または Ctrl/Cmd+Shift+P）に表示されるコマンド名が含まれています。
 
-| Button | Command | Description | Location(s) |
+| ボタン | コマンド | 説明 | 場所 |
 | :--- | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/lightbulb.svg" width="24px" style="background-color:white;"> | Brainstorm | Opens the `Brainstorming` panel. If the question "How should I solve this task?" has not already been answered (aka the "spec" has not been created yet), you will see that start at this point. | Task view, `...` context menu. |
-| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/question.svg"  width="24px" style="background-color:white;"> | Answer New Question... | Lets you ask Copilot Workspaces a specific question, and the `Brainstorming` panel then appears with the answer. | Task view, `...` context menu. |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/lightbulb.svg" width="24px" style="background-color:white;"> | Brainstorm | `Brainstorming`パネルを開きます。質問「このタスクをどのように解決すべきか？」がまだ回答されていない場合（つまり、「仕様」がまだ作成されていない場合）、この時点で開始されます。 | タスクビュー、`...`コンテキストメニュー。 |
+| <img src="https://raw.githubusercontent.com/microsoft/vscode-codicons/refs/heads/main/src/icons/question.svg"  width="24px" style="background-color:white;"> | Answer New Question... | Copilot Workspaces に特定の質問をすることができ、`Brainstorming`パネルに回答が表示されます。 | タスクビュー、`...`コンテキストメニュー。 |
 
-The `Task` view also includes a list of questions or answers that have already been added to the task in a section after the description. You can click on any of these to see the answer in the `Brainstorming` panel and continue brainstorming.
+`Task`ビューには、すでにタスクに追加された質問や回答のリストも含まれています。これらのいずれかをクリックすると、`Brainstorming`パネルに回答が表示され、ブレインストーミングを続けることができます。
 
-<img src="./images/vscode/ghcw-task-view-brainstorm.png" title="Image of task view with brainstorming" width="300px">
+<img src="./images/vscode/ghcw-task-view-brainstorm.png" title="ブレインストーミングを含むタスクビューの画像" width="300px">
 
-### Using the Brainstorming Panel
+### ブレインストーミングパネルの使用
 
-When you open the `Brainstorming` panel, you will see the current answer to a question. By default this will be the question "How should I solve this task?" which is always added to the Task. You will then see a series of buttons at the top with possible actions. 
+`Brainstorming`パネルを開くと、現在の質問に対する回答が表示されます。デフォルトでは、タスクに常に追加される質問「このタスクをどのように解決すべきか？」が表示されます。次に、可能なアクションを示す一連のボタンが上部に表示されます。
 
-<img src="./images/vscode/ghcw-brainstorm-panel.png" title="Image of the Brainstorming panel" width="700px">
+<img src="./images/vscode/ghcw-brainstorm-panel.png" title="ブレインストーミングパネルの画像" width="700px">
 
-Let's go through the buttons you may see and what they do.
+表示される可能性のあるボタンとその機能を見てみましょう。
 
-| Button | Description |
+| ボタン | 説明 |
 | :--- | :--- |
-| **Add to Task** | Adds the current answer to the task. This will also automatically trigger regeneration of the "How should I solve this task?" question / spec. Note that answer to any question added to the task will appear in below the task description in the `Task` view. |
-| **Remove from Task** | Removes the current answer from the task. This will also automatically trigger regeneration of the "How should I solve this task?" question / spec. |
-| **Regenerate** | Asks Copilot Workspace to try to answer the question again. |
-| **Delete** | Deletes both the question and its related answer from the list of existing answers. |
-| **Answer** | Lets you ask Copilot Workspace a new question. |
-| **Open Existing** | Displays a list of answers that have already been generated that you can open in the `Brainstorming` panel. Any answers that have been added to the task will have a check next to them. Useful if you did add an answer to the task or removed it, and changed your mind. |
+| **Add to Task** | 現在の回答をタスクに追加します。これにより、「このタスクをどのように解決すべきか？」の質問/仕様の再生成が自動的にトリガーされます。タスクに追加された質問の回答は、`Task`ビューのタスク説明の下に表示されます。 |
+| **Remove from Task** | 現在の回答をタスクから削除します。これにより、「このタスクをどのように解決すべきか？」の質問/仕様の再生成が自動的にトリガーされます。 |
+| **Regenerate** | Copilot Workspace に質問の再回答を依頼します。 |
+| **Delete** | 質問と関連する回答をリストから削除します。 |
+| **Answer** | Copilot Workspace に新しい質問をすることができます。 |
+| **Open Existing** | すでに生成された回答のリストを表示し、`Brainstorming`パネルで開くことができます。タスクに追加された回答にはチェックが付いています。タスクに回答を追加したり削除したりした場合に便利です。 |
 
-#### Multiple Answers
+#### 複数の回答
 
-Sometimes you may also be presented with multiple possible answers to a question. In this case, you can select the one you want to add to the task by clicking on the empty circle next to the option - which will then turn into a green checkmark indicating its been added. If you change your mind, you can click on the checkmark to remove it.
+場合によっては、質問に対する複数の回答が表示されることもあります。この場合、オプションの横にある空の円をクリックしてタスクに追加する回答を選択できます。これにより、緑色のチェックマークが表示され、追加されたことが示されます。気が変わった場合は、チェックマークをクリックして削除できます。
 
-<img src="./images/vscode/ghcw-brainstorm-multiple-answers.png" title="Image of the Brainstorming panel with multiple answers" width="700px">
+<img src="./images/vscode/ghcw-brainstorm-multiple-answers.png" title="複数の回答があるブレインストーミングパネルの画像" width="700px">
 
+#### 提案された質問
 
-#### Suggested Questions
+さらに、現在の質問に対する回答の下には、タスクに適用される可能性のある**提案された質問**のリストが表示されます。これらのいずれかをクリックすると、`Brainstorming`パネルに回答が表示されます。
 
-In addition, below the current answer for the question, you will see a list of **suggested questions** that may apply to your task. You can click on any of these to see the answer in the `Brainstorming` panel.
+### ブレインストーミングが完了したらプランを更新する
 
-### Updating the Plan When You Are Done
+ブレインストーミングが完了したら、`Plan`ビューの`...`をクリックし、**Regenerate Plan**を選択してプランを再生成できます。（まだプランがない場合は、前述のように`Plan`ビューの`...`をクリックし、**Generate Plan**を選択して生成できます。）
 
-When you are done brainstorming, you can regenerate your plan by clicking `...` in the `Plan` view and selecting **Regenerate Plan**. (And if you don't have a plan yet, you can generate one by clicking `...` in the `Plan` view and selecting **Generate Plan** as described previously.)
+ただし、既存のプランに概ね満足している場合は、新しい情報をより具体的な方法で考慮するために**[自然言語の修正](#natural-language-revisions)**を行うことができます。
 
-However, if you are generally happy with the plan as it exists, you can make a **[natural language revision](#natural-language-revisions)** to factor in the new information in a more specific way.
+## 既知の制限事項
 
-## Known Limitations
+**機能:** 上記のように、次の機能はまだ VS Code で利用できないため、Web UI を使用する必要があります：
+* 新しいセッションの開始
+* タスクや回答された質問のテキストの直接編集
 
-**Features:** As outlined above, you need to use the web UI for the following as they are not yet available in VS Code:
-* Starting a new session
-* Direct text edits to the task or an answered question
+**ファイル同期:**
+* 技術プレビュー中、バイナリファイル、特定のパスやファイルタイプ、特定のサイズを超えるファイルの同期を制限するなど、ファイル同期にはいくつかの制限があります。これらの制限は、改善が進むにつれて変更される可能性があります。VS Code 拡張機能を直接使用する場合、これらの制限に達したときに通知され、コマンドパレット（F1 または Ctrl/Cmd+Shift+P）から**GitHub Copilot Workspace: Show Files Ignored While Syncing**コマンドを使用して無視されたファイルを確認できます。
+* ファイル同期のステータスは、開いているウィンドウ間で共有されません。そのため、同じフォルダ（およびリポジトリ）に対して複数のウィンドウを開いており、それぞれが同期している場合、同じファイル内容を複数回送信または適用し、更新の適用に失敗する可能性があります。これを避けるためには、特定のリポジトリに対して単一のウィンドウを使用するか、複数のウィンドウでファイル同期を開始しないようにします。
+* GitHub Copilot Workspace Web UI によって開始された Codespace から作業する場合、同期中に無視されたファイルに関する通知は表示されません。この場合、拡張機能の使用はオプションです。ファイル同期はスタンドアロンプロセスによって処理されます。
 
-**File syncing:**
-* File syncing has some limitations placed on it during the technical preview such as not syncing binary files, certain paths or file types, or files over a certain size. These limitations are subject to change as we continue to improve. When using the VS Code extension directly you will be notified when one of these limitations has been hit, and can see which files have been ignored from the **GitHub Copilot Workspace: Show Files Ignored While Syncing** command from the command palette (F1 or Ctrl/Cmd+Shift+P).
-* File syncing status does not cross open windows. So if you have multiple windows for the same folder (and repository) open, and each are syncing, you can end up transmitting or applying same file contents multiple times and fail to apply updates. To avoid this, either use a single window for a given repository, or do not start file syncing for more than one.
-* Files that where ignored while syncing will not result in a notification when working from a Codespace started by the GitHub Copilot Workspace web UI since the use of the extension in this case is optional. File syncing is handled by a stand-alone process in this case.
-
-Note that if you see something unexpected, you can check the output view for more details. From the file menu, select **View** > **Output** and then select **GitHub Copilot Workspace** from the dropdown. This can help you identify what happened and can be used to help us diagnose any issues you may encounter.
+予期しないことが発生した場合は、詳細を確認するために出力ビューを確認できます。ファイルメニューから**表示** > **出力**を選択し、ドロップダウンから**GitHub Copilot Workspace**を選択します。これにより、何が起こったかを特定し、発生した問題の診断に役立ちます。
