@@ -1,0 +1,5 @@
+{
+    "tasks": {
+        "test": "npx textlint --fix ."
+    }
+}

@@ -1,31 +1,31 @@
-# Creating Repositories from Templates
+# テンプレートからリポジトリを作成する
 
-Copilot Workspace allows you to create repositories from templates using natural language.
+Copilot Workspace を使用すると、自然言語を使用してテンプレートからリポジトリを作成できます。
 
-## Using "Use this template" from GitHub.com
+## GitHub.com から「このテンプレートを使用」を使用する
 
-To create a repository with Copilot Workspace, you can navigate to a template repository in GitHub.com and choose “Use this template”, like this:
+Copilot Workspace を使用してリポジトリを作成するには、GitHub.com のテンプレートリポジトリに移動し、「このテンプレートを使用」を選択します。次のようになります：
 
-<img src="images/creating-repos/create-repo-from-template.png" width=400 alt="Create repository from template"><br>*Creating a repository from a template via Copilot Workspace*
+<img src="images/creating-repos/create-repo-from-template.png" width=400 alt="Create repository from template"><br>*Copilot Workspace を使用してテンプレートからリポジトリを作成する*
 
-The task is based on the description of the software to create, plus the README of the template repo. You can also start this kind of task by creating a [new session](#using-new-session-on-the-dashboard). Once started a create repository task looks like this:
+タスクは、作成するソフトウェアの説明とテンプレートリポジトリの README に基づいています。この種のタスクを開始するには、[新しいセッションを作成](#using-new-session-on-the-dashboard)することもできます。リポジトリ作成タスクを開始すると、次のようになります：
 
-<img src="images/creating-repos/repo-task-timeline-representation.png" width=600 alt="Repo task timeline representation"><br>*The task is labeled as “Repository”, and the “Template” panel indicates the template repo*
+<img src="images/creating-repos/repo-task-timeline-representation.png" width=600 alt="Repo task timeline representation"><br>*タスクは「リポジトリ」とラベル付けされ、「テンプレート」パネルにはテンプレートリポジトリが表示されます*
 
-Copilot Workspace will then generate a specification for the repository based on the description you provide, and a plan for creating it, and then the final implementation.
+その後、Copilot Workspace は提供された説明に基づいてリポジトリの仕様を生成し、それを作成するための計画を立て、最終的な実装を行います。
 
-## Using "New session" on the dashboard
+## ダッシュボードで「新しいセッション」を使用する
 
-You can also create a repository from a template by clicking the “New session” button in the [Copilot Workspace dashboard](https://copilot-workspace.githubnext.com), and search for a template. This will open a new task in the workspace where you can describe the software you want to create.
+[Copilot Workspace ダッシュボード](https://copilot-workspace.githubnext.com)で「新しいセッション」ボタンをクリックし、テンプレートを検索することで、テンプレートからリポジトリを作成することもできます。これにより、作成したいソフトウェアを説明する新しいタスクがワークスペースに開かれます。
 
-## Using the URL
+## URL を使用する
 
-You can also turn on “Create Repository” mode for any repository URL by adding `?template=true` as a query parameter. For example:
+任意のリポジトリ URL に`?template=true`というクエリパラメータを追加することで、「リポジトリ作成」モードをオンにすることもできます。例えば：
 
 https://copilot-workspace.githubnext.com/githubnext/hello-world?template=true
 
-For incoming URLs, some repositories are treated as templates by default:
+受信 URL の場合、次のリポジトリはデフォルトでテンプレートとして扱われます：
 
-- Any GitHub template repository
-- Any repository in an organization containing `templates`, upper or lower case, with dash at start or end
-- Any repository with `-template`, `-scaffold`, `-starter` or `-boilerplate` in its name, upper or lower case, with dash at start or end
+- 任意の GitHub テンプレートリポジトリ
+- `templates`を含む組織内の任意のリポジトリ（大文字小文字を区別せず、先頭または末尾にダッシュがある場合）
+- 名前に`-template`、`-scaffold`、`-starter`、または`-boilerplate`を含む任意のリポジトリ（大文字小文字を区別せず、先頭または末尾にダッシュがある場合）

@@ -1,46 +1,47 @@
-# Codespaces Starter Guide
+# Codespaces スターターガイド
 
-This document contains useful information for using the terminal/Codespace in your Workspace session.
+このドキュメントには、ワークスペースセッションでターミナル/Codespace を使用するための有用な情報が含まれています。
 
-## Codespaces Limits
+## Codespaces の制限
 
-### Overall Usage
+### 全体的な使用
 
-The technical preview includes limited free Codespaces compute usage that is reset at the start of the calendar month.
+技術プレビューには、カレンダー月の開始時にリセットされる限定的な無料の Codespaces コンピュート使用が含まれています。
 
-### Overall Limits
+### 全体的な制限
 
-The technical preview enforces a total Codespaces and total active Codespaces limits that you may encounter. If closing Workspace sessions does not resolve these issues you may reach out to us [here](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback).
+技術プレビューでは、合計 Codespaces および合計アクティブ Codespaces の制限が適用される場合があります。ワークスペースセッションを閉じてもこれらの問題が解決しない場合は、[こちら](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback)からお問い合わせください。
 
-### Organization based limits and policies
-If the Organization that owns the repository has set policies for Codespaces usage they will be applied to being able to create Codespaces for Workspace. You should reach out to an administrator of the organization to adjust any policies.
+### 組織ベースの制限とポリシー
 
-## Common Errors
+リポジトリを所有する組織が Codespaces の使用に関するポリシーを設定している場合、それらのポリシーがワークスペースの Codespaces の作成に適用されます。ポリシーの調整が必要な場合は、組織の管理者に連絡してください。
 
-#### You've reached your Copilot Workspace usage limit
+## 一般的なエラー
 
-At the start of the next calendar month your free usage limit will reset and you can continue using Workspace. You may reach out to us and give us feedback about the usage limit [here](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback).
+#### Copilot Workspace の使用制限に達しました
 
-#### Limit of active Copilot Workspace reached.
+次のカレンダー月の開始時に無料の使用制限がリセットされ、ワークスペースの使用を続けることができます。使用制限に関するフィードバックは[こちら](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback)からお寄せください。
 
-Remediate this by closing open Workspace sessions and allowing previous sessions to shutdown before creating new ones.
+#### アクティブな Copilot Workspace の制限に達しました
 
-#### Limit of Copilot Workspace reached.
-Remediate this by closing open Workspace sessions and allowing previous sessions to shutdown before creating new ones.
+オープンなワークスペースセッションを閉じ、以前のセッションがシャットダウンするのを待ってから新しいセッションを作成してください。
 
-#### Repository may not be used for a Codespace
+#### Copilot Workspace の制限に達しました
 
-This may be because of a repository or organization policy restricting Codespaces creation. Please check any settings in the organization or repository that may be preventing Codespaces usage. If you do not find any please reach out to our [technical
-preview feedback channels](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback) for assistance.
+オープンなワークスペースセッションを閉じ、以前のセッションがシャットダウンするのを待ってから新しいセッションを作成してください。
 
-#### The assigned location is currently unavailable.
+#### リポジトリは Codespace に使用できません
 
-You may try again in a few minutes. Additionally, you can change your default Codespaces region in your user settings if you continue to run into this error for a particular region by following these [public docs](https://docs.github.com/en/codespaces/setting-your-user-preferences/setting-your-default-region-for-github-codespaces).
+これは、リポジトリまたは組織のポリシーが Codespaces の作成を制限しているためかもしれません。Codespaces の使用を妨げている設定がないか、組織またはリポジトリの設定を確認してください。問題が解決しない場合は、[技術プレビューフィードバックチャネル](https://github.com/githubnext/copilot-workspace-user-manual?tab=readme-ov-file#feedback)にお問い合わせください。
 
-#### Provided `devcontainer.json` cannot be parsed to valid JSON
+#### 割り当てられた場所が現在利用できません
 
-In the chosen repository you may need to fix the `devcontainer.json` for syntax errors. You can read more about `devcontainer.json` syntax in the following [public docs](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers).
+数分後に再試行してください。さらに、このエラーが特定の地域で続く場合は、ユーザー設定でデフォルトの Codespaces リージョンを変更できます。詳細は[こちらの公開ドキュメント](https://docs.github.com/en/codespaces/setting-your-user-preferences/setting-your-default-region-for-github-codespaces)をご覧ください。
 
-#### The organization has enabled OAuth App access restrictions, meaning that access to Copilot Workspace is limited.
+#### 提供された`devcontainer.json`を有効な JSON に解析できません
 
-Reach out to the organization administrator to give access to the Copilot Workspace OAuth app.
+選択したリポジトリで`devcontainer.json`の構文エラーを修正する必要があるかもしれません。`devcontainer.json`の構文については、[こちらの公開ドキュメント](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)をご覧ください。
+
+#### 組織が OAuth アプリのアクセス制限を有効にしているため、Copilot Workspace へのアクセスが制限されています
+
+組織の管理者に連絡して、Copilot Workspace OAuth アプリへのアクセスを許可してください。
