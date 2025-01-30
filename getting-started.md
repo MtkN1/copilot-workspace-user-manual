@@ -1,4 +1,4 @@
-# Copilot Workspaceの使い方
+# Copilot Workspace の使い方
 
 Copilot Workspace (CW) の技術プレビューへようこそ！　👋 CW は「タスク中心」の開発環境であり、リポジトリのタスクを自然言語で定義し、それを AI と一緒に作業することができます。始めるには、以下のエントリポイントのいずれかを使用してタスクを定義または開始できます：
 
